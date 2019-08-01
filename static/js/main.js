@@ -207,7 +207,7 @@ var blackcandy = (function () {
     };
     var setLayoutType = function () {
         $(".layout-type i").click(function () {
-            document.cookie = "layout=" + $(this).data("type");
+            document.cookie = "layout_smarty=" + $(this).data("type");
             window.location.reload(true);
         });
     };
