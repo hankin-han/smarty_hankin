@@ -11,7 +11,7 @@
             </a>
         </div>
         <div class="header-menu-wrap clear">
-            <ul id="menu-%e5%af%bc%e8%88%aa%e8%8f%9c%e5%8d%95" class="header-menu">
+            <ul id="" class="header-menu">
                 <?php
                 if ( function_exists( 'wp_nav_menu' ) && has_nav_menu('warp-nav') ) {
                     wp_nav_menu( array( 'container' => false, 'items_wrap' => '%3$s', 'theme_location' => 'warp-nav', 'depth'=>2 ) );
@@ -21,8 +21,7 @@
                 ?>
             </ul>        </div>
         <div class="admin-login hidden-sm">
-            <a href="http://heitang.chuangzaoshi.com/wp-admin" target="_blank" class="btn-line btn-line-geek">
-                登录                                    </a>
+            <a href="<?php echo home_url(); ?>/wp-admin" target="_blank" class="btn-line btn-line-geek">登录</a>
         </div>
         <div class="search-button cursor-pointer">
             <i class="czs-search-l"></i>
@@ -38,7 +37,7 @@
     </nav>
     <div class="menu-wrap">
         <div class="mobile-menu">
-            <ul id="menu-%e5%af%bc%e8%88%aa%e8%8f%9c%e5%8d%95-1" class="mobile-menu-nav">
+            <ul id="" class="mobile-menu-nav">
                 <?php
                 if ( function_exists( 'wp_nav_menu' ) && has_nav_menu('warp-nav') ) {
                     wp_nav_menu( array( 'container' => false, 'items_wrap' => '%3$s', 'theme_location' => 'warp-nav', 'depth'=>2 ) );
@@ -48,8 +47,7 @@
                 ?>
             </ul>		</div>
         <div class="mobile-admin-login text-center mt-3">
-            <a href="/wp-admin" target="_blank" class="btn-line btn-line-geek">
-                登录									</a>
+            <a href="<?php echo home_url(); ?>/wp-admin" target="_blank" class="btn-line btn-line-geek">登录</a>
         </div>
     </div>
 </header>

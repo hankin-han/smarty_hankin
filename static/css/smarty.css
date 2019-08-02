@@ -990,8 +990,10 @@ a:hover{cursor:pointer}
 #footer .footer-feature .footer-menu{margin:0;padding:0;list-style:none}
 #footer .footer-feature .footer-menu li{display:inline-block;margin-right:8px}
 #footer .footer-feature .footer-menu li a{text-decoration:none;color:#818181;display:block}
+#footer .footer-feature .footer-menu li a:hover{color:#ffffff!important;}
 #footer .footer-friends li{display:inline-block;margin-right:20px;overflow:hidden;-ms-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}
 #footer .footer-friends li a{text-decoration:none;color:#fff}
+#footer .footer-friends li a:hover{color:#fff!important}
 #footer .footer-friends li a span{color:#999}
 #footer .footer-friends li img{float:left;margin:2px 5px 0 0;width:18px;height:18px}
 .copyright{background-color:#1b1b1b;padding:10px 0;margin-top:22px}

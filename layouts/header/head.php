@@ -20,6 +20,11 @@ Blog：https://www.hankin.cn -->
     <?php wp_head(); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/static/css/smarty.css?version=<?= time()?>" />
     <link rel="stylesheet" type="text/css" id="owlcss-css" href="<?php echo get_template_directory_uri(); ?>/static/css/owl.carousel.min.css?version=<?= time()?>" />
+    <title><?php show_wp_title() ?></title>
+    <meta name="description" content="那个为梦想拼尽全力的你~" />
+    <meta name="keywords" content="唤醒,唤醒-hankin,个人博客模板,主题分享,博客模板,个人网站模板,技术分享,功能开发,前端技术,后端技术" />
+    <meta name="template" content="唤醒-hankin" />
+    <link rel="icon" type="image/ico" href="">
 </head>
 <body <?php body_class(); ?>>
 <script type="text/javascript">
