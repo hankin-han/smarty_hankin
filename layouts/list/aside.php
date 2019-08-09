@@ -1,3 +1,4 @@
+<?php $category = get_the_category(); ?>
 <div class="post post-type-aside">
                     <div class="post-left pull-left">
                         <a class="post-img img-response d-block gradient-mask" href="<?php the_permalink() ?>"  style="background-image: url(http://heitang.chuangzaoshi.com/wp-content/uploads/2017/05/A-2.png)">
@@ -8,8 +9,8 @@
                             <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                         </div>
                         <div class="post-meta-top">
-                            <a class="post-meta-categories" href="<?php the_permalink() ?>">
-                                <i class="czs-bookmark"></i><?php $category = get_the_category(); echo $category[0]->cat_name; ?></a>
+                            <a class="post-meta-categories" href="<?php echo get_category_link( $category[0]->term_id ) ?>">
+                                <i class="czs-bookmark"></i><?php echo $category[0]->cat_name; ?></a>
                             <span class="post-meta-time">• <?= get_the_time('Y-m-d')?></span>
                         </div>
                         <div class="post-body">

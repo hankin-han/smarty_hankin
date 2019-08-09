@@ -8,7 +8,7 @@
 <div class="container ps-r mb-10 hidden-xs mt-6">
     <div class="custom-carousel">
         <?php foreach($categories as $k => $category):?>
-        <a href="<?php get_category_link( $category->term_id ) ?>" class="mask-animate d-block carousel-item" 
+        <a href="<?php echo get_category_link( $category->term_id ) ?>" class="mask-animate d-block carousel-item" 
             style="background: url(<?= get_template_directory_uri(); ?>/static/images/A-<?= rand(1,5)?>.png); background-repeat: no-repeat; background-size: cover; background-position: center top">
             <div class="text-center custom-carousel-info vertical-middle">
                 <div class="mb-1"><?= $category->count ?> 篇 </div>
@@ -17,5 +17,6 @@
             </div>
         </a>
     <?php endforeach;?>
+    
     </div>
 </div>

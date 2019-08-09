@@ -1,11 +1,11 @@
-
+<?php $category = get_the_category(); ?>
                 <div class="post post-style-standard">
                     <div class="post-title">
                         <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                     </div>
                     <div class="post-meta-top">
-                        <a class="post-meta-categories" href="<?php the_permalink() ?>">
-                            <i class="czs-bookmark"></i><?php $category = get_the_category(); echo $category[0]->cat_name; ?></a>
+                        <a class="post-meta-categories" href="<?php echo get_category_link( $category[0]->term_id ) ?>">
+                            <i class="czs-bookmark"></i><?php echo $category[0]->cat_name; ?></a>
                         <span class="post-meta-time">
          • 2017.05.15    </span>
                     </div>

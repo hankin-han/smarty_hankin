@@ -71,6 +71,7 @@ td,th{padding:0}
 }
 .btn{display:inline-block;padding:6px 16px;text-align:center;border-radius:2px;color:#fff!important;background:#171717;border:0!important}
 .btn-geek{background-color:#222}
+.btn-default{background-color:#fff;color:#171717!important}
 .btn-primary{background:#0275d8}
 .btn-success{background-color:#5cb85c}
 .btn-info{background-color:#5bc0de}
@@ -884,7 +885,7 @@ a:hover{cursor:pointer}
 }
 #carousel .owl-dots .active span{background-color:#fff}
 .custom-carousel{overflow:hidden;height:180px}
-.custom-carousel .carousel-item{position:relative;height:180px;color:#fff;font-size:14px;max-width:360px}
+.custom-carousel .carousel-item{position:relative;height:180px;color:#fff;font-size:14px;max-width:360px;}
 .custom-carousel .owl-dots{position:absolute;bottom:-28px;right:10px;width:100%;height:20px;text-align:right}
 .custom-carousel .owl-dots .owl-dot{display:inline-block;zoom:1}
 .custom-carousel .owl-dots .owl-dot span{display:block;width:12px;height:12px;background:#bbb;margin:3px 4px;opacity:1}
@@ -1066,7 +1067,7 @@ body{padding-top:80px}
 @media (max-width:575px){.post-type-aside .post-meta-author{display:none!important}
 }
 .post-type-aside .post-left{margin-right:10px}
-.post-type-aside .post-left .post-img{width:200px;height:0;padding-bottom:68%}
+.post-type-aside .post-left .post-img{width:200px;height:0;padding-bottom:68%;border-radius: 4px;box-shadow: 0 0 5px #7b7b7b;}
 @media screen and (max-width:767px){.post-type-aside .post-left .post-img{width:128px}
 }
 .post-type-aside .post-left ul{list-style:none;margin:8px 0;padding:0}
@@ -1360,3 +1361,5 @@ body{padding-top:80px}
 .comments .comments-list .comment .comment-body .comment-meta .comment-action{position:absolute;right:0}
 .comments .comments-list .comment .comment-body .comment-meta .comment-reply-link{text-decoration:none;color:#ccc;font-size:13px}
 .comments .comments-list .comment .comment-body .comment-meta .comment-edit-link{text-decoration:none;color:#ccc;font-size:13px}
+.breadcrumb{padding-left: 0}
+#list-ajax-nav ul li{ display: inline-block;flex-shrink: 0;margin-bottom: 4px; }

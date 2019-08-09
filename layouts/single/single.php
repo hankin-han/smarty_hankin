@@ -3,7 +3,8 @@
     .post-categories li{float:left;}
 </style>
 <main class="container pt-xs-6" id="pjax-content">
-	<div class="row">
+    <div class="row">
+    <?php cmp_breadcrumbs()?>
 	<div class="col-md-8">
 		<div class="row" id="main">
 								<article class="article " id="post-20">

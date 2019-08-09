@@ -1,4 +1,3 @@
-
 <div class="notice mb-6 py-3">
     <div class="container">
         <div class="notice-wrap">
@@ -13,6 +12,7 @@
                         黑糖丨主题用户购买须知                                </a>
                 </li>
             </ul>
+            <?php if(is_home()):?>
             <div class="layout-type pull-right">
                 显示模式：
                 <?php if(empty($_COOKIE) || !isset($_COOKIE['layout_smarty'])):?>
@@ -27,9 +27,8 @@
                     <i data-type="dcolumn" class="czs-layout-list mr-1"></i>
                     <i data-type="cascade" class="czs-layout-grid active"></i>
                 <?php endif;?>
-
-
             </div>
+            <?php endif;?>
         </div>
     </div>
 </div>

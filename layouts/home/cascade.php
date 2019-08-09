@@ -1,4 +1,5 @@
 <main class="container" id="main">
+    <?php cmp_breadcrumbs()?>
     <div class="row">
         <!-- cascade -->
         <div class="cascade-layout">
@@ -37,14 +38,7 @@
                                         <span class="d-inline-block"><?php the_author(); ?></span>
                                     </a>
                                 </li>
-                                <li class="post-meta-view pull-right ">
-                                    <i class="czs-eye-l"></i> 0</li>
-                                <li class="post-meta-comments pull-right ">
-                                    <i class="czs-comment-l"></i> <?php echo get_post($post->ID)->comment_count; ?></li>
-                                <li class="post-meta-like pull-right ">
-                                    <i class="czs-heart-l"></i>
-                                    <span class="count"><?php echo getPostViews($postID);?></span>
-                                </li>
+                                <?php get_template_part( 'layouts/home/_view_comments_like' );?>
                             </ul>
                         </div>
                     </div>
