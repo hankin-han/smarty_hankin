@@ -1,12 +1,50 @@
 <?php
-add_filter( 'show_admin_bar', '__return_false' );
-register_nav_menu('warp-nav', 'smarty-菜单');
+require_once dirname(__FILE__) . '/includes/author-avatars.php';
+require_once dirname(__FILE__) . '/cs-framework/cs-framework.php';
+// -(or)-
+define('CS_ACTIVE_FRAMEWORK', TRUE); // default true
+define('CS_ACTIVE_METABOX', TRUE); // default true
+define('CS_ACTIVE_TAXONOMY', FALSE); // default true
+define('CS_ACTIVE_SHORTCODE', FALSE); // default true
+define('CS_ACTIVE_CUSTOMIZE', FALSE); // default true
 
-/* 设置后台样式 */
+
+/*
+ * 添加一个简单的菜单
+ * 自行修改 'title' 和 'href' 的值
+ */
+function custom_adminbar_menu($meta = TRUE)
+{
+    global $wp_admin_bar;
+
+    if (!is_user_logged_in()) {return;}
+    if (!is_super_admin() || !is_admin_bar_showing()) {return;}
+    echo '<style>
+#wp-admin-bar-version-help .version-help{height:20px;background:#ca4a1f;border-radius:20px;display:inline-block;font-weight:bold;padding:0px 10px;line-height:20px;}
+#wp-admin-bar-version-help .version-help:hover{color:#fff!important;}
+#wp-admin-bar-version-help .version-help:active{color:#fff!important;}</style>';
+
+        $wp_admin_bar->add_menu([
+            'id' => 'custom_menu',
+            'title' => __('<i style="position: relative;top:5px;color:#9ea3a8" 
+                class="wp-menu-image dashicons-before dashicons-admin-settings">
+                </i>&nbsp;&nbsp;smarty_hankin 主题设置'),
+            'href' => '/wp-admin/admin.php?page=cs-framework',
+            //'meta'  => array( 'target' => '_blank' )
+        ]);
+}
+if(is_admin() && $_SERVER["QUERY_STRING"]=="page=cs-framework") {
+    add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
+}
+
+register_nav_menu('warp-nav', 'smarty-左侧菜单');
+//用户自定义头像功能
+/* 设置后台样式
 function admin_my_css() {
     wp_enqueue_style( "admin-my", get_template_directory_uri() . "/static/css/admin-my.css" );
 }
 add_action('admin_head', 'admin_my_css');
+*/
 /* 获取主题名称 */
 function _the_theme_name()
 {
@@ -44,6 +82,24 @@ function coolwp_remove_open_sans_from_wp_core()
     wp_enqueue_style('open-sans', '');
 }
 add_action('init', 'coolwp_remove_open_sans_from_wp_core');
+// 禁用谷歌字体
+class Disable_Google_Fonts
+{
+    public function __construct()
+    {
+        add_filter('gettext_with_context', [$this, 'disable_open_sans'], 888, 4);
+    }
+
+    public function disable_open_sans($translations, $text, $context, $domain)
+    {
+        if ('Open Sans font: on or off' == $context && 'on' == $text)
+        {
+            $translations = 'off';
+        }
+
+        return $translations;
+    }
+}
 /* 清除wp_head无用内容 */
 function disable_emojis() {
     remove_action( 'wp_head', 'wp_generator' ); //移除WordPress版本
@@ -235,4 +291,43 @@ function cmp_breadcrumbs()
         }
         echo '</ol>';
     }
+}
+
+// 获取信息
+function getSystemInfo()
+{
+    global $wpdb;
+    // 获取Mysql版本号
+    $mysqlVersion = $wpdb->get_row('SELECT VERSION() as v', ARRAY_A);
+    $mysqlVersion = $mysqlVersion ['v'];
+
+    // 获取数据库大小
+    $status = $wpdb->get_results('SHOW TABLE STATUS', ARRAY_A);
+    $size = 0;
+    foreach ($status as $row)
+        $size += $row ["Data_length"] + $row ["Index_length"];
+
+    $decimals = 2;
+    $mbytes = number_format($size / (1024 * 1024), $decimals);
+
+    // 获取上传大小
+    if (@ini_get('file_uploads')) $fileupload = ini_get('upload_max_filesize');
+    else $fileupload = '<font color="red">0</font>';
+
+    $table = "<table class='wp-list-table widefat fixed striped'>";
+    $table .= "<tbody>";
+    $table .= "<tr><td>主题开发</td><td><b>唤醒-hankin<b></td></tr>";
+    $table .= "<tr><td>QQ群</td><td><b>21310971<b></td></tr>";
+    $table .= "<tr><td>服务器系统</td><td>" . php_uname('s') . "</td></tr>";
+    $table .= "<tr><td>服务器软件</td><td>" . $_SERVER ['SERVER_SOFTWARE'] . "</td></tr>";
+    $table .= "<tr><td>服务器 IP</td><td>" . $_SERVER ['SERVER_ADDR'] . "</td></tr>";
+    $table .= "<tr><td>服务器时间</td><td>" . date("Y-m-d H:i:s") . "</td></tr>";
+    $table .= "<tr><td>PHP 版本号</td><td>" . PHP_VERSION . "</td></tr>";
+    $table .= "<tr><td>上传许可</td><td>" . $fileupload . "</td></tr>";
+    $table .= "<tr><td>MySQL 版本号</td><td>" . $mysqlVersion . "</td></tr>";
+    $table .= "<tr><td>MySQL 库占用</td><td>" . $mbytes . "</td></tr>";
+    $table .= "</tbody>";
+    $table .= "</table>";
+
+    return $table;
 }

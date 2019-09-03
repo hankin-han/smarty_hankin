@@ -1,53 +1,71 @@
-<header id="header">
-    <nav class="container">
-        <div class="logo hidden-sm">
-            <a href="http://heitang.chuangzaoshi.com" class="d-block">
-                <img src="http://heitang.chuangzaoshi.com/wp-content/uploads/2018/10/logo.png" alt="">
-            </a>
-        </div>
-        <div class="mobile-logo show-sm">
-            <a href="http://heitang.chuangzaoshi.com" class="d-inline-block">
-                <img src="http://heitang.chuangzaoshi.com/wp-content/uploads/2018/10/logo_mobile.png" alt="">
-            </a>
-        </div>
-        <div class="header-menu-wrap clear">
-            <ul id="" class="header-menu">
-                <?php
-                if ( function_exists( 'wp_nav_menu' ) && has_nav_menu('warp-nav') ) {
-                    wp_nav_menu( array( 'container' => false, 'items_wrap' => '%3$s', 'theme_location' => 'warp-nav', 'depth'=>2 ) );
-                } else {
-                    echo '<li><a href="/wp-admin/nav-menus.php">请到[后台->外观->菜单]中设置菜单。</a></li>';
-                }
-                ?>
-            </ul>        </div>
-        <div class="admin-login hidden-sm">
-            <a href="<?php echo home_url(); ?>/wp-admin" target="_blank" class="btn-line btn-line-geek">登录</a>
-        </div>
-        <div class="search-button cursor-pointer">
-            <i class="czs-search-l"></i>
-            <span class="d-inline-block transition opacity-0"><i class="czs-close-l"></i></span>
-        </div>
-        <div class="menu-button">
-            <div class="nav-bar">
-                <span></span>
-                <span></span>
-                <span></span>
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar menu-light menupos-fixed">
+    <div class="navbar-wrapper  ">
+        <div class="navbar-content scroll-div " >
+
+            <div class="">
+                <div class="main-menu-header">
+                    <img class="img-radius" src="<?php echo get_template_directory_uri(); ?>/assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
+                    <div class="user-details">
+                        <div id="more-details">hankin  <i class="fa fa-caret-down"></i></div>
+                    </div>
+                </div>
+                <div class="" id="nav-user-link">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="user-profile.html" data-toggle="tooltip" title="View Profile"><i class="feather icon-user"></i></a></li>
+                        <li class="list-inline-item"><a href="email_inbox.html"><i class="feather icon-mail" data-toggle="tooltip" title="Messages"></i><small class="badge badge-pill badge-primary">5</small></a></li>
+                        <li class="list-inline-item"><a href="auth-signin.html" data-toggle="tooltip" title="Logout" class="text-danger"><i class="feather icon-power"></i></a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <div class="menu-wrap">
-        <div class="mobile-menu">
-            <ul id="" class="mobile-menu-nav">
-                <?php
-                if ( function_exists( 'wp_nav_menu' ) && has_nav_menu('warp-nav') ) {
-                    wp_nav_menu( array( 'container' => false, 'items_wrap' => '%3$s', 'theme_location' => 'warp-nav', 'depth'=>2 ) );
-                } else {
-                    echo '<li><a href="/wp-admin/nav-menus.php">请到[后台->外观->菜单]中设置菜单。</a></li>';
-                }
-                ?>
-            </ul>		</div>
-        <div class="mobile-admin-login text-center mt-3">
-            <a href="<?php echo home_url(); ?>/wp-admin" target="_blank" class="btn-line btn-line-geek">登录</a>
+
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>导航</label>
+                </li>
+            </ul>
+            <?php
+            if ( function_exists( 'wp_nav_menu' ) && has_nav_menu('warp-nav') ) {
+                wp_nav_menu(
+                    ['container' => false,
+                        'theme_location' => 'warp-nav',
+                        'depth'=>2,
+                        //'items_wrap' => '%3$s',
+                        //'menu_class' => 'pcoded-submenu',
+                        'menu_class' => 'nav pcoded-inner-navbar',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    ]);
+            } else {
+                echo '<li><a href="/wp-admin/nav-menus.php">请到[后台->外观->菜单]中设置菜单。</a></li>';
+            }
+            ?>
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>分类</label>
+                </li>
+            </ul>
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>页面</label>
+                </li>
+            </ul>
+            <ul class="nav pcoded-inner-navbar ">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>友链</label>
+                </li>
+            </ul>
+
+            <div class="card text-center">
+                <div class="card-block">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="feather icon-sunset f-40"></i>
+                    <h6 class="mt-3">Help?</h6>
+                    <p>Please contact us on our email for need any support</p>
+                    <a href="#!" target="_blank" class="btn btn-primary btn-sm text-white m-0">Support</a>
+                </div>
+            </div>
+
         </div>
     </div>
-</header>
+</nav>
+<!-- [ navigation menu ] end -->
