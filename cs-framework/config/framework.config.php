@@ -10,7 +10,7 @@
 $themeMessage = _the_theme_name().'_v'._the_theme_version();
 
 $settings = [
-    'menu_title' => _the_theme_name(),
+    'menu_title' => '主题设置',
     'menu_type' => 'menu',
     'menu_slug' => 'cs-framework',
     'ajax_save' => TRUE,
@@ -42,8 +42,8 @@ $options[] = [
 ];
 
 
-if(is_admin() && $_SERVER["QUERY_STRING"]=="page=cs-framework")
-{
+//if(is_admin() && $_SERVER["QUERY_STRING"]=="page=cs-framework")
+//{
   // ------------------------------
   // 初级设置                      -
   // ------------------------------
@@ -1148,7 +1148,7 @@ if(is_admin() && $_SERVER["QUERY_STRING"]=="page=cs-framework")
       ],
     ],
   ];
-}
+//}
 
 // ------------------------------
 // 关于唤醒                       -

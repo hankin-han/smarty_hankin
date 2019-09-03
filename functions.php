@@ -33,9 +33,8 @@ function custom_adminbar_menu($meta = TRUE)
             //'meta'  => array( 'target' => '_blank' )
         ]);
 }
-if(is_admin() && $_SERVER["QUERY_STRING"]=="page=cs-framework") {
-    add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
-}
+add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
+
 
 register_nav_menu('warp-nav', 'smarty-左侧菜单');
 //用户自定义头像功能

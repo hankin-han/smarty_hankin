@@ -1,3 +1,6 @@
+<?php
+$i_links = cs_get_option('i_links'); //自定义友情链接
+?>
 <!-- [ navigation menu ] start -->
 <nav class="pcoded-navbar menu-light menupos-fixed">
     <div class="navbar-wrapper  ">
@@ -41,18 +44,64 @@
             ?>
             <ul class="nav pcoded-inner-navbar ">
                 <li class="nav-item pcoded-menu-caption">
-                    <label>分类</label>
+                    <label>组成</label>
                 </li>
             </ul>
             <ul class="nav pcoded-inner-navbar ">
-                <li class="nav-item pcoded-menu-caption">
-                    <label>页面</label>
-                </li>
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">分类</span></a>
+                        <ul class="pcoded-submenu">
+                            <?php
+                                $args=array(
+                                    'orderby' => 'name',
+                                    'order' => 'ESC'
+                                );
+                                $categories=get_categories($args);
+                                ?>
+                                <?php foreach($categories as $category):?>
+                                    <li><a href="<?= get_category_link( $category->term_id )?>" title="<?= $category->name ?>">
+                                            <span><?= $category->name ?></span>
+                                        </a>
+                                    </li>
+                                <?php endforeach;?>
+                        </ul>
+                    </li>
             </ul>
             <ul class="nav pcoded-inner-navbar ">
-                <li class="nav-item pcoded-menu-caption">
-                    <label>友链</label>
-                </li>
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file"></i></span><span class="pcoded-mtext">页面</span></a>
+                        <ul class="pcoded-submenu">
+                            <?php wp_page_menu([
+                                'sort_column'  => 'menu_order, post_title',
+                                'menu_id'      => '',
+                                'menu_class'   => '',
+                                'container'    => false, //还没有过滤
+                                'echo'         => true,
+                                'link_before'  => '',
+                                'link_after'   => '',
+                                'before'       => '',
+                                'after'        => '',
+                                'item_spacing' => 'discard',
+                                'walker'       => '',
+                                'exclude_tree' => '1036', //排除sitemap
+                            ]); ?>
+                        </ul>
+                    </li>
+            </ul>
+            <ul class="nav pcoded-inner-navbar ">
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-link"></i></span><span class="pcoded-mtext">友链</span></a>
+                        <ul class="pcoded-submenu">
+                            <?php if($i_links):?>
+                            <?php foreach($i_links as $link):?>
+                                <li><a href="<?= $link['i_links_link']?>" target="_blank" title="<?= $link['i_links_title']?>" alt="<?= $link['i_links_descript']?>">
+                                        <span><?= $link['i_links_title']?></span></a>
+                                </li>
+                            <?php endforeach;?>
+                            <?php echo '<li><a href="/wp-admin/nav-menus.php">请到[后台->主题设置->友情链接]中设置。</a></li>';?>
+                            <?php endif;?>
+                        </ul>
+                    </li>
             </ul>
 
             <div class="card text-center">
