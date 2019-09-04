@@ -13,7 +13,7 @@
 唤醒-hankin
 Blog：https://www.hankin.cn -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <title><?php show_wp_title() ?></title>
@@ -26,10 +26,11 @@ Blog：https://www.hankin.cn -->
     <?php wp_head(); ?>
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css?version=<?= time()?>">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css?version=<?= time()?>">
     <link rel="stylesheet" class="layout-css" id="layout-css" href="">
     <link rel="stylesheet" class="rtl-css" id="rtl-css" href="">
 </head>
-<body>
+<body class="container box-layout background-img-1">
 <!-- [ Pre-loader ] start -->
 <div class="loader-bg">
     <div class="loader-track">
