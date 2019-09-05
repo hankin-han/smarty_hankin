@@ -98,6 +98,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                                         <span><?= $link['i_links_title']?></span></a>
                                 </li>
                             <?php endforeach;?>
+                            <?php else: ?>
                             <?php echo '<li><a href="/wp-admin/nav-menus.php">请到[后台->主题设置->友情链接]中设置。</a></li>';?>
                             <?php endif;?>
                         </ul>
