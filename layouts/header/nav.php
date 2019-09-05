@@ -49,7 +49,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
             </ul>
             <ul class="nav pcoded-inner-navbar ">
                     <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">分类</span></a>
+                        <a href="#!" no-pjax class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">分类</span></a>
                         <ul class="pcoded-submenu">
                             <?php
                                 $args=array(
@@ -69,7 +69,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
             </ul>
             <ul class="nav pcoded-inner-navbar ">
                     <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file"></i></span><span class="pcoded-mtext">页面</span></a>
+                        <a href="#!" no-pjax class="nav-link "><span class="pcoded-micon"><i class="feather icon-file"></i></span><span class="pcoded-mtext">页面</span></a>
                         <ul class="pcoded-submenu">
                             <?php wp_page_menu([
                                 'sort_column'  => 'menu_order, post_title',
@@ -90,7 +90,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
             </ul>
             <ul class="nav pcoded-inner-navbar ">
                     <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-link"></i></span><span class="pcoded-mtext">友链</span></a>
+                        <a href="#!" no-pjax class="nav-link "><span class="pcoded-micon"><i class="feather icon-link"></i></span><span class="pcoded-mtext">友链</span></a>
                         <ul class="pcoded-submenu">
                             <?php if($i_links):?>
                             <?php foreach($i_links as $link):?>
