@@ -1,3 +1,10 @@
+/*body, th, td, button, input, select, textarea {
+    font-family: Play,"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,"WenQuanYi Micro Hei",Verdana,sans-serif,"\5B8B\4F53";
+    font-size: 12px;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}*/
 a{color:#222831;text-decoration:none;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;-ms-transition:all .3s ease;-o-transition:all .3s ease;transition:all .3s ease;cursor:pointer}
 a:link,a:visited{text-decoration:none}
 a:hover{text-decoration:none;color:#448ef6}
@@ -203,7 +210,7 @@ badge
 Avatar
 --------------------------------------------------------------*/
 .flex-avatar{position:relative;line-height:1;border-radius:500px;white-space:nowrap;font-weight:700;border-radius:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-negative:0;flex-shrink:0;border-radius:500px}
-.flex-avatar img{border-radius:inherit;width:100%}
+.flex-avatar img{border-radius:3px;width:100%}
 .flex-avatar.w-32 .avatar-title{margin:0}
 .flex-avatar.w-40 .avatar-title{margin:1px}
 .flex-avatar.w-48 .avatar-title{margin:2px}

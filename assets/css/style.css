@@ -1,17 +1,3 @@
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(../fonts/opensans/mem8YaGs126MiZpBA-UFWJ0bbck.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(../fonts/opensans/mem8YaGs126MiZpBA-UFUZ0bbck.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(../fonts/opensans/mem8YaGs126MiZpBA-UFWZ0bbck.woff2) format("woff2");unicode-range:U+1F00-1FFF}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(../fonts/opensans/mem8YaGs126MiZpBA-UFVp0bbck.woff2) format("woff2");unicode-range:U+0370-03FF}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(../fonts/opensans/mem8YaGs126MiZpBA-UFWp0bbck.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(../fonts/opensans/mem8YaGs126MiZpBA-UFW50bbck.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(../fonts/opensans/mem5YaGs126MiZpBA-UNirkOX-hpOqc.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(../fonts/opensans/mem5YaGs126MiZpBA-UNirkOVuhpOqc.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(../fonts/opensans/mem5YaGs126MiZpBA-UNirkOXuhpOqc.woff2) format("woff2");unicode-range:U+1F00-1FFF}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(../fonts/opensans/mem5YaGs126MiZpBA-UNirkOUehpOqc.woff2) format("woff2");unicode-range:U+0370-03FF}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(../fonts/opensans/mem5YaGs126MiZpBA-UNirkOXehpOqc.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(../fonts/opensans/mem5YaGs126MiZpBA-UNirkOXOhpOqc.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(https://fonts.gstatic.com/s/opensans/v16/mem5YaGs126MiZpBA-UNirkOUuhp.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 .ps{overflow:hidden!important;overflow-anchor:none;-ms-overflow-style:none;touch-action:auto;-ms-touch-action:auto}
 .ps__rail-x{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;height:15px;bottom:0;position:absolute}
 .ps__rail-y{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;width:15px;right:0;position:absolute}
@@ -5712,7 +5698,7 @@ body.background-img-6 .pcoded-navbar.theme-horizontal~.pcoded-header[class*=head
 body.box-layout{position:static;background-size:cover;max-width:1400px}
 body.box-layout .pcoded-header{position:relative}
 body.box-layout .pcoded-header~.pcoded-main-container{padding-top:0;background:#ecf0f5}
-body.box-layout .pcoded-navbar{position:fixed;border-radius:6px 6px 0 0;align-content:space-around;height:100%}
+body.box-layout .pcoded-navbar{position:fixed;border-radius:6px 6px 0 0;align-content:space-around;height:100%;overflow-y: auto;}
 body.box-layout .pcoded-navbar.theme-horizontal~.pcoded-header{position:relative}
 @media only screen and (max-width:992px){body.box-layout{position:relative}
 }
@@ -6893,3 +6879,19 @@ new-task label input[type=checkbox]{display:none}
 .user-profile-list table tr td{background:#fff;position:relative}
 .user-profile-list table tr td:first-child{border-top-left-radius:.25rem;border-bottom-left-radius:.25rem}
 .user-profile-list table tr td:last-child{border-top-right-radius:.25rem;border-bottom-right-radius:.25rem}
+
+/* 默认滚动条样式 */
+body.box-layout .pcoded-navbar::-webkit-scrollbar-track-piece{background:#ccc}
+body.box-layout .pcoded-navbar::-webkit-scrollbar{width:5px;height:6px}
+body.box-layout .pcoded-navbar::-webkit-scrollbar-thumb{border-radius:4px;background-color:#ffffffa8}
+body.box-layout .pcoded-navbar::-webkit-scrollbar-thumb:hover{background-color:#bbb}
+
+/* 页面加载loading*/
+#loadingbar {position: -webkit-sticky;position: -moz-sticky;position: -ms-sticky;position: -o-sticky;position: sticky;top: 50px;width: 100%;z-index: 1}
+@media (max-width:767px) {  #loadingbar {position: fixed;z-index:99;}}
+.butterbar {position: relative;height: 3px;margin-bottom: -3px}
+.butterbar .bar {position: absolute;width: 100%;height: 0;text-indent: -9999px;background-color: #23b7e5}
+.butterbar .bar:before {position: absolute;right: 50%;left: 50%;height: 3px;background-color: inherit;content: ""}
+.butterbar.active {-webkit-animation: changebar 2.25s infinite .75s;-moz-animation: changebar 2.25s infinite .75s;animation: changebar 2.25s infinite .75s}
+.butterbar.active .bar {-webkit-animation: changebar 2.25s infinite;-moz-animation: changebar 2.25s infinite;animation: changebar 2.25s infinite}
+.butterbar.active .bar:before {-webkit-animation: movingbar .75s infinite;-moz-animation: movingbar .75s infinite;animation: movingbar .75s infinite}

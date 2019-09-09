@@ -1,4 +1,4 @@
-<div class="list-home list-grid list-grid-padding">
+<div class="list-home list-grid list-grid-padding" id="content">
 <?php if (have_posts()): ?>
     <?php while (have_posts()) : the_post(); ?>
     <div class="card list-item block card-plain ">
@@ -19,7 +19,7 @@
             <div class="list-footer">
                 <div class="d-flex flex-fill align-items-center text-muted text-xs">
                     <div class="d-none d-md-inline-block">
-                       <a href="https://demo.nicetheme.xyz/panda-pro-style-one/author/suxing" target="_blank" class="flex-avatar w-20 ">
+                       <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" target="_blank" class="flex-avatar w-20 ">
                         <?php echo get_avatar( get_the_author_meta( 'user_email' ),'20' ); ?>
                         </a>
                     </div>

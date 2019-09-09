@@ -13,7 +13,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                         <div id="more-details">hankin  <i class="fa fa-caret-down"></i></div>
                     </div>
                 </div>
-                <div class="" id="nav-user-link">
+                <div class="collapse" id="nav-user-link">
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href="user-profile.html" data-toggle="tooltip" title="View Profile"><i class="feather icon-user"></i></a></li>
                         <li class="list-inline-item"><a href="email_inbox.html"><i class="feather icon-mail" data-toggle="tooltip" title="Messages"></i><small class="badge badge-pill badge-primary">5</small></a></li>
@@ -39,7 +39,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                         'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     ]);
             } else {
-                echo '<li><a href="/wp-admin/nav-menus.php">请到[后台->外观->菜单]中设置菜单。</a></li>';
+                echo '<li><a href="/wp-admin/nav-menus.php" target="_blank">请到[后台->外观->菜单]中设置菜单。</a></li>';
             }
             ?>
             <ul class="nav pcoded-inner-navbar ">
@@ -49,8 +49,9 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
             </ul>
             <ul class="nav pcoded-inner-navbar ">
                     <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" no-pjax class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">分类</span></a>
-                        <ul class="pcoded-submenu">
+                        <a href="javascript:void(0)" no-pjax class="nav-link pcoded-submenu-click">
+                            <span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">分类</span></a>
+                        <ul class="pcoded-submenu" data="off">
                             <?php
                                 $args=array(
                                     'orderby' => 'name',
@@ -69,8 +70,9 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
             </ul>
             <ul class="nav pcoded-inner-navbar ">
                     <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" no-pjax class="nav-link "><span class="pcoded-micon"><i class="feather icon-file"></i></span><span class="pcoded-mtext">页面</span></a>
-                        <ul class="pcoded-submenu">
+                        <a href="javascript:void(0)" no-pjax class="nav-link pcoded-submenu-click">
+                        <span class="pcoded-micon"><i class="feather icon-file"></i></span><span class="pcoded-mtext">页面</span></a>
+                        <ul class="pcoded-submenu" data="off">
                             <?php wp_page_menu([
                                 'sort_column'  => 'menu_order, post_title',
                                 'menu_id'      => '',
@@ -90,8 +92,9 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
             </ul>
             <ul class="nav pcoded-inner-navbar ">
                     <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" no-pjax class="nav-link "><span class="pcoded-micon"><i class="feather icon-link"></i></span><span class="pcoded-mtext">友链</span></a>
-                        <ul class="pcoded-submenu">
+                        <a href="javascript:void(0)" no-pjax class="nav-link pcoded-submenu-click">
+                        <span class="pcoded-micon"><i class="feather icon-link"></i></span><span class="pcoded-mtext">友链</span></a>
+                        <ul class="pcoded-submenu" data="off">
                             <?php if($i_links):?>
                             <?php foreach($i_links as $link):?>
                                 <li><a href="<?= $link['i_links_link']?>" target="_blank" title="<?= $link['i_links_title']?>" alt="<?= $link['i_links_descript']?>">
@@ -99,7 +102,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                                 </li>
                             <?php endforeach;?>
                             <?php else: ?>
-                            <?php echo '<li><a href="/wp-admin/nav-menus.php">请到[后台->主题设置->友情链接]中设置。</a></li>';?>
+                            <?php echo '<li><a href="/wp-admin/admin.php?page=cs-framework" target="_blank">请到[后台->主题设置->友情链接]中设置。</a></li>';?>
                             <?php endif;?>
                         </ul>
                     </li>

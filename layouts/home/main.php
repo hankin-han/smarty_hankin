@@ -1,5 +1,5 @@
 <!-- [ Main Content ] start -->
-<section id="content" class="pcoded-main-container">
+<section class="pcoded-main-container">
     <div class="pcoded-content">
         <!-- [ breadcrumb ] start -->
         <?php get_template_part( 'layouts/home/breadcrumb' );?>
