@@ -83,6 +83,9 @@ $(window).scroll(function() {
 		}
 	}
 });
+$("#more-details").on("click", function() {
+	$("#nav-user-link").slideToggle()
+});
 $(".pcoded-submenu-click").on("click",function(){
 	if($(this).next().attr("data") == 'off'){
 		$(this).next().slideDown()

@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-8">
                 <!-- [ list ] start -->
-                <?php get_template_part( 'layouts/home/list' );?>
+                <?php get_template_part( 'layouts/single/view' );?>
                 <!-- [ list ] end -->
             </div>
             <div class="col-md-4">

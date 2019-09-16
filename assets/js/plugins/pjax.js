@@ -886,11 +886,9 @@ $.support.pjax ? enable() : disable()
 $(function() {
 $(document).pjax('a[target!=_blank]', '#content', {fragment:'#content', timeout:6000});    
     $(document).on('pjax:send', function() {
-      $('#content').fadeTo(700,0.0);
       $(".loader-bg").show();
     });
     $(document).on('pjax:complete', function() {
-      $('#content').fadeTo(700,1);
       $(".loader-bg").hide();
     });
 });

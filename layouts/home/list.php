@@ -1,9 +1,9 @@
-<div class="list-home list-grid list-grid-padding" id="content">
+<div class="list-home list-grid list-grid-padding">
 <?php if (have_posts()): ?>
     <?php while (have_posts()) : the_post(); ?>
     <div class="card list-item block card-plain ">
         <div class="media media-3x2 col-4 col-md-4">
-            <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url('https://demo.nicetheme.xyz/panda-pro-style-one/wp-content/uploads/sites/25/2019/06/photo-1520358889634-04b1a67b3f0c.jpg')"></a>
+            <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url(<?= getThumbnail()?>)"></a>
         </div>
         <div class="list-content">
             <div class="list-body">
@@ -36,8 +36,12 @@
     </div>
     <?php endwhile; ?>
 <?php endif;?>
-<div class="pagination">
-    <span class="more d-inline-block"><?php next_posts_link(__('加载更多')); ?></span>
+<div class="text-center">
+    <?php if(is_home()): ?>
+        <?php homePage();?>
+    <?php else:?>
+        <?php categoryPage();?>
+    <?php endif;?>
 </div>
     <!-- <div class="list-item list-item-column block card-featured">
         <div class="list-content p-0">

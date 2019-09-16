@@ -232,3 +232,102 @@ Avatar
 .avatar-title.v2{background-color:#5bc146}
 .avatar-title.v3{background-color:#ffd14d}
 .avatar-title.v4{background-color:#fe4d62}
+
+/*--------------------------------------------------------------
+border
+--------------------------------------------------------------*/
+.border-secondary{border-color:#393e46!important}
+.border-light{border-color:#f2f2f5!important}
+.border-1{border-width:1px!important}
+.border-2{border-width:2px!important}
+.border-3{border-width:3px!important}
+.rounded{border-radius:3px}
+.rounded,.rounded-circle{overflow:hidden}
+.border-theme{position:absolute;display:inline-block;left:0;bottom:-1px;width:8%;height:2px;z-index:2}
+
+/*--------------------------------------------------------------
+form control
+--------------------------------------------------------------*/
+.form-control{color:#393e46;border:1px solid #f2f2f5;border-radius:.15rem}
+.form-control:focus{color:#222831;border-color:#f2f2f5}
+.form-control::-webkit-input-placeholder{color:#393e46;opacity:1}
+.form-control::-moz-placeholder{color:#393e46;opacity:1}
+.form-control:-ms-input-placeholder{color:#393e46;opacity:1}
+.form-control::-ms-input-placeholder{color:#393e46;opacity:1}
+.form-control::placeholder{color:#393e46;opacity:1}
+.form-control:disabled,.form-control[readonly]{background-color:#f2f2f5;opacity:1;color:#393e46}
+
+/*--------------------------------------------------------------
+input group
+--------------------------------------------------------------*/
+.input-group>.custom-select:not(:first-child),.input-group>.form-control:not(:first-child){border-left-width:0}
+.input-group>.form-control:focus+.input-group-append .input-group-text{border-color:#448ef6}
+.input-group>.form-control:not(:last-child){border-right-width:0}
+.input-group>.input-group-append>.btn-outline-secondary{border-color:#f2f2f5;border-left-width:0}
+.input-group>.input-group-append>.btn-outline-secondary:focus,.input-group>.input-group-append>.btn-outline-secondary:hover,.input-group>.input-group-append>.btn-outline-secondary:not(:disabled):not(.disabled).active,.input-group>.input-group-append>.btn-outline-secondary:not(:disabled):not(.disabled):active{background-color:transparent;border-color:#f2f2f5;color:#152035}
+.input-group>.form-control:focus+.input-group-append .btn{border-color:#f2f2f5}
+/*--------------------------------------------------------------
+post content
+--------------------------------------------------------------*/
+.post-header{position:relative}
+.post-content figure,.post-content p{margin-bottom:1.25rem;font-size:.9375rem;line-height:1.8;word-wrap:break-word}
+.post-content a:not(.btn){color:#448ef6;text-decoration:underline}
+.post-content img{max-width:100%;margin:0 auto;height:auto}
+.post-content h1,.post-content h2,.post-content h3,.post-content h4,.post-content h5,.post-content h6{margin-bottom:1rem}
+.post-content h1{font-size:1.625rem}
+.post-content h2{font-size:1.25rem;border-left:3px solid #448ef6;padding-left:15px}
+.post-content h3{position:relative;font-size:1.125rem;padding-left:20px}
+.post-content h3:before{content:'';position:absolute;top:10px;left:0;height:8px;width:8px;border-radius:20px;background-color:#448ef6}
+.post-content h4{font-size:1rem;padding-bottom:.5rem;border-bottom:1px solid #f2f2f5}
+.post-content h5,.post-content h6{font-size:.875rem}
+.post-content h2.quote{font-size:1.25rem;color:#2d3757;padding-bottom:1rem;border-bottom:solid 1px #f0f4f7}
+.post-content ul{list-style:disc}
+.post-content ol{list-style:decimal}
+.post-content ol,.post-content ul{margin:0 0 20px 45px;font-size:.875rem}
+.post-content ol li,.post-content ul li{margin:15px 0}
+/*--------------------------------------------------------------
+  post share  style
+--------------------------------------------------------------*/
+.content-share .link-post-share{display:block}
+.content-share .nice-dropdown{width:auto}
+.content-share .icon-close-fill,.content-share.show .icon-share-box-fill{display:none}
+.content-share.show .icon-close-fill{display:block}
+.content-share .nice-dropdown{width:230px;top:0;left:50%;right:auto;border-radius:100px;padding:1rem .75rem;text-align:center;-webkit-transform:translate(-50%,-100%);-ms-transform:translate(-50%,-100%);transform:translate(-50%,-100%)}
+.content-share .nice-dropdown:after{position:absolute;top:99%;right:0;left:0;width:16px;margin:auto;content:'';border-top:8px solid #fff;border-right:7px solid transparent;border-bottom:5px solid transparent;border-left:7px solid transparent}
+.content-share.show .nice-dropdown{-webkit-transform:translate(-50%,-130%);-ms-transform:translate(-50%,-130%);transform:translate(-50%,-130%)}
+.content-share .nice-dropdown a{display:block}
+@media (min-width:992px){.content-share{position:relative;display:inline-block}
+}
+@media (max-width:991.98px){.content-share .nice-dropdown{-webkit-transform:translate(0,100%);-ms-transform:translate(0,100%);transform:translate(0,100%);border-radius:0;text-align:center;position:fixed;top:auto;bottom:0;left:0;right:0;width:100%}
+.content-share.show .nice-dropdown{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}
+.content-share .nice-dropdown:after{display:none}
+}
+@media (min-width:768px) and (max-width:991.98px){.content-share .nice-dropdown{background-color:transparent;box-shadow:none;padding:1rem}
+.content-share .nice-dropdown .dropdown-inner{background-color:rgba(255,255,255,.95);padding:0 1rem;border-radius:3px;-webkit-box-shadow:0 0 40px rgba(0,0,0,.2);-khtml-box-shadow:0 0 40px rgba(0,0,0,.2);-moz-box-shadow:0 0 40px rgba(0,0,0,.2);-ms-box-shadow:0 0 40px rgba(0,0,0,.2);-o-box-shadow:0 0 40px rgba(0,0,0,.2);box-shadow:0 0 40px rgba(0,0,0,.2)}
+.content-share .nice-dropdown .dropdown-inner a{padding:2rem 0}
+}
+@media (max-width:767.98px){.content-share .nice-dropdown a{padding:.5rem 0}
+.content-share .nice-dropdown a .iconfont{font-size:1.25rem!important}
+}
+/*--------------------------------------------------------------
+  post grid pushes style
+--------------------------------------------------------------*/
+.post-pushed-item .post-pushed-body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex:1 1 auto;flex:1 1 auto;-ms-flex-pack:center;justify-content:center}
+.post-pushed-item .post-pushed-content{-ms-flex:1 1 auto;flex:1 1 auto}
+.post-pushed-item .post-pushed-content a,.post-pushed-item .post-pushed-footer a{text-decoration:none}
+
+/*--------------------------------------------------------------
+  post password style
+--------------------------------------------------------------*/
+.post-password-form{position:relative;text-align:center;border:1px dashed rgba(57,61,69,.24);border-radius:3px;padding:3.5rem 1rem 3rem 1rem}
+.post-password-form p:first-child{display:inline-block;font-size:.75rem;padding:.25rem 1rem;border-radius:3px}
+.post-password-form label{position:relative}
+.post-password-form label input{font-size:.875rem;color:#393e46;border:1px solid #f2f2f5;border-radius:3px;padding:.375rem .875rem;line-height:1.5}
+.post-password-form input[type=submit]{display:inline-block;font-weight:400;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem 1rem;font-size:.875rem;line-height:1.5;border-radius:3px;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;color:#fff;background-color:#393e46;border-color:#393e46}
+
+/*--------------------------------------------------------------
+  cover style
+--------------------------------------------------------------*/
+@media (max-width:767.98px){.post-cover .media-21x9:after{padding-top:100%}
+.list-cover .media-21x9:after{padding-top:66%}
+}

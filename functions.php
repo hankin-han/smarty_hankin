@@ -38,12 +38,12 @@ add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
 
 register_nav_menu('warp-nav', 'smarty-左侧菜单');
 //用户自定义头像功能
-/* 设置后台样式
+/* 设置后台样式*/
 function admin_my_css() {
-    wp_enqueue_style( "admin-my", get_template_directory_uri() . "/static/css/admin-my.css" );
+    wp_enqueue_style( "admin-my", get_template_directory_uri() . "/assets/css/admin-my.css" );
 }
 add_action('admin_head', 'admin_my_css');
-*/
+
 /* 获取主题名称 */
 function _the_theme_name()
 {
@@ -175,10 +175,10 @@ function cmp_breadcrumbs()
     $after = '</span>'; // 在当前链接后插入
     if (!is_home() && !is_front_page() || is_paged())
     {
-        echo '<ol class="breadcrumb bg-white b-a" itemscope="">' . __('<i class="fa fa-home"> </i>', 'cmp');
+        echo '<ul class="breadcrumb" itemscope="">' . __('<i class="fa fa-home"> </i>', 'cmp');
         global $post;
         $homeLink = home_url() . '/';
-        echo ' <a itemprop="breadcrumb" href="' . $homeLink . '">' . __('首页', 'cmp') . '</a> ' . $delimiter . ' ';
+        echo '<a itemprop="breadcrumb" href="' . $homeLink . '">' . __('首页', 'cmp') . '</a> ' . $delimiter . ' ';
         if (is_category())
         { // 分类 存档
             global $wp_query;
@@ -288,7 +288,7 @@ function cmp_breadcrumbs()
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
                 echo sprintf(__('( Page %s )', 'cmp'), get_query_var('paged'));
         }
-        echo '</ol>';
+        echo '</ul>';
     }
 }
 
@@ -329,4 +329,131 @@ function getSystemInfo()
     $table .= "</table>";
 
     return $table;
+}
+
+/**
+ * 首页调用分页
+ * @return string
+ */
+function homePage($query_string='')
+{
+    global $posts_per_page, $paged;
+
+    $my_query = new WP_Query($query_string . "&posts_per_page=-1");
+    $total_posts = $my_query->post_count;
+    if (empty($paged)) $paged = 1;
+    $prev = $paged - 1;
+    $next = $paged + 1;
+    $range = 4; // only edit this if you want to show more page-links
+    $showitems = ($range * 2) + 1;
+
+    $pages = ceil($total_posts / $posts_per_page);
+    if (1 != $pages)
+    {
+        echo "<ol class='page-navigator'>";
+        echo ($paged > 2 && $paged + $range + 1 > $pages && $showitems < $pages) ? "
+<li><a href='" . get_pagenum_link(1) . "'>首页</a></li>" : "";
+        echo ($paged > 1 && $showitems < $pages) ? "
+<li><a href='" . get_pagenum_link($prev) . "'>上一页</a></li>" : "";
+
+        for ($i = 1; $i <= $pages; $i++)
+        {
+            if (1 != $pages && (!($i >= $paged + $range + 1 ||
+                        $i <= $paged - $range - 1) || $pages <= $showitems))
+            {
+                echo ($paged == $i) ? "<li class='current'><span>" . $i . "</span></li>" :
+                    "<li><a href='" . get_pagenum_link($i) . "' class='inactive' >" . $i . "</a></li>";
+            }
+        }
+
+        echo ($paged < $pages && $showitems < $pages) ?
+            "<li><a href='" . get_pagenum_link($next) . "'>下一页</a></li>" : "";
+        echo ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) ?
+            "<li><a href='" . get_pagenum_link($pages) . "'>末页</a></li>" : "";
+        echo "</ol>\n";
+    }
+}
+
+
+
+
+/**
+ * 数字分页函数
+ * 因为wordpress默认仅仅提供简单分页
+ * 所以要实现数字分页，需要自定义函数
+ * @Param int $range            数字分页的宽度
+ * @Return string|empty        输出分页的HTML代码
+ */
+function categoryPage($range = 4)
+{
+    global $paged, $wp_query;
+    $max_page = '';
+    if (!$max_page)
+    {
+        $max_page = $wp_query->max_num_pages;
+    }
+    if ($max_page > 1)
+    {
+        echo "<ol class='page-navigator'>";
+        if (!$paged)
+        {
+            $paged = 1;
+        }
+        if ($paged != 1)
+        {
+            echo "<li><a href='" . get_pagenum_link(1) . "' class='extend' title='跳转到首页'>首页</a></li>";
+        }
+
+        echo ($paged > 1) ? "<li><a href='" . get_pagenum_link($paged-1) . "'>上一页</a></li>" : "";
+
+        if ($max_page > $range)
+        {
+            if ($paged < $range)
+            {
+                for ($i = 1; $i <= ($range + 1); $i++)
+                {
+                    echo ($i == $paged) ? "<li class='current'>" : '<li>';
+                    echo "<a href='" . get_pagenum_link($i) . "'>$i</a></li>";
+                }
+            }
+            elseif ($paged >= ($max_page - ceil(($range / 2))))
+            {
+                for ($i = $max_page - $range; $i <= $max_page; $i++)
+                {
+                    echo ($i == $paged) ? "<li class='current'>" : '<li>';
+                    echo "<a href='" . get_pagenum_link($i) . "'>$i</a></li>";
+                }
+            }
+            elseif ($paged >= $range && $paged < ($max_page - ceil(($range / 2))))
+            {
+                for ($i = ($paged - ceil($range / 2)); $i <= ($paged + ceil(($range / 2))); $i++)
+                {
+                    echo ($i == $paged) ? "<li class='current'>" : '<li>';
+                    echo "<a href='" . get_pagenum_link($i) . "'>$i</a></li>";
+                }
+            }
+        }
+        else
+        {
+            for ($i = 1; $i <= $max_page; $i++)
+            {
+                echo ($i == $paged) ? "<li class='current'>" : '<li>';
+                echo "<a href='" . get_pagenum_link($i) . "'>$i</a></li>";
+            }
+        }
+
+        echo ($paged < $max_page) ? "<li><a href='" . get_pagenum_link($paged+1) . "'>下一页</a></li>" : "";
+
+        if ($paged != $max_page)
+        {
+            echo "<li><a href='" . get_pagenum_link($max_page) . "' class='extend' title='跳转到最后一页'>尾页</a><li>";
+        }
+        echo '<li><a><span>共 ' . $max_page . ' 页</span></a></a>';
+        echo "</ol>\n";
+    }
+}
+
+function getThumbnail()
+{
+    return get_template_directory_uri()."/assets/images/thumbnail/img".rand(0, 48).".png?version".time();
 }
