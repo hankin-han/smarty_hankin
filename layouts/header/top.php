@@ -4,8 +4,7 @@
         <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
         <a href="#!" class="b-brand">
             <!-- ========   change your logo hear   ============ -->
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="" class="logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-icon.png" alt="" class="logo-thumb">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo2.png" alt="" class="logo">
         </a>
         <a href="#!" class="mob-toggler">
             <i class="feather icon-more-vertical"></i>
@@ -15,12 +14,12 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
-                <div class="search-bar">
-                    <input type="text" class="form-control border-0 shadow-none" placeholder="Search hear">
+                <form class="search-bar" id="searchform" method="get" role="search" action="<?= home_url()?>">
+                    <input type="text" name="s" class="form-control border-0 shadow-none" placeholder="请输入关键词搜索" />
                     <button type="button" class="close" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
+                </form>
             </li>
         </ul>
         <!--<ul class="navbar-nav ml-auto">

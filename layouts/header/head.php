@@ -24,7 +24,7 @@ Blog：https://www.hankin.cn -->
     <meta name="description" content="" />
     <meta name="keywords" content="">
     <?php wp_head(); ?>
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css?version=<?= time()?>">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css?version=<?= time()?>">
     <link rel="stylesheet" class="layout-css" id="layout-css" href="">

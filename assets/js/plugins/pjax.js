@@ -884,7 +884,12 @@ $.support.pjax ? enable() : disable()
 
 // 自定义
 $(function() {
-$(document).pjax('a[target!=_blank]', '#content', {fragment:'#content', timeout:6000});    
+    $(document).pjax('a[target!=_blank]', '#content', {
+      fragment:'#content', timeout:6000
+    });
+    $(document).on('submit', 'form', function (event) {
+      $.pjax.submit(event, '#content', {fragment:'#content', timeout:6000});
+    });
     $(document).on('pjax:send', function() {
       $(".loader-bg").show();
     });

@@ -86,6 +86,9 @@ $(window).scroll(function() {
 $("#more-details").on("click", function() {
 	$("#nav-user-link").slideToggle()
 });
+$(".mob-toggler").on("click", function() {
+		$(".pcoded-header > .collapse,.pcoded-header > .container > .collapse").toggleClass("d-flex")
+	});
 $(".pcoded-submenu-click").on("click",function(){
 	if($(this).next().attr("data") == 'off'){
 		$(this).next().slideDown()

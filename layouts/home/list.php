@@ -3,7 +3,7 @@
     <?php while (have_posts()) : the_post(); ?>
     <div class="card list-item block card-plain ">
         <div class="media media-3x2 col-4 col-md-4">
-            <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url(<?= getThumbnail()?>)"></a>
+            <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url('<?= getThumbnail()?>')"></a>
         </div>
         <div class="list-content">
             <div class="list-body">
@@ -24,12 +24,12 @@
                         </a>
                     </div>
                     <div class="d-inline-block ml-md-2">
-                        <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="由<?php the_author(); ?>发布" rel="author"><?php the_author(); ?></a>
+                        <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="由<?php the_author(); ?>发布" rel="author"><?= get_the_author_meta('display_name',1); ?></a>
                     </div>
                     <div class="d-inline-block mx-1 mx-md-2"><i class="text-primary">—</i></div>
                     <div class="d-inline-block"><?php the_category('ID'); ?></div>
                     <div class="flex-fill"></div>
-                    <div><time class="mx-1">3月前</time></div>
+                    <div><time class="mx-1"><?= timeGo(get_gmt_from_date(get_the_time('Y-m-d G:i:s'))) ?></time></div>
                 </div>
             </div>
         </div>

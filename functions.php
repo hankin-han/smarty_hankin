@@ -170,12 +170,12 @@ add_theme_support('post-thumbnails');
  */
 function cmp_breadcrumbs()
 {
-    $delimiter = ' &nbsp;›&nbsp;'; // 分隔符
+    $delimiter = ' &nbsp;&nbsp;›&nbsp;&nbsp;'; // 分隔符
     $before = '<span class="current">'; // 在当前链接前插入
     $after = '</span>'; // 在当前链接后插入
     if (!is_home() && !is_front_page() || is_paged())
     {
-        echo '<ul class="breadcrumb" itemscope="">' . __('<i class="fa fa-home"> </i>', 'cmp');
+        echo '<ul class="breadcrumb" itemscope="">' . __('', 'cmp');
         global $post;
         $homeLink = home_url() . '/';
         echo '<a itemprop="breadcrumb" href="' . $homeLink . '">' . __('首页', 'cmp') . '</a> ' . $delimiter . ' ';
@@ -215,7 +215,7 @@ function cmp_breadcrumbs()
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
                 echo '<a itemprop="breadcrumb" href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter . ' ';
-                echo $before . '正文' . $after;
+                echo $before . get_the_title() . $after;
             }
             else
             { // 文章 post
@@ -223,7 +223,7 @@ function cmp_breadcrumbs()
                 $cat = $cat[0];
                 $cat_code = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
                 echo $cat_code = str_replace('<a', '<a itemprop="breadcrumb"', $cat_code);
-                echo $before . '正文' . $after;
+                echo $before . get_the_title() . $after;
             }
         }
         elseif (!is_single() && !is_page() && get_post_type() != 'post')
@@ -259,9 +259,7 @@ function cmp_breadcrumbs()
         }
         elseif (is_search())
         { // 搜索结果
-            echo $before;
-            printf(__('搜索结果: <font color="#adff2f" size="5">%s</font>', 'cmp'), get_search_query());
-            echo $after;
+            printf(__('搜索结果： <b style="color:#4680ff">%s</b>', 'cmp'), get_search_query());
         }
         elseif (is_tag())
         { //标签 存档
@@ -285,7 +283,7 @@ function cmp_breadcrumbs()
         }
         if (get_query_var('paged'))
         { // 分页
-            if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
+            if (is_category() || is_day() || is_month() || is_year()  || is_tag() || is_author())
                 echo sprintf(__('( Page %s )', 'cmp'), get_query_var('paged'));
         }
         echo '</ul>';
@@ -453,7 +451,40 @@ function categoryPage($range = 4)
     }
 }
 
+/* 获取默认封面 */
 function getThumbnail()
 {
     return get_template_directory_uri()."/assets/images/thumbnail/img".rand(0, 48).".png?version".time();
+}
+
+/* 修改时间格式 */
+function timeGo($ptime)
+{
+    $ptime = strtotime($ptime);
+    $etime = time() - $ptime;
+    if ($etime < 1)
+    {
+        return '刚刚';
+    }
+    $interval = [
+        12 * 30 * 24 * 60 * 60 => '年前 ',
+        30 * 24 * 60 * 60 => '个月前 ',
+        7 * 24 * 60 * 60 => '周前 ',
+        24 * 60 * 60 => '天前',
+        60 * 60 => '小时前',
+        60 => '分钟前',
+        1 => '秒前',
+    ];
+    foreach ($interval as $secs => $str)
+    {
+        $d = $etime / $secs;
+        if ($d >= 1)
+        {
+            $r = round($d);
+
+            return $r . $str;
+        }
+    }
+
+    return TRUE;
 }
