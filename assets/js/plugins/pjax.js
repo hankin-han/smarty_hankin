@@ -884,6 +884,7 @@ $.support.pjax ? enable() : disable()
 
 // 自定义
 $(function() {
+    hljs.initHighlightingOnLoad();
     $(document).pjax('a[target!=_blank]', '#content', {
       fragment:'#content', timeout:6000
     });
@@ -895,5 +896,9 @@ $(function() {
     });
     $(document).on('pjax:complete', function() {
       $(".loader-bg").hide();
+      hljs.initHighlightingOnLoad();
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
     });
 });

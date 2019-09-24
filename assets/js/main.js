@@ -79,7 +79,7 @@ $(window).scroll(function() {
 		} else {
 			$(".pcoded-navbar").removeAttr("style");
 			$(".pcoded-navbar").css("position", "absolute");
-			$(".pcoded-navbar").css("margin-top", "60px")
+			$(".pcoded-navbar").css("margin-top", "50px")
 		}
 	}
 });

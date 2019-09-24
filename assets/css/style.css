@@ -1,6 +1,6 @@
 @import url(plugins/animate.min.css);
 @import url(../fonts/iconfont.css);
-@font-face{font-family:rst;src:url(https://www.cattu.cn/usuuu.ttf)}
+@font-face{font-family:rst;src:url(../fonts/usuuu.ttf)}
 .ps{overflow:hidden!important;overflow-anchor:none;-ms-overflow-style:none;touch-action:auto;-ms-touch-action:auto}
 .ps__rail-x{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;height:15px;bottom:0;position:absolute}
 .ps__rail-y{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;width:15px;right:0;position:absolute}
@@ -15,6 +15,10 @@
 }
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){.ps{overflow:auto!important}
 }
+html::-webkit-scrollbar-track-piece{background:#EDEDED}
+html::-webkit-scrollbar{width:5px;height:6px}
+html::-webkit-scrollbar-thumb{border-radius:4px;background-color:#9a9fbf}
+html::-webkit-scrollbar-thumb:hover{background-color:#bbb}
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -5104,7 +5108,7 @@ pre[class*=language-]:after,pre[class*=language-]:before{display:none}
 .pcoded-navbar.theme-horizontal~.pcoded-main-container .page-header h5{color:#37474f}
 .pcoded-navbar.theme-horizontal~.pcoded-main-container .page-header .page-header-title+.breadcrumb>.breadcrumb-item:before{color:rgba(55,71,79,.8)}
 .pcoded-navbar.theme-horizontal~.pcoded-main-container .page-header .page-header-title+.breadcrumb>.breadcrumb-item a{color:#37474f}
-.pcoded-content{position:relative;display:block;padding:0 25px 25px 25px;margin-top:10px;}
+.pcoded-content{position:relative;display:block;padding:0 25px 25px 25px;}
 .pcoded-main-container{/*background:#ecf0f5;*/position:relative;margin:0 auto;padding-top:0;display:block;clear:both;float:unset;right:0;top:0;margin-left:230px;min-height:100vh;transition:all .3s ease-in-out}
 @media only screen and (max-width:991px){.pcoded-header .input-group-text,.pcoded-header a,.pcoded-header dropdown-toggle{color:#101b33}
 .pcoded-header .input-group-text:hover,.pcoded-header a:hover,.pcoded-header dropdown-toggle:hover{color:#4680ff}
@@ -6888,15 +6892,11 @@ new-task label input[type=checkbox]{display:none}
 .user-profile-list table tr td:last-child{border-top-right-radius:.25rem;border-bottom-right-radius:.25rem}
 
 /* 默认滚动条样式 */
-body.box-layout .pcoded-navbar::-webkit-scrollbar-track-piece{background:#ccc}
+body.box-layout .pcoded-navbar::-webkit-scrollbar-track-piece{background:#EDEDED}
 body.box-layout .pcoded-navbar::-webkit-scrollbar{width:5px;height:6px}
-body.box-layout .pcoded-navbar::-webkit-scrollbar-thumb{border-radius:4px;background-color:#ffffffa8}
+body.box-layout .pcoded-navbar::-webkit-scrollbar-thumb{border-radius:4px;background-color:#9a9fbf}
 body.box-layout .pcoded-navbar::-webkit-scrollbar-thumb:hover{background-color:#bbb}
 
-body.box-layout .pcoded-navbar::-webkit-scrollbar-track-piece{background:#ccc}
-body.box-layout .pcoded-navbar::-webkit-scrollbar{width:5px;height:6px}
-body.box-layout .pcoded-navbar::-webkit-scrollbar-thumb{border-radius:4px;background-color:#ffffffa8}
-body.box-layout .pcoded-navbar::-webkit-scrollbar-thumb:hover{background-color:#bbb}
 /* 加载更多 */
 .page-navigator{display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}
 .page-navigator>li{display:inline}
