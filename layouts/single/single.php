@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/monokai_sublime.min.css?version=<?= time()?>">
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container" id="content">
     <div class="pcoded-content">

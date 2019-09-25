@@ -896,8 +896,18 @@ $(function() {
     $(document).on('pjax:complete', function() {
       $(".loader-bg").hide();
       hljs.initHighlightingOnLoad();
-      $('pre code').each(function(i, block) {
+      $('pre code').each(function(j, block) {
         hljs.highlightBlock(block);
+        var lines = $(this).text().split('\n').length - 1;
+          if (lines < 4) return;  // 当行数小于4时不显示行号
+          var $numbering = $('<ol/>').addClass('pre-numbering');
+          $(this)
+              .addClass('has-numbering')
+              .parent()
+              .append($numbering);
+          for(i=1;i<=lines;i++) {
+              $numbering.append($('<li/>').text(i));
+          }
       });
     });
 });
