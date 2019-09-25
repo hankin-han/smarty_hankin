@@ -884,7 +884,6 @@ $.support.pjax ? enable() : disable()
 
 // 自定义
 $(function() {
-    hljs.initHighlightingOnLoad();
     $(document).pjax('a[target!=_blank]', '#content', {
       fragment:'#content', timeout:6000
     });

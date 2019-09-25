@@ -1,3 +1,19 @@
+hljs.initHighlightingOnLoad();
+$(function() {
+    $('pre code').each(function() {
+        var lines = $(this).text().split('\n').length - 1;
+        if (lines < 4) return;  // 当行数小于4时不显示行号
+        var $numbering = $('<ol/>').addClass('pre-numbering');
+        $(this)
+            .addClass('has-numbering')
+            .parent()
+            .append($numbering);
+        for(i=1;i<=lines;i++) {
+            $numbering.append($('<li/>').text(i));
+        }
+    });
+});
+
 var c = $(window)[0].innerWidth;
 $(".search-btn").on("click", function() {
 		var d = $(this);
