@@ -6,7 +6,7 @@ $query_posts->query($args);
 $num = 0;
 ?>
 
-<div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+<div class="theiaStickySidebar animated fadeIn" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
     <div id="recommended_posts-14" class="card card-sm widget Recommended_Posts">
         <div class="card-header widget-header">
             随即文章
@@ -55,14 +55,15 @@ $num = 0;
             <?php endwhile;?>
         </div>
     </div>
+    <div id="tag_cloud-2" class="card card-sm widget widget_tag_cloud">
+       <div class="card-header widget-header">
+        推荐话题
+        <i class="bg-primary"></i>
+       </div>
+       <div class="tagcloud">
+        <a href="https://demo.nicetheme.xyz/panda-pro-style-one/tag/apple" class="tag-cloud-link tag-link-987 tag-link-position-1" style="font-size: 8pt;" aria-label="Apple (1个项目)">Apple</a>
+       </div> 
+    </div>
 </div>
 
-  <div id="tag_cloud-2" class="card card-sm widget widget_tag_cloud">
-   <div class="card-header widget-header">
-    推荐话题
-    <i class="bg-primary"></i>
-   </div>
-   <div class="tagcloud">
-    <a href="https://demo.nicetheme.xyz/panda-pro-style-one/tag/apple" class="tag-cloud-link tag-link-987 tag-link-position-1" style="font-size: 8pt;" aria-label="Apple (1个项目)">Apple</a>
-   </div> 
-  </div>
+  

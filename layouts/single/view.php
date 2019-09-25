@@ -1,7 +1,7 @@
 <?php $category = get_the_category()[0] ?>
 <?php if ( have_posts() ): ?>
 <?php while ( have_posts() ) : the_post(); ?>
-<div class="post card">
+<div class="post card animated fadeIn ">
     <div class="card-body">
         <div class="post-header border-bottom border-light mb-4 pb-4">
             <div class="d-block text-sm mt-md-1 mb-2 mb-md-3">
