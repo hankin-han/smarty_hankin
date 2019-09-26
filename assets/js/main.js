@@ -1,4 +1,6 @@
- hljs.initHighlightingOnLoad();
+
+function hljsLoad(){
+	hljs.initHighlightingOnLoad();
       $('pre code').each(function(j, block) {
         hljs.highlightBlock(block);
         var lines = $(this).text().split('\n').length - 1;
@@ -12,6 +14,9 @@
               $numbering.append($('<li/>').text(i));
           }
       });
+}
+hljsLoad();
+
 var c = $(window)[0].innerWidth;
 $(".search-btn").on("click", function() {
 		var d = $(this);
@@ -116,25 +121,3 @@ $(".pcoded-submenu-click").on("click",function(){
 		$(this).parent().removeClass("pcoded-trigger");
 	}
 });
-$(function(){
-    $.ajax({
-        url:"https://api.fczbl.vip/163/?type=playlist&id=9474056",
-        success:function(e){
-            var a = new APlayer({
-                element:document.getElementById("ap-f"),
-                autoplay:true,
-                fixed:true,
-                loop:"all",
-                order:"list",
-                listFolded:true,
-                showlrc:1,
-                theme:"#e6d0b2",
-                listmaxheight:"200px",
-                music:eval(e)
-            });
-            window.aplayers || (window.aplayers = []),
-            window.aplayers.push(a)
-        }
-    })
-
-})

@@ -210,7 +210,7 @@ badge
 Avatar
 --------------------------------------------------------------*/
 .flex-avatar{position:relative;line-height:1;border-radius:500px;white-space:nowrap;font-weight:700;border-radius:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-negative:0;flex-shrink:0;border-radius:500px}
-.flex-avatar img{border-radius:3px;width:100%}
+.flex-avatar img{border-radius:inherit;width:100%}
 .flex-avatar.w-32 .avatar-title{margin:0}
 .flex-avatar.w-40 .avatar-title{margin:1px}
 .flex-avatar.w-48 .avatar-title{margin:2px}
@@ -374,3 +374,13 @@ post content
 .textwidget,
 .tagcloud {padding: 1.375rem 1.5rem 1.5rem;}
 .tagcloud a {position: relative;font-size: .875rem !important;line-height: 1;text-transform: uppercase;display: inline-block;margin: 0 .75rem 0.5rem 0;}
+
+/*--------------------------------------------------------------
+widget author meta style
+--------------------------------------------------------------*/
+.widget_author_meta {position: relative;}
+.widget-author-avatar {position: absolute;left: 50%;top: 0;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}
+.widget-author-meta {margin-top: 2rem;}
+.widget-author-cover {position: relative;border-radius: 3px 3px 0 0;}
+.widget-author-cover+.widget-author-meta {margin-top: 2rem;}
+.widget-author-cover .widget-author-avatar {top: auto;bottom: 0;-webkit-transform: translate(-50%, 50%);-ms-transform: translate(-50%, 50%);transform: translate(-50%, 50%);}
