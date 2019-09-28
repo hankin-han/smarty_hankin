@@ -1,7 +1,10 @@
 <?php
-$postid = $post->ID;
-$query_posts = new WP_Query();
-$query_posts->query(['orderby' => 'rand', 'post__not_in' => [$post->ID], 'showposts' => 5]);
+$args = array(
+    'posts_per_page' => 5, //每页显示10篇文章
+    'orderby' => 'rand',
+    'ignore_sticky_posts' => 1 //取消文章置顶
+);
+$query_posts = new WP_Query($args);
 $num = 0;
 ?>
 
@@ -12,12 +15,12 @@ $num = 0;
             </div>
             <div class="widget-author-avatar">
                 <div class="flex-avatar mx-2 w-80 border border-white border-2">
-                    <img alt="" src="//gravatar.loli.net/avatar/afa39accf8700cbbe7b13e1d01aa5b17?s=80&amp;d=mm&amp;r=g" srcset="//gravatar.loli.net/avatar/afa39accf8700cbbe7b13e1d01aa5b17?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo 80" height="80" width="80">                </div>
+                    <?php echo get_avatar( get_the_author_meta( 'user_email' ),'80' ); ?></div>
             </div>
         </div>
         <div class="widget-author-meta text-center p-4">
-            <div class="h6 mb-3">nicetheme<small class="d-block"><span class="badge badge-outline-primary mt-2">站长</span></small></div>
-            <div class="desc text-xs mb-3 h-2x">nicetheme奈斯坚持原创和保持创新的用户体验设计，提供专业与创新的网站解决方案。</div>
+            <div class="h6 mb-3"><?= get_the_author_meta('display_name',1); ?><small class="d-block"><span class="badge badge-outline-primary mt-2">站长</span></small></div>
+            <div class="desc text-xs mb-3 h-2x">hankin坚持原创和保持创新的用户体验设计，提供专业与创新的网站解决方案。</div>
             <div class="row no-gutters text-center">
                 <a href="https://demo.nicetheme.xyz/panda-pro-style-one/author/suxing" target="_blank" class="col">
                     <span class="font-theme font-weight-bold text-md">32</span><small class="d-block text-xs text-muted">文章</small>
@@ -33,7 +36,7 @@ $num = 0;
     </div>
     <div id="recommended_posts-14" class="card card-sm widget Recommended_Posts">
         <div class="card-header widget-header">
-            随即文章
+            随机文章
             <i class="bg-primary"></i>
         </div>
         <div class="card-body">

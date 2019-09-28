@@ -454,7 +454,7 @@ function categoryPage($range = 4)
 /* 获取默认封面 */
 function getThumbnail()
 {
-    return get_template_directory_uri()."/assets/images/thumbnail/img".rand(0, 48).".png?version".time();
+    return get_template_directory_uri()."/assets/images/thumbnail/img".rand(0, 260).".png?version".time();
 }
 
 /* 修改时间格式 */
@@ -487,4 +487,49 @@ function timeGo($ptime)
     }
 
     return TRUE;
+}
+
+/**
+* 根据 QQ号获取 昵称和头像
+* http://test.www.hankin.cn/wp-admin/admin-ajax.php?action=get_ajax_qq&qq=315444473
+*/
+function get_ajax_qq() {
+  // 输出响应
+  header( "Content-Type: application/json" );
+
+  $api = "http://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=";
+
+  $avatarApi = "https://q1.qlogo.cn/g?b=qq&s=5&nk=";
+
+  $qq = isset($_GET['qq']) ? addslashes(trim($_GET['qq'])) : '';
+
+  if(!empty($qq) && is_numeric($qq) && strlen($qq) > 4 && strlen($qq) < 13)
+  {
+    $contents = file_get_contents($api.$qq);
+    if($contents){
+        $data = iconv("GB2312","UTF-8",$contents);
+        $pattern = '/portraitCallBack\((.*)\)/is';
+        preg_match($pattern,$data,$result);
+        $result = $result[1];
+        $result = json_decode($result, true)[$qq];
+        $nickname = $result[6];
+        //$avatar = $result[0]; //被禁了
+        $avatar = $avatarApi.$qq;
+    }
+    ajaxResult(200,'',["id"=> intval($qq),"name"=>$nickname,"avatar"=>$avatar]);
+  }else{
+    ajaxResult(1000,'',["id"=> "","name"=>"","avatar"=>""]);
+  }
+}
+add_action( 'wp_ajax_nopriv_get_ajax_qq', 'get_ajax_qq' );
+add_action( 'wp_ajax_get_ajax_qq', 'get_ajax_qq' );
+
+function ajaxResult($resultCode, $message = NULL, $data = NULL){
+    exit(json_encode([
+        'result' => [
+            'code' => $resultCode,
+            'msg' => $message,
+        ],
+        'data' => $data,
+    ]));
 }
