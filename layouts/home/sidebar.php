@@ -20,7 +20,7 @@ $num = 0;
         </div>
         <div class="widget-author-meta text-center p-4">
             <div class="h6 mb-3"><?= get_the_author_meta('display_name',1); ?><small class="d-block"><span class="badge badge-outline-primary mt-2">站长</span></small></div>
-            <div class="desc text-xs mb-3 h-2x">hankin坚持原创和保持创新的用户体验设计，提供专业与创新的网站解决方案。</div>
+            <div class="desc text-xs mb-3 h-2x">smarty_hankin主题 持续为开发者开源！</div>
             <div class="row no-gutters text-center">
                 <a href="https://demo.nicetheme.xyz/panda-pro-style-one/author/suxing" target="_blank" class="col">
                     <span class="font-theme font-weight-bold text-md">32</span><small class="d-block text-xs text-muted">文章</small>

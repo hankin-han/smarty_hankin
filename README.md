@@ -1,7 +1,7 @@
 # smarty_hankin
 
 #### 介绍
-一款开源wordpress主题
+一款开源wordpress主题 smarty_hankin主题
 
 #### 软件架构
 软件架构说明
