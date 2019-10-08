@@ -11,7 +11,15 @@
                     <?php if (is_sticky()): ?>
                         <span class="badge badge-primary">推荐</span>
                     <?php endif; ?>
-                    <?php the_title(); ?>
+                    <?php 
+                    if(isset($_GET['s']) && !empty($_GET['s']))
+                    {
+                        echo str_replace($_GET['s'],"<font color='#4680ff'>".$_GET['s']."</font>",get_the_title());
+                    }else{
+                        echo get_the_title();
+                    }
+                         
+                    ?>
                 </a>
                 <div class="list-desc d-none d-md-block text-sm text-secondary my-3">
                     <div class="h-2x "><?php echo wp_trim_words(get_the_content(), 100); ?></div></div>

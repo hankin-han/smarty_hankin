@@ -101,6 +101,24 @@ $(window).scroll(function() {
 			$(".pcoded-navbar").css("margin-top", "50px")
 		}
 	}
+	if($(this).scrollTop() > 410)
+	{
+		$("#recommended_posts").css({
+			"padding-top":"0px",
+		    "padding-bottom":"1px",
+		    "position":"fixed",
+		    "top":"0px",
+		    "left":"1273.5px",
+		    "width":$(".theiaStickySidebar").width()+"px"
+		})
+	}else{
+		$("#recommended_posts").css({
+		    "position":"static",
+		    "left":"1273.5px",
+		    "width":$(".theiaStickySidebar").width()+"px"
+		})
+	}
+	console.log($(this).scrollTop());
 });
 $("#more-details").on("click", function() {
 	$("#nav-user-link").slideToggle()

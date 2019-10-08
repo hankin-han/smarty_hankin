@@ -9,6 +9,9 @@
                 <!-- [ list ] start -->
                 <?php get_template_part( 'layouts/home/list' );?>
                 <!-- [ list ] end -->
+                <!-- [ copyright ] start -->
+                <?php get_template_part( 'layouts/footer/copyright' );?>
+                <!-- [ copyright ] end -->
             </div>
             <div class="col-md-4">
                 <!-- [ list ] start -->

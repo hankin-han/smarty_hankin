@@ -81,6 +81,8 @@ function coolwp_remove_open_sans_from_wp_core()
     wp_enqueue_style('open-sans', '');
 }
 add_action('init', 'coolwp_remove_open_sans_from_wp_core');
+
+
 // 禁用谷歌字体
 class Disable_Google_Fonts
 {
@@ -319,7 +321,7 @@ function getSystemInfo()
     $table .= "<tr><td>服务器软件</td><td>" . $_SERVER ['SERVER_SOFTWARE'] . "</td></tr>";
     $table .= "<tr><td>服务器 IP</td><td>" . $_SERVER ['SERVER_ADDR'] . "</td></tr>";
     $table .= "<tr><td>服务器时间</td><td>" . date("Y-m-d H:i:s") . "</td></tr>";
-    $table .= "<tr><td>PHP 版本号</td><td>" . PHP_VERSION . "</td></tr>";
+    $table .= "<tr><td>PHP版本号</td><td>" . PHP_VERSION . "</td></tr>";
     $table .= "<tr><td>上传许可</td><td>" . $fileupload . "</td></tr>";
     $table .= "<tr><td>MySQL 版本号</td><td>" . $mysqlVersion . "</td></tr>";
     $table .= "<tr><td>MySQL 库占用</td><td>" . $mbytes . "</td></tr>";
@@ -532,4 +534,17 @@ function ajaxResult($resultCode, $message = NULL, $data = NULL){
         ],
         'data' => $data,
     ]));
+}
+
+function lo_all_view(){ 
+    global $wpdb;
+    $count=0;
+    $views= $wpdb->get_results("SELECT * FROM $wpdb->postmeta WHERE meta_key='views'");
+    foreach($views as $key=>$value){
+        $meta_value=$value->meta_value;
+        if($meta_value!=' '){
+            $count+=(int)$meta_value;
+        }
+    }
+    return $count;
 }
