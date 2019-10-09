@@ -55,6 +55,10 @@ $("#mobile-collapse").on("click", function() {
 		if (c > 991) {
 			$(".pcoded-navbar:not(.theme-horizontal)").toggleClass("navbar-collapsed")
 		}
+		console.log(111);
+		$("#recommended_posts").css({
+		    "width":"100%"
+		})
 });
 $("#mobile-collapse,#mobile-collapse1").click(function(b) {
 	var a = $(window)[0].innerWidth;
@@ -108,13 +112,11 @@ $(window).scroll(function() {
 		    "padding-bottom":"1px",
 		    "position":"fixed",
 		    "top":"0px",
-		    "left":"1273.5px",
 		    "width":$(".theiaStickySidebar").width()+"px"
 		})
 	}else{
 		$("#recommended_posts").css({
 		    "position":"static",
-		    "left":"1273.5px",
 		    "width":$(".theiaStickySidebar").width()+"px"
 		})
 	}

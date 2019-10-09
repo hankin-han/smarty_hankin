@@ -6,14 +6,17 @@
                 <!-- [ breadcrumb ] start -->
                 <?php cmp_breadcrumbs();?>
                 <!-- [ breadcrumb ] end -->
-                <!-- [ list ] start -->
+                <!-- [ single ] start -->
                 <?php get_template_part( 'layouts/single/view' );?>
-                <!-- [ list ] end -->
+                <!-- [ single ] end -->
+                <!-- [ comments ] start -->
+                <?php comments_template(); ?>
+                <!-- [ comments ] end -->
             </div>
             <div class="col-md-4">
-                <!-- [ list ] start -->
+                <!-- [ sidebar ] start -->
                <?php get_template_part( 'layouts/home/sidebar' );?>
-               <!-- [ list ] end -->
+               <!-- [ sidebar ] end -->
             </div>
         </div>
     </div>

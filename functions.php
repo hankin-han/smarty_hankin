@@ -1,6 +1,6 @@
 <?php
 require_once dirname(__FILE__) . '/includes/author-avatars.php';
-require_once dirname(__FILE__) . '/cs-framework/cs-framework.php';
+require_once dirname(__FILE__) . '/framework/cs-framework.php';
 // -(or)-
 define('CS_ACTIVE_FRAMEWORK', TRUE); // default true
 define('CS_ACTIVE_METABOX', TRUE); // default true
