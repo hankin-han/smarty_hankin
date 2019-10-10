@@ -466,5 +466,41 @@ Avatar
 .pop-bg{position:fixed;top:0;right:0;bottom:0;left:0;z-index:9998;width:100%;height:100%;background:url(../images/popbg.png) repeat;visibility:hidden;opacity:0}
 .trans{transition:all .3s ease-in .1s}
 
+/*--------------------------------------------------------------
+ icon rest
+--------------------------------------------------------------*/
+.iconfont {line-height: 1;display: inline-block;vertical-align: middle;}
+.btn .iconfont {position: relative;top: -1px;}
+
 .comment-list{list-style: none;margin: 0;padding: 0;}
 .comment-list li{list-style: none;}
+.comment-navigation{width:100%;margin:0 auto;padding:15px 0;text-align:center}
+.comment-navigation .page-numbers{display:inline-block;padding:9px 16px;color:#999;background:#f1f1f1}
+.comment-navigation .page-numbers:hover{background:#e8e8e8;color:#666}
+.comment-navigation .current,.comment-navigation .current:hover{background:#23b7e5;color:#fff}
+/*--------------------------------------------------------------
+comment style
+--------------------------------------------------------------*/
+.comment-list .comment-respond{position:relative;padding:1rem 0 0}
+.comment{position:relative}
+.comment .comment-text{border-bottom:1px solid #f2f2f5;padding-bottom:1rem;margin-bottom:1rem}
+.comment:last-child .comment-text{border:0;padding-bottom:0}
+.comment .children{margin:.5rem 0 1.5rem 3.875rem;padding:0 0 .5rem;border-bottom:1px solid #f2f2f5}
+.comment .children .children{padding-left:0;padding-bottom:0}
+.comment .children .comment{border-bottom:0;margin-bottom:0;padding:0}
+.comment .children .comment-text{padding-top:0}
+.comment .children .load-more-comment{display:inline-block;position:absolute;bottom:5px;left:0;width:100%;text-align:center;z-index:1}
+.comment .children .load-more-comment button{background:#fff;border:1px solid #f4f5f9;border-radius:20px;font-size:.75rem;line-height:1;padding:7px 18px}
+.comment-body{position:relative}
+.parent .comment-body{padding-bottom:35px}
+.children .comment-avatar-author .flex-avatar{width:36px!important;height:36px!important;-ms-flex-negative:0!important;flex-shrink:0!important}
+.comment-author{position:relative}
+.comment-author span{display:inline-block;font-size:.75rem;margin-left:5px}
+@media only screen and (max-width:767px){.comment-text{padding-top:0}
+.comment .children{margin:0 0 1rem .5rem}
+.comment .children .comment-text{padding-bottom:.875rem;margin-bottom:.5rem}
+.comment .children .load-more-comment{bottom:10px}
+.comment-avatar-author .flex-avatar{width:36px!important;height:36px!important}
+.children .comment-avatar-author .flex-avatar{width:28px!important;height:28px!important}
+}
+

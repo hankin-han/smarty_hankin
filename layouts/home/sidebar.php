@@ -1,5 +1,4 @@
 <?php
-global $user_ID;
 $args = array(
     'posts_per_page' => 5, //每页显示10篇文章
     'orderby' => 'rand',
@@ -28,7 +27,7 @@ $num = 0;
                     <span class="font-theme font-weight-bold text-md"><?php the_author_posts(); ?></span><small class="d-block text-xs text-muted">文章</small>
                 </a>
                 <a href="" class="col">
-                    <span class="font-theme font-weight-bold text-md"><?= get_comments('count=true&user_id='.$user_ID);?></span><small class="d-block text-xs text-muted">评论</small>
+                    <span class="font-theme font-weight-bold text-md"><?= get_comments('count=true&comment_status=approved');?></span><small class="d-block text-xs text-muted">评论</small>
                 </a>
                 <a href="" class="col">
                     <span class="font-theme font-weight-bold text-md"><?= lo_all_view();?></span><small class="d-block text-xs text-muted">浏览</small>

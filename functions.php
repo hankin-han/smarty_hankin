@@ -1,6 +1,6 @@
 <?php
-require_once dirname(__FILE__) . '/includes/author-avatars.php';
 require_once dirname(__FILE__) . '/framework/cs-framework.php';
+require_once dirname(__FILE__) . '/includes/author-avatars.php';
 // -(or)-
 define('CS_ACTIVE_FRAMEWORK', TRUE); // default true
 define('CS_ACTIVE_METABOX', TRUE); // default true
@@ -36,7 +36,7 @@ function custom_adminbar_menu($meta = TRUE)
 add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
 
 
-register_nav_menu('warp-nav', 'smarty-左侧菜单');
+register_nav_menu('warp-nav', 'smarty_hankin-左侧菜单');
 //用户自定义头像功能
 /* 设置后台样式*/
 function admin_my_css() {
@@ -548,3 +548,50 @@ function lo_all_view(){
     }
     return $count;
 }
+
+//WordPress加速优化前台不加载多语言包
+add_filter( 'locale', 'wpjam_locale' );   
+function wpjam_locale($locale) {   
+    $locale = ( is_admin() ) ? $locale : 'en_US';   
+    return $locale;   
+} 
+
+function simple_comment($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; ?>
+   <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-<?php comment_ID(); ?>">
+        <article id="div-comment-<?php comment_ID(); ?>" class="comment-body d-flex flex-fill ">
+            <div class="comment-avatar-author vcard mr-2 mr-md-3 ">
+                <div class="flex-avatar w-48">
+                    <?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?>
+                </div>
+            </div>
+            <div class="comment-text d-flex flex-fill flex-column">
+                <div class="comment-info d-flex align-items-center mb-1">
+                    <div class="comment-author text-sm">
+                        <?php if(!get_comment_author_url()) : ?>
+                            <?php comment_author(); ?>
+                            <?php else : ?>
+                            <a href="<?php comment_author_url(); ?>" target="_blank" rel='nofollow'><?php comment_author(); ?></a>
+                        <?php endif; ?>
+                        <?php if ($comment->comment_approved == '0') : ?>
+                            <em>评论等待审核...</em><br />
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="comment-content d-inline-block text-sm">
+                    <?php comment_text(); ?>
+                </div>
+                <!-- .comment-content -->
+                <div class="d-flex flex-fill text-xs text-muted pt-2">
+                    <div>
+                        <time class="comment-date"><?php echo timeGo(get_gmt_from_date(get_the_time('Y-m-d G:i:s'))); ?></time></div>
+                    <div class="flex-fill"></div>
+                    <?php comment_reply_link(array_merge($args, ['reply_text' => '回复', 'depth' => $depth, 'max_depth' => $args['max_depth']])) ?>
+                </div>
+            </div>
+            
+        </article>
+    </li>
+<?php
+}
+?>

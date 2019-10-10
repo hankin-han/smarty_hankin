@@ -16,7 +16,10 @@ function hljsLoad(){
       });
 }
 hljsLoad();
-
+$(".pcoded-navbar .close").on("click", function() {
+	var a = $(this);
+	a.parents(".card").fadeOut("slow").remove()
+});
 var c = $(window)[0].innerWidth;
 $(".search-btn").on("click", function() {
 		var d = $(this);
@@ -120,7 +123,6 @@ $(window).scroll(function() {
 		    "width":$(".theiaStickySidebar").width()+"px"
 		})
 	}
-	console.log($(this).scrollTop());
 });
 $("#more-details").on("click", function() {
 	$("#nav-user-link").slideToggle()
