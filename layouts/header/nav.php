@@ -2,9 +2,9 @@
 $i_links = cs_get_option('i_links'); //自定义友情链接
 ?>
 <!-- [ navigation menu ] start -->
-<nav class="pcoded-navbar menu-light menupos-fixed">
+<nav class="pcoded-navbar menu-light">
     <div class="navbar-wrapper  ">
-        <div class="navbar-content scroll-div " >
+        <div class="navbar-content scroll-div ">
 
             <div class="" style="display: none">
                 <div class="main-menu-header">

@@ -28,7 +28,7 @@ Blog：https://www.hankin.cn -->
 <meta name="description" content="" />
 <meta name="keywords" content="">
 </head>
-<body class="container box-layout background-img-1">
+<body class="">
 <!-- [ Pre-loader ] start -->
 <div class="loader-bg" style="display: none">
     <div class="loader-track">
