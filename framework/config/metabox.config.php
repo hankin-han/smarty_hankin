@@ -62,97 +62,97 @@ $options      = array();
 //    ),
 //);
 
-$options[]    = array(
-    'id'        => 'about_page',
-    'title'     => '说说模板选项',
-    'post_type' => 'page',
-    'context'   => 'normal',
-    'priority'  => 'default',
-    'sections'  => array(
-
-        $options[] = array(
-            'name' => 'about',
-            'title' => '联系方式',
-            'icon' => 'fa fa-comment',
-            'fields' => array(
-                /*邮箱*/
-                array(
-                    'id' => 'about_page_mail',
-                    'type' => 'text',
-                    'title' => '邮箱',
-                ),
-                // 昵称
-                array(
-                    'id' => 'about_page_name',
-                    'type' => 'text',
-                    'title' => '昵称',
-                ),
-                /*QQ*/
-                array(
-                    'id' => 'about_page_qq',
-                    'type' => 'text',
-                    'title' => 'QQ',
-                ),
-                /*微博*/
-                array(
-                    'id' => 'about_page_weibo',
-                    'type' => 'text',
-                    'title' => '微博',
-                ),
-                /*网易云*/
-                array(
-                    'id' => 'about_page_163_id',
-                    'type' => 'text',
-                    'title' => '我的网易云音乐id',
-                ),
-                array(
-                    'id' => 'about_page_163',
-                    'type' => 'text',
-                    'title' => '我的网易云音乐名称',
-                ),
-                /*关于我*/
-                array(
-                    'id' => 'about_page_description',
-                    'type' => 'textarea',
-                    'title' => '关于我',
-                ),
-            ),
-        ),
-
-        $options[] = array(
-            'name' => 'about_background',
-            'title' => '封面背景',
-            'icon' => 'fa fa-globe',
-            'fields' => array(
-                /*封面背景*/
-                array(
-                    'id' => 'about_page_background',
-                    'type' => 'upload',
-                    'title' => '封面背景	',
-                    'default' => "https://www.hankin.cn/wp-content/themes/hankin/images/default-avatar.png",
-                ),
-            ),
-        ),
-    ),
-);
-
-$options[]    = array(
-    'id'        => 'work_page',
-    'title'     => '作品模板选项',
-    'post_type' => 'page',
-    'context'   => 'normal',
-    'priority'  => 'default',
-    'sections'  => array(
-
-        array(
-            'name'  => 'page_section_1',
-            'fields' => array(
-
-            ),
-        ),
-
-    ),
-);
+//$options[]    = array(
+//    'id'        => 'about_page',
+//    'title'     => '说说模板选项',
+//    'post_type' => 'page',
+//    'context'   => 'normal',
+//    'priority'  => 'default',
+//    'sections'  => array(
+//
+//        $options[] = array(
+//            'name' => 'about',
+//            'title' => '联系方式',
+//            'icon' => 'fa fa-comment',
+//            'fields' => array(
+//                /*邮箱*/
+//                array(
+//                    'id' => 'about_page_mail',
+//                    'type' => 'text',
+//                    'title' => '邮箱',
+//                ),
+//                // 昵称
+//                array(
+//                    'id' => 'about_page_name',
+//                    'type' => 'text',
+//                    'title' => '昵称',
+//                ),
+//                /*QQ*/
+//                array(
+//                    'id' => 'about_page_qq',
+//                    'type' => 'text',
+//                    'title' => 'QQ',
+//                ),
+//                /*微博*/
+//                array(
+//                    'id' => 'about_page_weibo',
+//                    'type' => 'text',
+//                    'title' => '微博',
+//                ),
+//                /*网易云*/
+//                array(
+//                    'id' => 'about_page_163_id',
+//                    'type' => 'text',
+//                    'title' => '我的网易云音乐id',
+//                ),
+//                array(
+//                    'id' => 'about_page_163',
+//                    'type' => 'text',
+//                    'title' => '我的网易云音乐名称',
+//                ),
+//                /*关于我*/
+//                array(
+//                    'id' => 'about_page_description',
+//                    'type' => 'textarea',
+//                    'title' => '关于我',
+//                ),
+//            ),
+//        ),
+//
+//        $options[] = array(
+//            'name' => 'about_background',
+//            'title' => '封面背景',
+//            'icon' => 'fa fa-globe',
+//            'fields' => array(
+//                /*封面背景*/
+//                array(
+//                    'id' => 'about_page_background',
+//                    'type' => 'upload',
+//                    'title' => '封面背景	',
+//                    'default' => "https://www.hankin.cn/wp-content/themes/hankin/images/default-avatar.png",
+//                ),
+//            ),
+//        ),
+//    ),
+//);
+//
+//$options[]    = array(
+//    'id'        => 'work_page',
+//    'title'     => '作品模板选项',
+//    'post_type' => 'page',
+//    'context'   => 'normal',
+//    'priority'  => 'default',
+//    'sections'  => array(
+//
+//        array(
+//            'name'  => 'page_section_1',
+//            'fields' => array(
+//
+//            ),
+//        ),
+//
+//    ),
+//);
 
 
 

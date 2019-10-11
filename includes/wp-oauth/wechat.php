@@ -2,7 +2,7 @@
 define('WX_APPID','');
 define('WX_APPSECRET','');
 define('WX_KEY','weixin_uid');
-require( dirname(__FILE__) . '/../../../wp-load.php' );
+require( dirname(__FILE__) . '/../../../../../wp-load.php' );
 function wechat_oauth_redirect(){
     $url = home_url();
     wp_redirect( $url );

@@ -179,7 +179,7 @@ List hover
 .text-lg{font-size:1.125rem!important}
 .text-xl{font-size:1.375rem!important}
 .text-64{font-size:4rem!important}
-@media (max-width:767.98px){.text-lg{font-size:1rem!important}
+@media (max-width:767.98px){.text-lg{font-size:.8rem!important}
 .text-xl{font-size:1.25rem!important}
 }
 /*--------------------------------------------------------------
