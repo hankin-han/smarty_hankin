@@ -22,13 +22,13 @@ Blog：https://www.hankin.cn -->
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css?version=<?= time()?>">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/monokai_sublime.min.css?version=<?= time()?>">
 <link rel="icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" class="layout-css" id="layout-css" href="">
+<link rel="stylesheet" class="layout-css" id="layout-css" href="<?= $_COOKIE['layout-css']?>">
 <link rel="stylesheet" class="rtl-css" id="rtl-css" href="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="" />
 <meta name="keywords" content="">
 </head>
-<body class="">
+<body class="<?= $_COOKIE['box-layout']?> <?= $_COOKIE['background']?>">
 <!-- [ Pre-loader ] start -->
 <div class="loader-bg" style="display: none">
     <div class="loader-track">

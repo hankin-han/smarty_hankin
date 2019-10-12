@@ -456,7 +456,7 @@ function categoryPage($range = 4)
 /* 获取默认封面 */
 function getThumbnail()
 {
-    return get_template_directory_uri()."/assets/images/thumbnail/img".rand(0, 260).".png?version".time();
+    return get_template_directory_uri()."/assets/images/thumbnail/img".rand(0, 48).".png?version".time();
 }
 
 /* 修改时间格式 */
