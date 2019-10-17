@@ -1,11 +1,13 @@
+<!-- <div class="div-black-700"></div> -->
 <footer class="footer card py-3 py-lg-3">
     <div class="container">
         <div class="d-md-flex flex-md-fill align-items-md-center">
             <div class="d-md-flex flex-md-column">
-                <div class="footer-copyright text-xs">
-        			Copyright © 2019 <a href="https://demo.nicetheme.xyz/panda-pro-style-one" title="Panda PRO 主题 演示" rel="home">Panda PRO 主题 演示</a>. Designed by <a href="https://www.nicetheme.cn" title="nicetheme奈思主题-资深的原创WordPress主题开发团队" target="_blank">nicetheme</a>.         		</div>
+                <div class="footer-copyright text-xs px-3">
+        			Copyright © <?= date("Y") ?> <a href="" title="" rel="home"><?php echo _the_theme_name()?> 主题</a>. Designed by <a href="http://www.hankin.cn" title="hankin" target="_blank">hankin</a>
+        		</div>
             </div>
             <div class="flex-md-fill"></div>
         </div>
-            </div>
+    </div>
 </footer>
