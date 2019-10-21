@@ -19,7 +19,7 @@
     </div>
 </div>
 <?php endif;?>
-<div class="list-home list-grid list-grid-padding div-black-745">
+<div class="list-home list-grid list-grid-padding div-black-745" <?php if(is_home()):?>style="margin-top:20px;"<?php endif;?>>
 <?php if (have_posts()): ?>
     <?php while (have_posts()) : the_post(); ?>
     <div class="card list-item block card-plain ">
@@ -72,6 +72,8 @@
         <?php categoryPage();?>
     <?php endif;?>
 </div>
+<?php
+/*
     <!-- <div class="list-item list-item-column block card-featured">
         <div class="list-content p-0">
             <div class="list-body ">
@@ -101,4 +103,5 @@
                 <div class="h-2x ">编者按：2006年11月,Google公司以16.5亿美元收购了YouTube,并把其当做一家子公司来经营。 ...</div></div>
         </div>
     </div> -->
+    */?>
 </div>

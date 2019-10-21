@@ -12,7 +12,7 @@ $num = 0;
     <div id="author_card-5" class="card card-sm widget Author_Card">        
         <div class="widget-author-cover">
             <div class="media media-2x1">
-                <div class="media-content" style="background-image:url('https://demo.nicetheme.xyz/panda-pro-style-one/wp-content/themes/PandaPRO/images/default-cover.jpg')"></div>
+                <div class="media-content" style="background-image:url('<?= getThumbnail()?>')"></div>
             </div>
             <div class="widget-author-avatar">
                 <div class="flex-avatar mx-2 w-80 border border-white border-2">
@@ -20,8 +20,8 @@ $num = 0;
             </div>
         </div>
         <div class="widget-author-meta text-center p-4">
-            <div class="h6 mb-3"><?= get_the_author_meta('display_name',1); ?><small class="d-block"><span class="badge badge-outline-primary mt-2">站长</span></small></div>
-            <div class="desc text-xs mb-3 h-2x">smarty_hankin主题 持续为开发者开源！</div>
+            <div class="h6 mb-3 text-lg text-c-blue"><?= get_the_author_meta('display_name',1); ?></div>
+            <div class="desc text-xs mb-3 h-2x ">smarty_hankin主题 持续为开发者开源！</div>
             <div class="row no-gutters text-center">
                 <a href="" class="col">
                     <span class="font-theme font-weight-bold text-md"><?php the_author_posts(); ?></span><small class="d-block text-xs text-muted">文章</small>
@@ -86,11 +86,11 @@ $num = 0;
         </div>
         <div id="tag_cloud-2" class="card card-sm widget widget_tag_cloud">
            <div class="card-header widget-header">
-            推荐话题
+            标签
             <i class="bg-primary"></i>
            </div>
            <div class="tagcloud">
-            <a href="https://demo.nicetheme.xyz/panda-pro-style-one/tag/apple" class="tag-cloud-link tag-link-987 tag-link-position-1" style="font-size: 8pt;" aria-label="Apple (1个项目)">Apple</a>
+            <a href="" class="tag-cloud-link tag-link-987 tag-link-position-1" style="font-size: 8pt;" aria-label=""></a>
            </div> 
         </div>
     </div>

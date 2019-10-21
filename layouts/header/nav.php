@@ -2,7 +2,7 @@
 $i_links = cs_get_option('i_links'); //自定义友情链接
 ?>
 <!-- [ navigation menu ] start -->
-<nav class="pcoded-navbar <?= $_COOKIE['menu']?> <?= $_COOKIE['menupos']?>">
+<nav class="pcoded-navbar <?= ($_COOKIE['menu'] == '') ? 'menu-light' : $_COOKIE['menu']?> <?= $_COOKIE['menupos']?>">
     <div class="navbar-wrapper  ">
         <div class="navbar-content scroll-div ">
 
@@ -108,7 +108,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                     </li>
             </ul>
 
-            <div class="card text-center">
+            <div class="card text-center" style="display: none;">
                 <div class="card-block">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <i class="feather icon-sunset f-40"></i>

@@ -8,7 +8,6 @@ define('CS_ACTIVE_TAXONOMY', FALSE); // default true
 define('CS_ACTIVE_SHORTCODE', FALSE); // default true
 define('CS_ACTIVE_CUSTOMIZE', FALSE); // default true
 
-
 /*
  * 添加一个简单的菜单
  * 自行修改 'title' 和 'href' 的值
@@ -37,6 +36,7 @@ add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
 
 
 register_nav_menu('warp-nav', 'smarty_hankin-左侧菜单');
+register_nav_menu('top-warp-nav', 'smarty_hankin-顶部菜单');
 //用户自定义头像功能
 /* 设置后台样式*/
 function admin_my_css() {

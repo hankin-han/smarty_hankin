@@ -18,7 +18,7 @@
                     </div>
                     <div class="list-content">
                         <div class="list-body ">
-                            <a href="<?= get_category_link( $category->term_id )?>" target="_blank" class="list-title text-md"><?= $category->name ?></a>
+                            <a href="<?= get_category_link( $category->term_id )?>" class="list-title text-md"><?= $category->name ?></a>
                             <div class="list-desc text-xs text-muted h-2x mt-2"><?= $category->category_description ?></div></div>
                     </div>
                 </div>

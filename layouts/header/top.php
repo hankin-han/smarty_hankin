@@ -11,7 +11,22 @@
         </a>
     </div>
     <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
+        <?php
+            if ( function_exists( 'wp_nav_menu' ) && has_nav_menu('top-warp-nav') ) {
+                wp_nav_menu(
+                    ['container' => false,
+                        'theme_location' => 'top-warp-nav',
+                        'depth'=>2,
+                        //'items_wrap' => '%3$s',
+                        //'menu_class' => 'pcoded-submenu',
+                        'menu_class' => 'navbar-nav top-navbar-nav',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    ]);
+            } else {
+                echo '<li><a href="/wp-admin/nav-menus.php" target="_blank">请到[后台->外观->菜单]中设置菜单。</a></li>';
+            }
+            ?>
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
                 <form class="search-bar" id="searchform" method="get" role="search" action="<?= home_url()?>">
@@ -22,6 +37,7 @@
                 </form>
             </li>
         </ul>
+        
         <!--<ul class="navbar-nav ml-auto">
             <li>
                 <div class="dropdown">

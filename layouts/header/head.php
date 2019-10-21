@@ -28,7 +28,7 @@ Blog：https://www.hankin.cn -->
 <meta name="description" content="" />
 <meta name="keywords" content="">
 </head>
-<body class="<?= $_COOKIE['box-layout']?> <?= $_COOKIE['background']?>">
+<body class="<?= ($_COOKIE['box-layout'] == '') ? 'container box-layout' :  $_COOKIE['box-layout'] ?> <?= ($_COOKIE['background'] == '') ? 'background-blue' : $_COOKIE['background']?>">
 <!-- [ Pre-loader ] start -->
 <div class="loader-bg" style="display: none">
     <div class="loader-track">
