@@ -23,7 +23,7 @@
                         'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     ]);
             } else {
-                echo '<li><a href="/wp-admin/nav-menus.php" target="_blank">请到[后台->外观->菜单]中设置菜单。</a></li>';
+                //echo '<li><a href="/wp-admin/nav-menus.php" target="_blank">请到[后台->外观->菜单]中设置菜单。</a></li>';
             }
             ?>
         <ul class="navbar-nav ml-auto">
@@ -37,7 +37,7 @@
                 </form>
             </li>
         </ul>
-        
+
         <!--<ul class="navbar-nav ml-auto">
             <li>
                 <div class="dropdown">
