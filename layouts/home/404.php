@@ -56,9 +56,6 @@
     </div>
 </main>
                 <!-- [ list ] end -->
-                <!-- [ copyright ] start -->
-                <?php get_template_part( 'layouts/footer/copyright' );?>
-                <!-- [ copyright ] end -->
             </div>
         </div>
     </div>

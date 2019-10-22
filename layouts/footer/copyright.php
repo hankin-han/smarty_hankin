@@ -1,4 +1,3 @@
-<!-- <div class="div-black-700"></div> -->
 <footer class="footer card py-3 py-lg-3">
     <div class="container">
         <div class="d-md-flex flex-md-fill align-items-md-center">

@@ -12,7 +12,7 @@ $num = 0;
     <div id="author_card-5" class="card card-sm widget Author_Card">        
         <div class="widget-author-cover">
             <div class="media media-2x1">
-                <div class="media-content" style="background-image:url('<?= getThumbnail()?>')"></div>
+                <div class="media-content" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/default-cover.jpg')"></div>
             </div>
             <div class="widget-author-avatar">
                 <div class="flex-avatar mx-2 w-80 border border-white border-2">

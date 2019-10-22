@@ -18,6 +18,9 @@ Template Name: 专题
             </div>
         </div>
     </div>
+    <!-- [ copyright ] start -->
+    <?php get_template_part( 'layouts/footer/copyright' );?>
+    <!-- [ copyright ] end -->  
 </section>
 <!-- [ Main Content ] end -->
 <?php get_footer(); ?>

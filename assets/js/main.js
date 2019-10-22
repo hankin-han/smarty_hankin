@@ -130,21 +130,7 @@ $(window).scroll(function() {
 			$(".pcoded-navbar").css("margin-top", "50px")
 		}
 	}
-	if($(this).scrollTop() > 410)
-	{
-		$("#recommended_posts").css({
-			"padding-top":"0px",
-		    "padding-bottom":"1px",
-		    "position":"fixed",
-		    "top":"0px",
-		    "width":$(".theiaStickySidebar").width()+"px"
-		})
-	}else{
-		$("#recommended_posts").css({
-		    "position":"static",
-		    "width":$(".theiaStickySidebar").width()+"px"
-		})
-	}
+	
 });
 $("#more-details").on("click", function() {
 	$("#nav-user-link").slideToggle()

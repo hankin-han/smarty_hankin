@@ -19,7 +19,7 @@ a:hover{text-decoration:none;color:#448ef6}
 img{max-width:100%;height:auto}
 a img{border:0 none}
 
-
+.footer{margin-bottom:0!important;}
 .top-navbar-nav li{padding:0 20px;}
 /*--------------------------------------------------------------
 List grid
