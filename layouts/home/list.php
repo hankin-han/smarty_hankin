@@ -19,7 +19,7 @@
     </div>
 </div>
 <?php endif;?>
-<div class="list-home list-grid list-grid-padding div-black-745" <?php if(is_home()):?>style="margin-top:20px;"<?php endif;?>>
+<div class="list-home list-grid list-grid-padding div-black-745">
 <?php if (have_posts()): ?>
     <?php while (have_posts()) : the_post(); ?>
     <div class="card list-item block card-plain ">

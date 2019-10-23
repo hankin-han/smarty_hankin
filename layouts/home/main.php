@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8">
                  <!-- [ banner ] start -->
-                <?php get_template_part( 'layouts/home/banner' );?>
+                <?php //get_template_part( 'layouts/home/banner' );?>
                 <!-- [ banner ] end -->
                 <!-- [ breadcrumb ] start -->
                 <?php cmp_breadcrumbs();?>
