@@ -74,7 +74,7 @@
 </div>
 <?php
 /*
-    <!-- <div class="list-item list-item-column block card-featured">
+<div class="list-item list-item-column block card-featured">
         <div class="list-content p-0">
             <div class="list-body ">
                 <a class="list-title text-lg h-2x mb-2 mb-md-3" href="https://demo.nicetheme.xyz/panda-pro-style-one/4575.html" target="_blank">YouTube到底应该变成什么样？谷歌还没想清楚</a>
@@ -102,6 +102,6 @@
             <div class="list-desc d-none d-md-block text-sm text-secondary">
                 <div class="h-2x ">编者按：2006年11月,Google公司以16.5亿美元收购了YouTube,并把其当做一家子公司来经营。 ...</div></div>
         </div>
-    </div> -->
-    */?>
+    </div>
+*/?>
 </div>

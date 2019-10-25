@@ -1,6 +1,3 @@
-
-<!-- Required Js -->
-<?php wp_footer(); ?>
 <!--定义全局变量--> 
 <script type="text/javascript">
 window.THEME_URL = '<?php echo get_template_directory_uri(); ?>'; 
@@ -16,14 +13,21 @@ window.ENCODE_URI_COMPONENT_SITE = '唤醒-hankin，wordpress 自适应主题，
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu-setting.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/clipboard.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/highlight.min.js?version=<?= time()?>"></script>
-<script type='text/javascript' src='https://demo.nicetheme.xyz/panda-pro-style-one/wp-content/themes/PandaPRO/js/owl.carousel.min.js?ver=1.0.0'></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/pjax.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/message.js?version=<?= time()?>"></script>
-<!-- 分享插件 start--><div id="cz-leftside-share"></div><script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.share.min.js?version=<?= time()?>"></script><!-- 分享插件 end-->
+<!-- 分享插件 start-->
+<div id="cz-leftside-share"></div>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.share.min.js?version=<?= time()?>"></script>
+<!-- 分享插件 end-->
 <?php if(!wp_is_mobile()):?>
-<!-- 音乐播放器 start--><div class="aplayer-footer"><div class="ap-f" id="ap-f"></div></div><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/player/css/play.css"><script src="<?php echo get_template_directory_uri(); ?>/assets/player/js/aplayer.min.js?version=<?= time()?>"></script><!-- 音乐播放器 start-->
+<!-- 音乐播放器 start-->
+<div class="aplayer-footer"><div class="ap-f" id="ap-f"></div></div>
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/player/css/play.css">
+<script src="<?php echo get_template_directory_uri(); ?>/assets/player/js/aplayer.min.js?version=<?= time()?>"></script>
+<!-- 音乐播放器 start-->
 <?php endif;?>
+<?php wp_footer(); ?>
 <script type="text/javascript">
     let style = 'color:#4680ff;font-size:14px; padding:2px;';
     console.log('version：'+'%c %s', style, '<?php echo _the_theme_name().'_v'._the_theme_version();?>');

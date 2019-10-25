@@ -14,27 +14,7 @@ function hljsLoad(){
               $numbering.append($('<li/>').text(i));
           }
       });
-
-     /*var swiper = new Swiper('.swiper-container', {
-	    pagination: '.swiper-pagination',
-	    nextButton: '.swiper-button-next',
-	    prevButton: '.swiper-button-prev',
-	    paginationClickable: true,
-	    loop : true,
-	    autoplay : 5000,
-	    lazyLoading: true,
-	    zoom: false,
-	    effect: 'slide'
-    });
-	$(window).resize(function(){
-	    newSlideSize();
-    });*/
 }
-/*var newSlideSize = function slideSize(){
-	    var w = Math.ceil($(".swiper-container").width()/2);
-	    $(".swiper-container,.swiper-wrapper,.swiper-slide").height(w);
-    };
-newSlideSize();*/
 hljsLoad();
 $(".pcoded-navbar .close").on("click", function() {
 	var a = $(this);

@@ -21,7 +21,7 @@ $num = 0;
         </div>
         <div class="widget-author-meta text-center p-4">
             <div class="h6 mb-3 text-lg text-c-blue"><?= get_the_author_meta('display_name',1); ?></div>
-            <div class="desc text-xs mb-3 h-2x ">smarty_hankin主题 持续为开发者开源！</div>
+            <div class="desc text-xs mb-3 h-2x ">smarty_hankin主题 持续为开发者开源！<a href='https://gitee.com/theme-smarty/smarty_hankin/stargazers'><img src='https://gitee.com/theme-smarty/smarty_hankin/badge/star.svg?theme=dark' alt='star'></img></a></div>
             <div class="row no-gutters text-center">
                 <a href="" class="col">
                     <span class="font-theme font-weight-bold text-md"><?php the_author_posts(); ?></span><small class="d-block text-xs text-muted">文章</small>
