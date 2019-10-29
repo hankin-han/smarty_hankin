@@ -215,18 +215,6 @@ class AuthorCard extends WP_Widget {
         function widget($args, $instance) {
             extract($args);
             echo $before_widget;
-            //if (!empty($instance['title'])) {
-            //    echo $before_title . $instance['title'] . $after_title;
-            //}
-            //$NewTab = $instance['sure'];
-            //echo '<div class="textwidget">';
-            //echo '<a href="' . $instance['link'] . '"';
-            //if ($NewTab == true) {
-            //    echo 'target="_black"';
-            //}
-            //echo '<img src="' . $instance['advertising'] . '" />';
-            //echo '</a>';
-            //echo '</div>';
         echo '<div id="author_card-5" class="card-sm widget Author_Card">';
         echo '    <div class="widget-author-cover">';
         echo '        <div class="media media-2x1">';
