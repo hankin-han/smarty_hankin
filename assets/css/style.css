@@ -885,7 +885,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 .card-link+.card-link{margin-left:1.25rem}
 .card-header{padding:1.25rem 1.25rem;margin-bottom:0;background-color:rgba(0,0,0,0);border-bottom:0 solid rgba(0,0,0,.125)}
 .card-header:first-child{border-radius:calc(.25rem - 0px) calc(.25rem - 0px) 0 0}
-.card-header+.list-group .list-group-item:first-child{border-top:0}
+/*.card-header+.list-group .list-group-item:first-child{border-top:0}*/
 .card-footer{padding:1.25rem 1.25rem;background-color:rgba(0,0,0,0);border-top:0 solid rgba(0,0,0,.125)}
 .card-footer:last-child{border-radius:0 0 calc(.25rem - 0px) calc(.25rem - 0px)}
 .card-header-tabs{margin-right:-.625rem;margin-bottom:-1.25rem;margin-left:-.625rem;border-bottom:0}

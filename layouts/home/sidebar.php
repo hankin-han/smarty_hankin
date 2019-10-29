@@ -9,6 +9,9 @@ $num = 0;
 ?>
 
 <div class="theiaStickySidebar animated fadeIn" style="padding-top: 0px; padding-bottom: 1px; position: relative; transform: none;">
+    <?php if(is_dynamic_sidebar()) dynamic_sidebar('home_sidebar');?>
+    <?php
+    /*
     <div id="author_card-5" class="card card-sm widget Author_Card">        
         <div class="widget-author-cover">
             <div class="media media-2x1">
@@ -21,7 +24,11 @@ $num = 0;
         </div>
         <div class="widget-author-meta text-center p-4">
             <div class="h6 mb-3 text-lg text-c-blue"><?= get_the_author_meta('display_name',1); ?></div>
-            <div class="desc text-xs mb-3 h-2x ">smarty_hankin主题 持续为开发者开源！<a href='https://gitee.com/theme-smarty/smarty_hankin/stargazers'><img src='https://gitee.com/theme-smarty/smarty_hankin/badge/star.svg?theme=dark' alt='star'></img></a></div>
+            <div class="desc text-xs mb-3 h-2x ">
+                smarty_hankin主题 持续为开发者开源！
+                <a href="https://github.com/hankin-han/smarty_hankin"><img src="https://img.shields.io/badge/GitHub-10-yellow.svg?style=social&logo=github" alt='github'></img></a>
+                <a href="https://gitee.com/theme-smarty/smarty_hankin"><img src="https://gitee.com/theme-smarty/smarty_hankin/badge/star.svg?theme=white" alt='gitee'></img></a>
+            </div>
             <div class="row no-gutters text-center">
                 <a href="" class="col">
                     <span class="font-theme font-weight-bold text-md"><?php the_author_posts(); ?></span><small class="d-block text-xs text-muted">文章</small>
@@ -35,6 +42,7 @@ $num = 0;
             </div>
         </div>
     </div>
+    */?>
     <div id="recommended_posts">
         <div id="recommended_posts_1" class="card card-sm widget Recommended_Posts">
             <div class="card-header widget-header">
@@ -83,15 +91,6 @@ $num = 0;
                 <?php $num++;?>
                 <?php endwhile;?>
             </div>
-        </div>
-        <div id="tag_cloud-2" class="card card-sm widget widget_tag_cloud">
-           <div class="card-header widget-header">
-            标签
-            <i class="bg-primary"></i>
-           </div>
-           <div class="tagcloud">
-            <a href="" class="tag-cloud-link tag-link-987 tag-link-position-1" style="font-size: 8pt;" aria-label=""></a>
-           </div> 
         </div>
     </div>
 </div>

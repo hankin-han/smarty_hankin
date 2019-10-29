@@ -14,9 +14,9 @@
                 <!-- [ list ] end -->
             </div>
             <div class="col-md-4">
-                <!-- [ list ] start -->
-               <?php get_template_part( 'layouts/home/sidebar' );?>
-               <!-- [ list ] end -->
+                <!-- [ sidebar ] start -->
+               <?php get_sidebar(); ?>
+               <!-- [ sidebar ] end -->
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 <?php
 require_once dirname(__FILE__) . '/framework/cs-framework.php';
 require_once dirname(__FILE__) . '/includes/author-avatars.php';
+require_once dirname(__FILE__) . './widgets.php';
 // -(or)-
 define('CS_ACTIVE_FRAMEWORK', TRUE); // default true
 define('CS_ACTIVE_METABOX', TRUE); // default true
@@ -578,8 +579,6 @@ function output_comments_qq_columns( $column_name, $comment_id ){
         break;
         }
 }
-
-
 
 function simple_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
