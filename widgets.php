@@ -203,14 +203,14 @@ class CS_Widget_Link extends WP_Widget {
         }
 }
 
-//图像链接
+//作者版块
 class AuthorCard extends WP_Widget {
         function __construct() {
             $widget_ops = array(
-                'classname' => 'cs_widget_link',
+                'classname' => 'cs_widget_author',
                 'description' => '作者主页小工具'
             );
-            parent::__construct('cs_widget_link', 'smarty_hankin主题作者主页', $widget_ops);
+            parent::__construct('cs_widget_author', 'smarty_hankin主题作者主页', $widget_ops);
         }
         function widget($args, $instance) {
             extract($args);
@@ -278,12 +278,110 @@ class AuthorCard extends WP_Widget {
         }
 }
 
+//随机列表
+class RandLists extends WP_Widget {
+        function __construct() {
+            $widget_ops = array(
+                'classname' => 'cs_widget_rand_list',
+                'description' => '随机文章小工具'
+            );
+            parent::__construct('cs_widget_rand_list', 'smarty_hankin随机文章列表', $widget_ops);
+        }
+        function widget($args, $instance) {
+            $args = array(
+                'posts_per_page' => empty($instance['number']) ? 5 : $instance['number'], //每页显示10篇文章
+                'orderby' => 'rand',
+                'ignore_sticky_posts' => 1 //取消文章置顶
+            );
+            $query_posts = new WP_Query($args);
+            $num = 0;
+            extract($args);
+            echo $before_widget;
+        
+            echo '<div id="recommended_posts">';
+            echo '    <div id="recommended_posts_1" class="card card-sm widget Recommended_Posts">';
+            echo '        <div class="card-header widget-header">';
+            echo '            随机文章';
+            echo '            <i class="bg-primary"></i>';
+            echo '        </div>';
+            echo '        <div class="card-body">';
+            while ($query_posts->have_posts()){
+                $query_posts->the_post();
+                if($num == 0){
+            echo '            <div class="list-rounded my-n2">';
+            echo '                <div class="py-2">';
+            echo '                    <div class="list-item list-overlay-content">';
+            echo '                        <div class="media media-2x1">';
+            echo '                            <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url('.getThumbnail().')">';
+            echo '                                <span class="overlay"></span>';
+            echo '                            </a>';
+            echo '                        </div>';
+            echo '                        <div class="list-content">';
+            echo '                            <div class="list-body">';
+            echo '                                <a href="'.get_the_permalink().'" class="list-title h-2x">'.get_the_title().'</a></div>';
+            echo '                            <div class="list-footer">';
+            echo '                                <div class="text-muted text-xs">';
+            echo '                                    <time class="d-inline-block">'.timeGo(get_gmt_from_date(get_the_time('Y-m-d G:i:s'))).'</time></div>';
+            echo '                            </div>';
+            echo '                        </div>';
+            echo '                    </div>';
+            echo '                </div>';
+            echo '            </div>';
+                }else{
+            echo '            <div class="list-grid list-rounded">';
+            echo '                <div class="list-item py-2">';
+            echo '                    <div class="list-content py-0 mr-3">';
+            echo '                        <div class="list-body">';
+            echo '                            <a href="'.get_the_permalink().'" class="list-title h-2x">'.get_the_title().'</a></div>';
+            echo '                        <div class="list-footer">';
+            echo '                            <div class="text-muted text-xs">';
+            echo '                                <time class="d-inline-block">'.timeGo(get_gmt_from_date(get_the_time('Y-m-d G:i:s'))).'</time></div>';
+            echo '                        </div>';
+            echo '                    </div>';
+            echo '                    <div class="media media-3x2 col-4">';
+            echo '                        <a class="media-content" href="'.get_the_permalink().'" style="background-image:url('.getThumbnail().')"></a>';
+            echo '                    </div>';
+            echo '                </div>';
+            echo '            </div>';
+                }
+            $num++;
+            }
+            echo '        </div>';
+            echo '    </div>';
+            echo '</div>';
+
+            echo $after_widget;
+        }
+        function update($new_instance, $old_instance) {
+            $instance = $old_instance;
+            $instance['number'] = $new_instance['number'];
+            return $instance;
+        }
+        function form($instance) {
+            $instance = wp_parse_args($instance, array(
+                'title' => '头像',
+                'advertising' => '',
+                'link' => '',
+                'sure' => '',
+            ));
+            $text_value = esc_attr($instance['number']);
+            $text_field = array(
+                'id' => $this->get_field_name('number') ,
+                'name' => $this->get_field_name('number') ,
+                'type' => 'number',
+                'title' => '文章数量',
+            );
+            echo cs_add_element($text_field, $text_value);
+        }
+}
+
 function EfanBlogStat()
 {
     // 注册小工具
     register_widget('EfanBlogStat');
     register_widget('CS_Widget_Link');
     register_widget('AuthorCard');
+    register_widget('RandLists');
 }
 
 add_action('widgets_init', 'EfanBlogStat');
