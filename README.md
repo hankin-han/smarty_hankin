@@ -5,4 +5,4 @@
 
 主题预览 [www.hankin.cn](https://www.hankin.cn)
 
-![www.hankin.cn](https://www.hankin.cn/wp-content/themes/smarty_hankin/screenshot.jpg)
+![pic](https://www.hankin.cn/wp-content/themes/smarty_hankin/screenshot.jpg)
