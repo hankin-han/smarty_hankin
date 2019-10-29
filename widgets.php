@@ -222,7 +222,7 @@ class AuthorCard extends WP_Widget {
         echo '        </div>';
         echo '        <div class="widget-author-avatar">';
         echo '            <div class="flex-avatar mx-2 w-80 border border-white border-2">';
-        echo '                <img src="' . $instance['advertising'] . '" width="80" height="80"/></div>';
+        echo '                <img src="' . $instance['advertising'] . '" style="width:80px;height:80px;" /></div>';
         echo '        </div>';
         echo '    </div>';
         echo '    <div class="widget-author-meta text-center p-4">';
@@ -232,7 +232,7 @@ class AuthorCard extends WP_Widget {
         echo '        </div>';
         echo '        <div class="row no-gutters text-center">';
         echo '            <a href="" class="col">';
-        echo '                <span class="font-theme font-weight-bold text-md">'.the_author_posts().'</span><small class="d-block text-xs text-muted">文章</small>';
+        echo '                <span class="font-theme font-weight-bold text-md">'.get_the_author_posts().'</span><small class="d-block text-xs text-muted">文章</small>';
         echo '            </a>';
         echo '            <a href="" class="col">';
         echo '                <span class="font-theme font-weight-bold text-md">'.get_comments('count=true&comment_status=approved').'</span><small class="d-block text-xs text-muted">评论</small>';
