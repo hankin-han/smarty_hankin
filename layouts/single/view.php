@@ -15,10 +15,10 @@
                 <div class="ml-auto text-sm">
                     <span class="mx-1">
                         <i class="text-md iconfont icon-eye-line mx-1"></i>
-                        <small>624</small></span>
+                        <small><?php setPostViews(get_the_ID());?><?= getPostViews(get_the_ID()); ?></small></span>
                     <a class="mx-1" href="#comments">
                         <i class="text-md iconfont icon-chat--line mx-1"></i>
-                        <small>3</small></a>
+                        <small><?= getCommentsNumber($post->ID); ?></small></a>
                     <a class="btn-like btn-link-like  mx-1" href="javascript:;" data-action="like" data-id="4621">
                         <i class="text-md iconfont icon-thumb-up-line mx-1"></i>
                         <small class="like-count">19</small></a>

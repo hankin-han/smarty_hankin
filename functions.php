@@ -125,21 +125,7 @@ function remove_dns_prefetch( $hints, $relation_type ) {
     return $hints;
 }
 
-/* 获取和设置文章浏览数 */
- function getPostViews($postID) {
-     $count_key = 'post_views_count';
-     $count = get_post_meta($postID, $count_key, true);   
-     if (is_single()) {
-         if ($count == '') {
-             add_post_meta($postID, $count_key, 1);
-             return 1;
-         } else {
-             $count ++;
-             update_post_meta($postID, $count_key, $count);
-         }
-     }
-     return empty($count) ? 0 : $count;
- }
+
 /* 开启文章形式 */
 //文章形式
 add_theme_support('post-formats', [
@@ -578,6 +564,80 @@ function output_comments_qq_columns( $column_name, $comment_id ){
         echo get_comment_meta( $comment_id, 'new_field_qq', true );
         break;
         }
+}
+
+
+/* 启用浏览数目 */
+function getPostViews($postID)
+{
+    $count_key = 'views';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count=='') {
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count.'&nbsp;';
+}
+
+function setPostViews($postID,$count_key='views')
+{
+    $count = get_post_meta($postID, $count_key, true);
+
+        if ($count=='') {
+            $count = 0;
+            delete_post_meta($postID, $count_key);
+            add_post_meta($postID, $count_key, '0');
+        } else {
+            $count++;
+            update_post_meta($postID, $count_key, $count);
+        }
+}
+
+//后台显示浏览数目
+add_filter('manage_posts_columns', 'posts_column_views');
+add_action('manage_posts_custom_column', 'posts_custom_column_views', 5, 2);
+function posts_column_views($defaults)
+{
+    $defaults['post_views'] = __('浏览');
+    return $defaults;
+}
+function posts_custom_column_views($column_name, $id)
+{
+    if ($column_name === 'post_views') {
+        echo getPostViews(get_the_ID());
+    }
+}
+/* 获取文章的评论人数 by zwwooooo | zww.me */
+function getCommentsNumber($postid = 0, $which = 0)
+{
+    $comments = get_comments('status=approve&type=comment&post_id=' . $postid); //获取文章的所有评论
+    if ($comments)
+    {
+        $i = 0;
+        $j = 0;
+        $commentusers = [];
+        foreach ($comments as $comment)
+        {
+            ++$i;
+            if ($i == 1)
+            {
+                $commentusers[] = $comment->comment_author_email;
+                ++$j;
+            }
+            if (!in_array($comment->comment_author_email, $commentusers))
+            {
+                $commentusers[] = $comment->comment_author_email;
+                ++$j;
+            }
+        }
+        $output = [$j, $i];
+        $which = ($which == 0) ? 0 : 1;
+
+        return $output[$which]; //返回评论人数
+    }
+
+    return '0'; //没有评论返回0
 }
 
 function simple_comment($comment, $args, $depth) {

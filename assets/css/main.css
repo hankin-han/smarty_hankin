@@ -514,13 +514,39 @@ comment style
 .children .comment-avatar-author .flex-avatar{width:28px!important;height:28px!important}
 }
 
-/* 幻灯片 */
-.swiper-slide .slick-con{position:absolute;bottom:0;right:0;left:0;font-weight:300;background:rgba(0,0,0,0.7)}
-.swiper-slide .slick-con h2{color:#fff;margin-bottom:8px;font-weight:300;text-align: left}
-.swiper-slide .slick-con p{color:#efefef;font-size:14px;text-align: left;margin:5px 10px}
-.swiper-pagination-bullet{width: 15px;height: 2px;display: inline-block;background: #fff;opacity: .2;border-radius:0}
-.swiper-pagination-bullet-active{opacity: 1;background: #fff;}
-.swiper-container .swiper-button-prev{left:-25px;opacity:0}
-.swiper-container .swiper-button-next{right:-25px;opacity:0}
-.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 2px;}
+/*--------------------------------------------------------------
+bg style
+--------------------------------------------------------------*/
+.bg-primary {background-color:#11999e !important}
+.bg-dark {background-color:#222831 !important;}
+.bg-secondary {background-color:#393e46 !important}
+.bg-light {background-color:#f4f6f9 !important}
+.bg-danger {background-color:#e23e57 !important}
+.bg-dark-gradient {background:linear-gradient(to bottom,#222831,#343f48);}
+.bg-special {position:relative;overflow:hidden;}
+.bg-white-overlay {color:#fff;background-color:rgba(39,49,73,.33);}
+.bg-nocolor {background-color:transparent !important;}
+.bg-dark-overlay {color:#fff;background-color:rgba(0, 0, 0, 0.56);}
+.bg-img {background-size:cover;background-position:50% 50%;background-repeat:no-repeat;}
+.bg-wrapper-80 {position:absolute;left:0;top:0;bottom:0;width:80%;z-index:-1;}
+.bg-overlay {position:fixed;height:100%;right:-99%;top:0;left:-99%;opacity:0;background:rgba(120,129,147,.22);visibility:hidden;-webkit-transform:translate3d(0px,0px,0px);-ms-transform:translate3d(0px,0px,0px);-o-transform:translate3d(0px,0px,0px);transform:translate3d(0px,0px,0px);-webkit-transition:0.3s ease-in-out;-o-transition:0.3s ease-in-out;transition:0.3s ease-in-out;z-index:998;}
+.bg-effect {position:absolute;top:0;left:0;right:0;bottom:0;}
+.bg-cover {-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;background-repeat:no-repeat;}
+.bg-fixed {background-attachment:fixed;}
+.bg-relative{overflow: hidden;position: relative;display: none;}
+.bg-relative .bg{position: absolute;left: 0;top: 0;width: 110%;height: 110%;margin-left: -5%;margin-top: -5%;background-repeat: no-repeat;background-position: center center;background-size: cover;background-color: #18181e;-webkit-filter: blur(5px);filter: blur(5px);z-index: -2;}
+.container-box{width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;}
 
+.mobile-btn{position:fixed;z-index:3;bottom:0px;box-shadow:0px 0px 1px 0px #ccc;background:#e6e6e6;width:100%;text-align:center;box-sizing:border-box;-webkit-box-sizing:border-box;display:none}
+.menu{position:relative;float:left;width:33.33%;height:50px;line-height:50px;background:#fff;border-right:1px solid #ebebeb;box-sizing:border-box;-webkit-box-sizing:border-box}
+.cura{border-right:none}
+.new-sub{position:absolute;bottom:50px;z-index:10;width:100%;padding:0px 10px;background:#fff;box-sizing:border-box;-webkit-box-sizing:border-box;display:none;box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);}
+.new-sub li{width:100%;background:#fff;float:none;box-sizing:border-box;-webkit-box-sizing:border-box;border-top:1px solid #f2f2f2}
+.new-sub li a{display:block;height:50px;line-height:50px;text-align:left;background:#fff;color:#333;border:none;text-align:center;font-size:16px}
+.sanjiao{position:absolute;bottom:5px;right:5px;width:0;height:0;border:5px solid transparent;border-right:5px solid #a7a7a7;border-bottom:5px solid #a7a7a7;opacity:.5}
+.bt-name{}
+.bt-name a{display:block;font-size:.8rem!important;color:#000}
+.new-sub ul{margin:0;padding:0;}
+.new-sub ul li{list-style: none;}
+.user-info{display: block;width: 101vw;left: calc(-67vw);padding: 0;display: none;}
+@media only screen and (max-width:414px){.bg-relative{display: block;}.mobile-btn{display: block;}}
