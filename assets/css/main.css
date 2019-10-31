@@ -552,6 +552,7 @@ bg style
 .clear-lineheight{line-height: 1;}
 @media only screen and (max-width:414px){.bg-relative{display: block;}.mobile-btn{display: block;}}
 
+#infscr-loading{text-align: center;color: #ccc;}
 
 .user-tab{z-index:3;bottom:0px;width:100%;text-align:center;box-sizing:border-box;-webkit-box-sizing:border-box;}
 .user-tab .tab-list{position:relative;float:left;width:50%;height:40px;line-height:40px;background:#161823;box-sizing:border-box;-webkit-box-sizing:border-box}

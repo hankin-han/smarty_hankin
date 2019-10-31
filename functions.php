@@ -650,6 +650,20 @@ function json_get_avatar_url( $avatar_html ) {
 
     return '';
 }
+
+
+/*
+加载infinite scroll插件脚本
+*/
+function infinitescroll_js() {
+    wp_register_script('infinite_scroll', 'https://cdn.bootcss.com/jquery-infinitescroll/2.0.2/jquery.infinitescroll.min.js', array('jquery'), null, true);
+    if (!is_singular()) {
+        wp_enqueue_script('infinite_scroll');
+    }
+}
+add_action('wp_enqueue_scripts', 'infinitescroll_js');
+
+
 function simple_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-<?php comment_ID(); ?>">

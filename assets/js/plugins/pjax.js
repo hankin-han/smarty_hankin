@@ -5,7 +5,7 @@ trimCacheStack(cacheForwardStack,0);trimCacheStack(cacheBackStack,pjax.defaults.
 
 // 自定义
 $(function() {
-    $(document).pjax('a[target!=_blank]', '#content', {
+    $(document).pjax('a[target!=_blank]:not(a[target="_blank"],a[no-pjax])', '#content', {
       fragment:'#content', timeout:6000
     });
     $(document).on('submit', 'form', function (event) {
