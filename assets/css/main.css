@@ -549,4 +549,11 @@ bg style
 .new-sub ul{margin:0;padding:0;}
 .new-sub ul li{list-style: none;}
 .user-info{display: block;width: 101vw;left: calc(-67vw);padding: 0;display: none;}
+.clear-lineheight{line-height: 1;}
 @media only screen and (max-width:414px){.bg-relative{display: block;}.mobile-btn{display: block;}}
+
+
+.user-tab{z-index:3;bottom:0px;width:100%;text-align:center;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.user-tab .tab-list{position:relative;float:left;width:50%;height:40px;line-height:40px;background:#161823;box-sizing:border-box;-webkit-box-sizing:border-box}
+.user-tab .tab-list .tab-name a{display:block;font-size:.8rem!important;color:#ccc;}
+.user-tab .tab-list .tab-name .active{background:#face15;color:#161823;}

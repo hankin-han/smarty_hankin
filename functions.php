@@ -639,7 +639,17 @@ function getCommentsNumber($postid = 0, $which = 0)
 
     return '0'; //没有评论返回0
 }
+function json_get_avatar_url( $avatar_html ) {
 
+    // Strip the avatar url from the get_avatar img tag.
+    preg_match('/src=["|\'](.+)[\&|"|\']/U', $avatar_html, $matches);
+
+    if ( isset( $matches[1] ) && ! empty( $matches[1] ) ) {
+        return esc_url_raw( $matches[1] );
+    }
+
+    return '';
+}
 function simple_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-<?php comment_ID(); ?>">
