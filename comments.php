@@ -25,7 +25,7 @@ if (post_password_required())
                     <div class="comment-from-author">
                         <div class="comment-avatar-author d-flex flex-fill align-items-center text-sm mb-2">
                             <div class="flex-avatar w-32">
-                                <img src="https://demo.nicetheme.xyz/panda-pro-style-one/wp-content/themes/PandaPRO/images/default-avatar.png" class="avatar w-32"></div>
+                                <img src="<?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?>" class="avatar w-32"></div>
                         </div>
                         <div class="comment-form-text">
                             <?php if ($user_ID) : ?>
