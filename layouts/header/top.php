@@ -1,10 +1,17 @@
+<?php
+$i_avatar_logo = cs_get_option('i_avatar_logo'); //自定义友情链接
+?>
 <!-- [ Header ] start -->
 <header class="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
     <div class="m-header">
         <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
         <a href="#!" class="b-brand">
             <!-- ========   change your logo hear   ============ -->
+            <?php if(empty($i_avatar_logo)):?>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo2.png" alt="" class="logo">
+            <?php else:?>
+            <img src="<?php echo $i_avatar_logo?>" alt="" class="logo">
+            <?php endif;?>
         </a>
         <a href="#!" class="mob-toggler">
             <i class="feather icon-more-vertical"></i>

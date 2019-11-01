@@ -54,22 +54,6 @@ $options[] = [
     'icon' => 'fa fa-cubes',
     'fields' => [
 
-      // 头像
-      [
-        'id' => 'i_avatar_image',
-        'type' => 'upload',
-        'title' => '头像	',
-        'default' => "https://www.hankin.cn/wp-content/themes/hankin/images/default-avatar.png",
-      ],
-
-      // icon
-      [
-        'id' => 'i_avatar_icon',
-        'type' => 'upload',
-        'title' => 'icon设置',
-        'default' => "https://www.hankin.cn/wp-content/uploads/2018/05/bitbug_favicon.ico",
-      ],
-
       // logo
       [
         'id' => 'i_avatar_logo',
@@ -78,12 +62,12 @@ $options[] = [
         'default' => "https://www.hankin.cn/wp-content/uploads/2018/05/bitbug_favicon.ico",
       ],
 
-      // 昵称
+      // icon
       [
-        'id' => 'i_avatar_name',
-        'type' => 'text',
-        'title' => '昵称',
-        'default' => '你的名字',
+        'id' => 'i_avatar_icon',
+        'type' => 'upload',
+        'title' => 'icon设置',
+        'default' => "https://www.hankin.cn/wp-content/uploads/2018/05/bitbug_favicon.ico",
       ],
 
       // 网站备案号
@@ -203,7 +187,7 @@ $options[] = [
   // ------------------------------
   // 高级设置                      -
   // ------------------------------
-
+/*
   $options[] = [
     'name' => 'rule',
     'title' => '高级设置',
@@ -269,12 +253,12 @@ $options[] = [
       ],
 
     ],
-  ];
+  ];*/
 
   // ------------------------------
-  // 外观设置                         -
+  // 页面元素                         -
   // ------------------------------
-
+/*
   $options[] = [
     'name' => 'pageElement',
     'title' => '页面元素',
@@ -376,6 +360,10 @@ $options[] = [
     ],
   ];
 
+
+  // ------------------------------
+  // 页面元素                         -
+  // ------------------------------
   $options[] = [
     'name' => 'theme',
     'title' => '外观设置',
@@ -840,7 +828,7 @@ $options[] = [
 
     ],
   ];
-
+*/
   // ------------------------------
   // 音乐设置                         -
   // ------------------------------
@@ -911,7 +899,7 @@ $options[] = [
   // ------------------------------
   // 幻灯片                      -
   // ------------------------------
-
+/*
   $options[] = [
     'name' => 'slider',
     'title' => '幻灯片',
@@ -1001,7 +989,7 @@ $options[] = [
 
     ],
   ];
-
+*/
   // ----------------------------------------
   // 友情链接
   // ----------------------------------------
@@ -1153,6 +1141,7 @@ $options[] = [
 // ------------------------------
 // 关于唤醒                       -
 // ------------------------------
+/*
 $options[] = [
     'name' => 'about',
     'title' => '关于唤醒',
@@ -1167,5 +1156,5 @@ $options[] = [
 
     ],
 ];
-
+*/
 CSFramework::instance($settings, $options);

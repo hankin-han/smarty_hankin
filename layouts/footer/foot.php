@@ -1,3 +1,7 @@
+<?php
+$i_js = cs_get_option('i_js'); //js
+$i_js_tongji = cs_get_option('i_js_tongji'); //统计
+?>
 <!--定义全局变量--> 
 <script type="text/javascript">
 window.THEME_URL = '<?php echo get_template_directory_uri(); ?>'; 
@@ -16,6 +20,7 @@ window.ENCODE_URI_COMPONENT_SITE = '唤醒-hankin，wordpress 自适应主题，
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/pjax.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/message.js?version=<?= time()?>"></script>
+<?php if( ! empty( $i_js ) ){ echo '<script type="text/javascript">'.$i_js.'</script>';}else{ echo'';} ?>
 <!-- 分享插件 start-->
 <div id="cz-leftside-share"></div>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.share.min.js?version=<?= time()?>"></script>
@@ -34,5 +39,8 @@ window.ENCODE_URI_COMPONENT_SITE = '唤醒-hankin，wordpress 自适应主题，
     console.log('SQL 请求数：'+'%c %s', style, '<?php echo get_num_queries();?>');
     console.log('页面生成耗时： '+'%c %s', style, '<?php echo timer_stop(0,10);?>');
 </script>
+<!--网站统计代码 start-->
+<?php if( ! empty( $i_js_tongji ) ){ echo '<script type="text/javascript">'.$i_js_tongji.'</script>';}else{ echo'';} ?>
+<!--网站统计代码 end-->
 </body>
 </html>

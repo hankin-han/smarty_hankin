@@ -25,7 +25,7 @@ if (post_password_required())
                     <div class="comment-from-author">
                         <div class="comment-avatar-author d-flex flex-fill align-items-center text-sm mb-2">
                             <div class="flex-avatar w-32">
-                                <img src="<?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?>" class="avatar w-32"></div>
+                                <img src="<?= json_get_avatar_url(get_avatar( get_the_author_meta( 'user_email' ),'80' )) ?>" class="avatar w-32"></div>
                         </div>
                         <div class="comment-form-text">
                             <?php if ($user_ID) : ?>

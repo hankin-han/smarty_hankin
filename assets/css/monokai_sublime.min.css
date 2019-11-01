@@ -342,7 +342,6 @@ code.has-numbering {
     line-height: 135%;
     color: #AAA;
     list-style: none;
-    font-size: medium!important;
 }
 .pre-numbering li {
     margin: 0!important;
