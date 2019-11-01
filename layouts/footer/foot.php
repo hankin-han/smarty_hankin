@@ -1,20 +1,37 @@
 <?php
 $i_js = cs_get_option('i_js'); //js
 $i_js_tongji = cs_get_option('i_js_tongji'); //统计
+$i_seo_keywords = cs_get_option('i_seo_keywords'); //关键词
+$i_seo_description = cs_get_option('i_seo_description'); //关键词
+$i_appId = cs_get_option('i_appId'); //appid
+$i_appSecret = cs_get_option('i_appSecret'); //appSecret
 ?>
 <!--定义全局变量--> 
 <script type="text/javascript">
 window.THEME_URL = '<?php echo get_template_directory_uri(); ?>'; 
-window.ENCODE_URI_COMPONENT_TITLE = "唤醒-hankin - 那个为梦想拼尽全力的你~"; 
+window.ENCODE_URI_COMPONENT_TITLE = document.title; 
 window.ENCODE_URI_COMPONENT_LINK = window.location.href; 
-window.ENCODE_URI_COMPONENT_IMAGE = '<?php echo get_template_directory_uri(); ?>/screenshot.png'; 
-window.ENCODE_URI_COMPONENT_DESC = 'wordpress 自适应主题，响应式主题，唤醒-hankin，个人博客模板，主题分享，博客模板，个人网站模板，技术分享，功能开发，前端技术，后端技术'; 
-window.ENCODE_URI_COMPONENT_SITE = '唤醒-hankin，wordpress 自适应主题，响应式主题，个人博客模板，主题分享，博客模板，个人网站模板，技术分享，功能开发，前端技术，后端技术'; 
+window.ENCODE_URI_COMPONENT_IMAGE = '<?php echo get_template_directory_uri(); ?>/screenshot.jpg';
+window.ENCODE_URI_COMPONENT_DESC = '<?= $i_seo_description?>';
+window.ENCODE_URI_COMPONENT_SITE = '<?= $i_seo_keywords?>';
+<?php $wxJsData = getLocationSevice($i_appId,$i_appSecret);?>
+window.APPID = '<?= $wxJsData['appId']?>';
+window.TIMESTAMP = '<?= $wxJsData['timestamp']?>';
+window.NONCESTR = '<?= $wxJsData['nonceStr']?>';
+window.SIGNATURE = '<?= $wxJsData['signature']?>';
+wxConfig = {
+	title : document.title,
+	desc : window.ENCODE_URI_COMPONENT_DESC,
+	link : window.location.href,
+	imgUrl : window.ENCODE_URI_COMPONENT_IMAGE,
+};
 </script>
+<script type="text/javascript" src="//res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/wxShare.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.cookie.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/bootstrap.min.js?version=<?= time()?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu-setting.min.js?version=<?= time()?>"></script>
+<?php if(!wp_is_mobile()):?><script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu-setting.min.js?version=<?= time()?>"></script><?php endif;?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/clipboard.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/highlight.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?version=<?= time()?>"></script>

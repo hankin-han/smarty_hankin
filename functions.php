@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__FILE__) . '/framework/cs-framework.php';
+require_once dirname(__FILE__) . '/includes/wxShare.php';
 require_once dirname(__FILE__) . '/includes/author-avatars.php';
 require_once dirname(__FILE__) . '/widgets.php';
 // -(or)-

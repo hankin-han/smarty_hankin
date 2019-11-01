@@ -550,7 +550,7 @@ bg style
 .new-sub ul li{list-style: none;}
 .user-info{display: block;width: 101vw;left: calc(-67vw);padding: 0;display: none;}
 .clear-lineheight{line-height: 1;}
-@media only screen and (max-width:414px){.bg-relative{display: block;}.mobile-btn{display: block;}}
+@media only screen and (max-width:414px){.bg-relative{display: block;}.mobile-btn{display: block;}#styleSelector{display: none;}}
 
 #infscr-loading{text-align: center;color: #ccc;}
 
