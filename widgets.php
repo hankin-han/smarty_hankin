@@ -312,7 +312,7 @@ class RandLists extends WP_Widget {
             echo '                <div class="py-2">';
             echo '                    <div class="list-item list-overlay-content">';
             echo '                        <div class="media media-2x1">';
-            echo '                            <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url('.getThumbnail().')">';
+            echo '                            <a class="media-content" href="'.the_permalink().'" style="background-image:url('.getThumbnail().')">';
             echo '                                <span class="overlay"></span>';
             echo '                            </a>';
             echo '                        </div>';

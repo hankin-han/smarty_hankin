@@ -558,3 +558,5 @@ bg style
 .user-tab .tab-list{position:relative;float:left;width:50%;height:40px;line-height:40px;background:#161823;box-sizing:border-box;-webkit-box-sizing:border-box}
 .user-tab .tab-list .tab-name a{display:block;font-size:.8rem!important;color:#ccc;}
 .user-tab .tab-list .tab-name .active{background:#face15;color:#161823;}
+
+.time{color: #FFFFFF;text-align: center;line-height: 20px;margin-top: 15px;margin-bottom: 15px;margin-left: auto;background-color: #BDBDBD;border-radius: 10px;max-width:130px;font-size: 12px;margin-right: auto;}

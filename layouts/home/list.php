@@ -39,7 +39,6 @@
                     }else{
                         echo get_the_title();
                     }
-                         
                     ?>
                 </a>
                 <div class="list-desc d-none d-md-block text-sm text-secondary my-3">

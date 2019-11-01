@@ -443,7 +443,14 @@ function categoryPage($range = 4)
 /* 获取默认封面 */
 function getThumbnail()
 {
-    return get_template_directory_uri()."/assets/images/thumbnail/img".rand(0, 48).".png?version".time();
+    $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+
+    if(!empty($large_image_url[0]))
+    {
+        return $large_image_url[0]."?version=".time();
+    }
+
+    return get_template_directory_uri()."/assets/images/thumbnail/img".rand(0, 48).".png?version=".time();
 }
 
 /* 修改时间格式 */
@@ -663,6 +670,16 @@ function infinitescroll_js() {
 }
 add_action('wp_enqueue_scripts', 'infinitescroll_js');
 
+
+/* 如果判断当前浏览页面为微信浏览器*/
+function isWechat(){
+    if(strpos($_SERVER['HTTP_USER_AGENT'],'MicroMessenger')){
+        //判断微信浏览器为真
+        return true;
+    }
+    //此处为假
+    return false;
+}
 
 function simple_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>

@@ -7,7 +7,11 @@
                 <?php cmp_breadcrumbs();?>
                 <!-- [ breadcrumb ] end -->
                 <!-- [ list ] start -->
-                <?php get_template_part( 'layouts/home/list' );?>
+                <?php if(isWechat()):?>
+                <?php get_template_part( 'layouts/home/wx_list' );?>
+                <?php else:?>
+                <?php get_template_part( 'layouts/home/list' );?>    
+                <?php endif;?>
                 <!-- [ list ] end -->
             </div>
             <div class="col-md-4">
