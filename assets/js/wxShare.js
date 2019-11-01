@@ -13,7 +13,7 @@
     ]
 });
  wx.ready(function() {
-    
+    console.dir(wxConfig);
     //分享给朋友 、分享到QQ
     wx.updateAppMessageShareData({
         title: wxConfig.title,

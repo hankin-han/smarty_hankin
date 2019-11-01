@@ -26,26 +26,23 @@ function hljsLoad(){
 	        $(this).children(".new-sub").slideDown("fast"); //展示当前的二级菜单
 	    }
 	});
-
-	$(document).ready(function(){          
-	$("#list-home").infinitescroll({
-	    loading: {
-	        img: THEME_URL+'/assets/images/loading.gif',
-	        msgText: "加载中...",
-	        finishedMsg: "—— 我是有底线的 ——"
-	    },
-	    nextSelector:".pagenavi a",
-	    navSelector:".pagenavi",
-	    itemSelector:"#list-home .list-item",
-	    animate: true,
-	    extraScrollPx: 30, //离网页底部多少像素时触发ajax 
-	});
-});
+	if(window.IS_PAGE_SINGLE == 0){
+		$(document).ready(function(){          
+			$("#list-home").infinitescroll({
+			    loading: {
+			        img: THEME_URL+'/assets/images/loading.gif',
+			        msgText: "加载中...",
+			        finishedMsg: "—— 我是有底线的 ——"
+			    },
+			    nextSelector:".pagenavi a",
+			    navSelector:".pagenavi",
+			    itemSelector:"#list-home .list-item",
+			    animate: true,
+			    extraScrollPx: 30, //离网页底部多少像素时触发ajax 
+			});
+		});
+	}
 }
-
-
-
-
 hljsLoad();
 $(".pcoded-navbar .close").on("click", function() {
 	var a = $(this);

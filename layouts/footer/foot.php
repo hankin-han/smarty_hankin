@@ -19,6 +19,7 @@ window.APPID = '<?= $wxJsData['appId']?>';
 window.TIMESTAMP = '<?= $wxJsData['timestamp']?>';
 window.NONCESTR = '<?= $wxJsData['nonceStr']?>';
 window.SIGNATURE = '<?= $wxJsData['signature']?>';
+window.IS_PAGE_SINGLE = <?= (is_single() || is_page()) ? '1' : '0' ?>;
 wxConfig = {
 	title : document.title,
 	desc : window.ENCODE_URI_COMPONENT_DESC,
