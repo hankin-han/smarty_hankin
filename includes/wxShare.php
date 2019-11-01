@@ -8,7 +8,8 @@ function getLocationSevice($appId, $appSecret)
     $ret_json = https_request($url);
     $ret = json_decode($ret_json);
     $ticket = isset($ret->ticket)?$ret->ticket:'';
-    $strvalue = 'jsapi_ticket=' . $ticket . '&noncestr=' . $noncestr . '&timestamp=' . $timestamp . '&url=http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+    $strvalue = 'jsapi_ticket=' . $ticket . '&noncestr=' . $noncestr . '&timestamp=' . $timestamp . '&url='.$http_type. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $signature = sha1($strvalue);
 
 
