@@ -10,7 +10,7 @@ $i_appSecret = cs_get_option('i_appSecret'); //appSecret
 <script type="text/javascript">
 window.THEME_URL = '<?php echo get_template_directory_uri(); ?>'; 
 window.ENCODE_URI_COMPONENT_TITLE = document.title; 
-window.ENCODE_URI_COMPONENT_LINK = window.location.href; 
+window.ENCODE_URI_COMPONENT_LINK = this.location.href; 
 window.ENCODE_URI_COMPONENT_IMAGE = '<?php echo get_template_directory_uri(); ?>/screenshot.jpg';
 window.ENCODE_URI_COMPONENT_DESC = '<?= $i_seo_description?>';
 window.ENCODE_URI_COMPONENT_SITE = '<?= $i_seo_keywords?>';
@@ -22,7 +22,7 @@ window.SIGNATURE = '<?= $wxJsData['signature']?>';
 wxConfig = {
 	title : document.title,
 	desc : window.ENCODE_URI_COMPONENT_DESC,
-	link : window.location.href,
+	link : window.ENCODE_URI_COMPONENT_LINK,
 	imgUrl : window.ENCODE_URI_COMPONENT_IMAGE,
 };
 </script>
@@ -31,7 +31,9 @@ wxConfig = {
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.cookie.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/bootstrap.min.js?version=<?= time()?>"></script>
-<?php if(!wp_is_mobile()):?><script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu-setting.min.js?version=<?= time()?>"></script><?php endif;?>
+<?php if(!wp_is_mobile()):?>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu-setting.min.js?version=<?= time()?>"></script>
+<?php endif;?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/clipboard.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/highlight.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?version=<?= time()?>"></script>
