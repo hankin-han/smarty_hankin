@@ -5,8 +5,9 @@ wx.config({
     nonceStr: window.NONCESTR,
     signature: window.SIGNATURE,
     jsApiList: [
-    	'updateAppMessageShareData',
-    	'updateTimelineShareData',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+        'onMenuShareQQ',
         'onMenuShareQZone',
         'onMenuShareWeibo',
         'chooseImage', 'uploadImage', 'previewImage'
@@ -14,8 +15,8 @@ wx.config({
 });
  wx.ready(function() {
     console.dir(wxConfig);
-    //分享给朋友 、分享到QQ
-    wx.updateAppMessageShareData({
+    //分享到朋友圈
+    wx.onMenuShareTimeline({
         title: wxConfig.title,
         desc:  wxConfig.desc,
         link:  wxConfig.link,
@@ -23,9 +24,19 @@ wx.config({
         success: function () {},
         cancel: function () {}
     });
-
-    //分享到朋友圈 、分享到QQ空间
-    wx.updateTimelineShareData({
+    //分享给朋友
+    wx.onMenuShareAppMessage({
+        title: wxConfig.title,
+        desc:  wxConfig.desc,
+        link:  wxConfig.link,
+        imgUrl: wxConfig.imgUrl,
+        type: '',
+        dataUrl: "",
+        success: function () {},
+        cancel: function () {}
+    });
+    //分享到QQ
+    wx.onMenuShareQQ({
         title: wxConfig.title,
         desc:  wxConfig.desc,
         link:  wxConfig.link,
@@ -33,7 +44,6 @@ wx.config({
         success: function () {},
         cancel: function () {}
     });
-
     //分享到腾讯微博
     wx.onMenuShareQZone({
         title: wxConfig.title,

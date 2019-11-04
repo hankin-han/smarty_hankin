@@ -2,7 +2,9 @@
 require_once dirname(__FILE__) . '/framework/cs-framework.php';
 require_once dirname(__FILE__) . '/includes/wxShare.php';
 require_once dirname(__FILE__) . '/includes/author-avatars.php';
+require_once dirname(__FILE__) . '/includes/wp-editormd/wp-editormd.php';
 require_once dirname(__FILE__) . '/widgets.php';
+
 // -(or)-
 define('CS_ACTIVE_FRAMEWORK', TRUE); // default true
 define('CS_ACTIVE_METABOX', TRUE); // default true
@@ -33,6 +35,13 @@ function custom_adminbar_menu($meta = TRUE)
             'href' => '/wp-admin/admin.php?page=cs-framework',
             //'meta'  => array( 'target' => '_blank' )
         ]);
+
+        $wp_admin_bar->add_menu([
+                'id' => 'markdown_edit',
+                'title' => __('<i style="position: relative;top:5px;color:#9ea3a8" class="wp-menu-image dashicons-before dashicons-admin-generic"></i>&nbsp;&nbsp;Markdown 编辑器设置'),
+                'href' => '/wp-admin/plugins.php?page=wp-editormd-settings',
+                //    'meta'  => array( target => '_blank' )
+            ]);
 }
 add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
 
