@@ -5,6 +5,7 @@ function getLocationSevice($appId, $appSecret)
     $timestamp = time();
     $noncestr = getRandStr(15);
     $url = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' . get_token($appId, $appSecret) . '&type=jsapi';
+    var_dump($url);die;
     $ret_json = https_request($url);
     $ret = json_decode($ret_json);
     $ticket = isset($ret->ticket)?$ret->ticket:'';
@@ -54,10 +55,9 @@ function https_request($url)
 //获取token
 function get_token($appid, $appsecret)
 {
-    $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$appid&secret=$appsecret";
+    $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.$appid.'&secret='.$appsecret.'';
     $ret_json = https_request($url);
     $ret = json_decode($ret_json,TRUE);
-
     if (isset($ret['access_token'])) {
         return $ret['access_token'];
     }
