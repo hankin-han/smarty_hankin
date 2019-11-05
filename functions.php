@@ -719,7 +719,7 @@ function simple_comment($comment, $args, $depth) {
                 <!-- .comment-content -->
                 <div class="d-flex flex-fill text-xs text-muted pt-2">
                     <div>
-                        <time class="comment-date"><?php echo timeGo(get_gmt_from_date(get_the_time('Y-m-d G:i:s'))); ?></time></div>
+                        <time class="comment-date"><?php echo timeGo(get_gmt_from_date(comment_time('Y-m-d G:i:s'))); ?></time></div>
                     <div class="flex-fill"></div>
                     <?php comment_reply_link(array_merge($args, ['reply_text' => '回复', 'depth' => $depth, 'max_depth' => $args['max_depth']])) ?>
                 </div>
