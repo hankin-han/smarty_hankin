@@ -522,6 +522,7 @@ notice style
 .notice .notice-list{height:40px;line-height:40px;overflow:hidden;margin:0;padding:0;}
 .notice .notice-list li{max-width:450px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
 .notice .notice-list li a i{font-size: 18px;position: relative;top: 3px;margin-right: 10px;}
+.notice .notice-list li a:hover{color:#4680ff;}
 .notice a{vertical-align:middle;color:#6d6d6d}
 
 /*--------------------------------------------------------------

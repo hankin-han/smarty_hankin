@@ -42,8 +42,6 @@ function hljsLoad(){
 			});
 		});
 	}
-}
-hljsLoad();
 
 /** 公告栏 */
 (function (win){
@@ -75,8 +73,8 @@ hljsLoad();
          });
  }(window));
  setTimeout(window.autoAnimation, 5000);
-
-
+}
+hljsLoad();
 $(".pcoded-navbar .close").on("click", function() {
 	var a = $(this);
 	a.parents(".card").fadeOut("slow").remove()
