@@ -513,6 +513,16 @@ comment style
 .comment-avatar-author .flex-avatar{width:36px!important;height:36px!important}
 .children .comment-avatar-author .flex-avatar{width:28px!important;height:28px!important}
 }
+/*--------------------------------------------------------------
+notice style
+--------------------------------------------------------------*/
+.notice{overflow:hidden;height:41px;padding:0 20px;}
+.notice-icon{width:40px;height:40px;padding:16px 18px;background-color:#4680ff;border-right:1px solid #e6ecf5;display:inline-block;vertical-align:middle;margin-right:15px;float:left}
+.notice-icon i{font-size:16px;color:#fff}
+.notice .notice-list{height:40px;line-height:40px;overflow:hidden;margin:0;padding:0;}
+.notice .notice-list li{max-width:450px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.notice .notice-list li a i{font-size: 18px;position: relative;top: 3px;margin-right: 10px;}
+.notice a{vertical-align:middle;color:#6d6d6d}
 
 /*--------------------------------------------------------------
 bg style

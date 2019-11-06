@@ -92,13 +92,43 @@ $options[] = [
 
       // 网站公告栏
       [
-        'id' => 'i_bulletin',
-        'type' => 'wysiwyg',
+        'id' => 'i_notice',
+        'type' => 'group',
         'title' => '网站公告栏',
-        'settings' => [
-          'textarea_rows' => 5,
-          'tinymce' => FALSE,
-          'media_buttons' => FALSE,
+        'info' => '',
+        'button_title' => '添加公告项',
+        'accordion_title' => '公告项',
+        'help' => '',
+        'fields' => [
+
+          // 自定义社交链接--标题
+          [
+            'id' => 'i_notice_title',
+            'type' => 'text',
+            'title' => '公告标题',
+            'attributes' => [
+              'placeholder' => '例如：smarty_hankin主题上线',
+            ],
+          ],
+
+          // 自定义社交链接--链接
+          [
+            'id' => 'i_notice_link',
+            'type' => 'text',
+            'title' => '公告链接',
+            'attributes' => [
+              'placeholder' => 'http://...',
+            ],
+          ],
+
+          // 自定义社交链接--新标签
+          [
+            'id' => 'i_notice_newtab',
+            'type' => 'switcher',
+            'title' => '新标签打开',
+            'dependency' => ['i_notice_link', '!=', ''],
+          ],
+
         ],
       ],
 
