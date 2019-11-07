@@ -25,7 +25,6 @@
     <?php while (have_posts()) : the_post(); ?>
     <div class="row list-grouped">
             <div class="col-md-4 col-lg-12">
-                <div class="text-center time"><?= get_gmt_from_date(get_the_time('Y-m-d G:i:s')) ?></div>
                 <div class="list-item block">
                     <div class="media media-21x9">
                         <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url(<?= getThumbnail()?>)"></a>

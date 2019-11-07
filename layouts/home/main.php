@@ -6,15 +6,9 @@ $i_notice = cs_get_option('i_notice'); //自定义友情链接
     <div class="pcoded-content">
         <div class="row">
             <div class="col-md-8">
-                <?php if(is_home() && $i_notice):?>
-                <div class="notice breadcrumb" id="notice">
-                    <ul class="notice-list" style="margin-top: 0px;">
-                            <?php foreach($i_notice as $notice):?>
-                                <li><a href="<?= $notice['i_notice_link']?>" <?php if($notice['i_notice_newtab']):?>target="_blank"<?php endif;?> title="<?= $notice['i_notice_title']?>"><i class="feather icon-volume-2"></i><?= $notice['i_notice_title']?></a></li>
-                            <?php endforeach;?>     
-                    </ul>
-                </div>
-                <?php endif;?>
+                <!-- [ notice ] start -->
+                <?php get_template_part( 'layouts/home/notice' );?>
+                <!-- [ notice ] end -->
                 <!-- [ breadcrumb ] start -->
                 <?php cmp_breadcrumbs();?>
                 <!-- [ breadcrumb ] end -->
