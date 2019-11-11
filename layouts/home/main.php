@@ -1,6 +1,3 @@
-<?php
-$i_notice = cs_get_option('i_notice'); //自定义友情链接
-?>
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container" id="content">
     <div class="pcoded-content">
@@ -16,7 +13,7 @@ $i_notice = cs_get_option('i_notice'); //自定义友情链接
                 <?php if(isWechat()):?>
                 <?php get_template_part( 'layouts/home/wx_list' );?>
                 <?php else:?>
-                <?php get_template_part( 'layouts/home/list' );?>    
+                <?php get_template_part( 'layouts/home/list' );?> 
                 <?php endif;?>
                 <!-- [ list ] end -->
             </div>
