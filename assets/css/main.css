@@ -571,3 +571,41 @@ bg style
 .user-tab .tab-list .tab-name .active{background:#face15;color:#161823;}
 
 .time{color: #FFFFFF;text-align: center;line-height: 20px;margin-top: 15px;margin-bottom: 15px;margin-left: auto;background-color: #BDBDBD;border-radius: 10px;max-width:130px;font-size: 12px;margin-right: auto;}
+
+.grid_author_avt {
+    position: relative;
+    z-index: 9;
+    display: block;
+    width: 100px;
+    height: 36px;
+    margin-top: -24px;
+    margin-left: -10px;
+    transform: translateZ(0);
+}
+
+.grid_author_bggo {
+    position: absolute;
+    margin: auto;
+    top: 8px;
+    right: 0;
+    left: 24px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+.grid_author_avt:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: right top;
+    background-repeat: no-repeat;
+    /*background-size: 100px 30px;*/
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAfCAYAAABNjStyAAAABmJLR0QA/wD/AP+gvaeTAAAB1UlEQVRoge2YPWsUURhGz/WjsBIVNRAIrNGIiiCmUCQGRUhjI1j4D1L5P2xEsPMvmEa08aMQJCghopWVoBFCFsUIVoLielJstllQcnfuzJ3gPTBMM/PM+5xhZi4TyIi6EzgPzAHTwBFgbOiwz8BH4A3wFFgKIfxpcs7sqMfUO2rXeNbU2+pk7h61o55UH6i9EUQN01MX1KncvZKj7lHvqr8TiBrml3pL3Z27ZxLsP37vahA1zLI6nrtvJdQZdb0BWQNW1dO5e4+EOqv+aFDWgG/bTpo6rX7PIGtAVz1aR7eQOlA9CzwH9qbOjmQNuBhCWEkZmlSYegJ4ARxMmVuBD8BsCKGbKjCZMLUDLAJt+1K9py/tS4qwHSlC1AngMe2TBTAFPFQPpAirLEy9ALwFjlcfpzbOAa/VyjOOLEwN6jzwBEhy92qmAyyq1xu/snpGfZZlwZCGBUdcdmz5pa/uAq4AN4GrMee2lB5wH7gHvNzqL6N/llbHgEvAZeAacKjajK1lFXgEvAKWgE9/ExjUG8C+zW3/5r4DnAIONzJu+/gJrNAX+RVYH2xBNedk240k67D/iSIskiIskiIskiIskiIskiIskiIskiIskiIskiIskiIskg3BxADmB5cAEQAAAABJRU5ErkJggg==);
+    top: 6px;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: -1;
+}
