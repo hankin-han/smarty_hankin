@@ -10,7 +10,7 @@
                 <?php cmp_breadcrumbs();?>
                 <!-- [ breadcrumb ] end -->
                 <!-- [ list ] start -->
-                <?php if(isWechat()):?>
+                <?php if(isWechat() || wp_is_mobile()):?>
                 <?php get_template_part( 'layouts/home/wx_list' );?>
                 <?php else:?>
                 <?php get_template_part( 'layouts/home/box_list' );?> 
