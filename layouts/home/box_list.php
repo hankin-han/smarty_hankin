@@ -15,7 +15,7 @@
 
                 </a>
             <div class="list-body pt-3 pl-3 pr-3">
-                 <a class="list-title text-sm h-2x mb-2 mb-md-3" title="Facebook的增长故事：能不能给我点个赞？" href="https://pandapro.demo.nicetheme.xyz/4568">
+                 <a class="list-title text-sm h-2x mb-2 mb-md-3 text-hidden" title="<?php echo get_the_title();?>" href="<?php the_permalink() ?>">
                      <?php if (is_sticky()): ?>
                         <span class="badge badge-primary">推荐</span>
                     <?php endif; ?>
