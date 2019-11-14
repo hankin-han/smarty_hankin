@@ -1,13 +1,17 @@
 <?php get_template_part( 'layouts/home/category' );?>
 <div class="list-home list-grid list-grid-padding div-black-745" id="list-home">
-    <?php if (have_posts()): ?>
-    <?php while (have_posts()) : the_post(); ?>
+    
+    <?php 
+    $args = ['showposts' => 9];
+    query_posts($args);
+    if (have_posts()): ?>
+    <?php while (have_posts('showposts=4')) : the_post(); ?>
     <div class="list-box">
-        <div class="col-lg-1-5 col-6 col-sm-6 float-left">
+        <div class="col-md-6 float-left">
         <div class="list-item-column list-item block card-featured p-0">
         <div class="list-content p-0">
             <div class="media media-16x9">
-                <a class="media-content" title="Facebook的增长故事：能不能给我点个赞？" href="<?php the_permalink() ?>" style="background-image:url('<?= getThumbnail()?>');border-radius: 4px 4px 0 0;"></a>
+                <a class="media-content" title="<?php echo get_the_title()?>" href="<?php the_permalink() ?>" style="background-image:url('<?= getThumbnail()?>');border-radius: 4px 4px 0 0;"></a>
             </div>
             <a href="<?php the_permalink() ?>" class="grid_author_avt">
                     <div class="grid_author_bggo avatar bg-cover" style="background-image: url(<?php echo json_get_avatar_url(get_avatar( get_the_author_meta( 'user_email' ),'30' )); ?>);"></div>
@@ -21,9 +25,9 @@
                     <?php 
                     if(isset($_GET['s']) && !empty($_GET['s']))
                     {
-                        echo str_replace($_GET['s'],"<font color='#4680ff'>".$_GET['s']."</font>",wp_trim_words(get_the_title(),23));
+                        echo str_replace($_GET['s'],"<font color='#4680ff'>".$_GET['s']."</font>",get_the_title());
                     }else{
-                        echo wp_trim_words(get_the_title(),23);
+                        echo get_the_title();
                     }
                     ?>
                  </a>
@@ -52,5 +56,6 @@
     </div>
         <?php endwhile; ?>
 <?php endif;?>
+<div class="clearfix"></div>
 <div class="pagenavi text-center clearfix"><?php next_posts_link('加载更多') ?></div>
 </div>

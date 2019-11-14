@@ -38,7 +38,7 @@ function hljsLoad(){
 			    navSelector:".pagenavi",
 			    itemSelector:"#list-home .list-box",
 			    animate: true,
-			    extraScrollPx: 500, //离网页底部多少像素时触发ajax 
+			    extraScrollPx: 30, //离网页底部多少像素时触发ajax 
 			});
 		});
 	}

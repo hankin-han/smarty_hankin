@@ -94,7 +94,7 @@ List
 .list-item.block .list-content{padding:1rem}
 .list-body{-ms-flex:1 1 auto;flex:1 1 auto}
 .list-footer{margin-top:.5rem}
-.list-title{font-size:.875rem;line-height:1.4285714286;display:block;color:inherit}
+.list-title{font-size:.875rem;line-height:1.4285714286;display:block;color:inherit;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .list-title .badge{top:-2px;position:relative;margin-right:.375rem}
 @media (max-width:767.98px){.list-title{font-size:.9375rem!important}
 .list-title .badge{padding:.2em .2em;top:-1px}
@@ -609,3 +609,5 @@ bg style
     transform: translate(-50%,0);
     z-index: -1;
 }
+.display-flex{display:flex;}
+
