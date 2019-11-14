@@ -1,10 +1,7 @@
 <?php get_template_part( 'layouts/home/category' );?>
 <div class="list-home list-grid list-grid-padding div-black-745" id="list-home">
     
-    <?php 
-    $args = ['showposts' => 9];
-    query_posts($args);
-    if (have_posts()): ?>
+    <?php if (have_posts()): ?>
     <?php while (have_posts('showposts=4')) : the_post(); ?>
     <div class="list-box">
         <div class="col-md-6 float-left">
