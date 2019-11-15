@@ -1,5 +1,5 @@
 <?php get_template_part( 'layouts/home/category' );?>
-<div class="list-home list-grid list-grid-padding div-black-745" id="list-grid" <?php if($_COOKIE['theme-box-list'] == 'box-list'):?>style="display: none;" <?php endif;?>>
+<div class="list-home list-grid list-grid-padding div-black-745" id="list-grid" <?php if($_COOKIE['theme-box-list'] == 'box-list' || !isset($_COOKIE['theme-box-list'])):?>style="display: none;" <?php endif;?>>
     
     <?php if (have_posts()): ?>
     <?php while (have_posts('showposts=4')) : the_post(); ?>
