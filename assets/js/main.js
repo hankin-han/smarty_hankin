@@ -40,6 +40,18 @@ function hljsLoad(){
 			    animate: true,
 			    extraScrollPx: 30, //离网页底部多少像素时触发ajax 
 			});
+			$("#list-grid").infinitescroll({
+			    loading: {
+			        img: THEME_URL+'/assets/images/loading.gif',
+			        msgText: "加载中...",
+			        finishedMsg: "—— 我是有底线的 ——"
+			    },
+			    nextSelector:".pagenavi a",
+			    navSelector:".pagenavi",
+			    itemSelector:"#list-grid .list-box",
+			    animate: true,
+			    extraScrollPx: 30, //离网页底部多少像素时触发ajax 
+			});
 		});
 	}
 
