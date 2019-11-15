@@ -5,7 +5,7 @@
     <?php while (have_posts('showposts=4')) : the_post(); ?>
     <div class="list-box">
         <div class="col-md-6 float-left">
-        <div class="list-item-column list-item block card-featured p-0">
+        <div class="list-item-column card card-featured p-0 box-grid">
         <div class="list-content p-0">
             <div class="media media-16x9">
                 <a class="media-content" title="<?php echo get_the_title()?>" href="<?php the_permalink() ?>" style="background-image:url('<?= getThumbnail()?>');border-radius: 4px 4px 0 0;"></a>
