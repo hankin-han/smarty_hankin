@@ -1,4 +1,4 @@
-<?php get_template_part( 'layouts/home/category' );?>
+
 <div class="list-home list-grid list-grid-padding div-black-745" id="list-home" <?php if($_COOKIE['theme-box-list'] == 'box-grid'):?>style="display: none;" <?php endif;?>>
 <?php if (have_posts()): ?>
     <?php while (have_posts()) : the_post(); ?>
