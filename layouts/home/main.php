@@ -13,7 +13,7 @@
                 <?php if(isWechat()):?>
                 <?php get_template_part( 'layouts/home/wx_list' );?>
                 <?php else:?>
-                <?php get_template_part( 'layouts/home/box_list' );?> 
+                <?php get_template_part( 'layouts/home/list' );?> 
                 <?php endif;?>
                 <!-- [ list ] end -->
             </div>
