@@ -361,7 +361,7 @@ post content
 /*--------------------------------------------------------------
   widget_recent_entries  style
 --------------------------------------------------------------*/
-.widget_recent_entries ul{padding-left:2.75rem}
+.widget_recent_entries ul{}
 .widget_recent_entries ul li{margin-bottom:.5rem;list-style-type:circle}
 .widget_recent_entries ul li a{display:block;font-size:.875rem}
 .widget_recent_entries ul li span{color:#8a92a9;font-size:.75rem}
@@ -371,13 +371,13 @@ post content
   widget_categories style
 --------------------------------------------------------------*/
 
-.blogroll li,.widget_archive li,.widget_categories li,.widget_meta li{position:relative;font-size:.75rem;color:#393e46;padding:.75rem 0;text-transform:uppercase;border-top:1px solid #f5f6fa;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center;text-align:justify;justify-content:space-between}
+.blogroll li,.widget_archive li,.widget_categories li,.widget_meta li,.widget_pages li,.widget_recent_comments li,.widget_recent_entries li{position:relative;font-size:.75rem;color:#393e46;padding:.75rem 0;text-transform:uppercase;border-top:1px solid #f5f6fa;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center;text-align:justify;justify-content:space-between}
 .blogroll li{-ms-flex-direction:column;flex-direction:column;justify-content:normal;-ms-flex-align:normal;align-items:normal}
-.blogroll li a,.widget_archive li a,.widget_categories li a,.widget_meta li a{font-size:.875rem}
+.blogroll li a,.widget_archive li a,.widget_categories li a,.widget_meta li a,.widget_pages li a,.widget_recent_comments li a,.widget_recent_entries li a{font-size:.875rem}
 .blogroll li a{display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center}
 .blogroll li a img{width:26px;height:26px;border-radius:100%;margin-right:10px}
-.blogroll li:first-child,.widget_archive li:first-child,.widget_categories li:first-child,.widget_meta li:first-child{border:none;padding:0 0 .75rem 0}
-.blogroll li:last-child,.widget_archive li:last-child,.widget_categories li:last-child,.widget_meta li:last-child{padding:.75rem 0 0}
+.blogroll li:first-child,.widget_archive li:first-child,.widget_categories li:first-child,.widget_meta li:first-child,.widget_pages li:first-child,.widget_recent_comments li:first-child,.widget_recent_entries li:first-child{border:none;padding:0 0 .75rem 0}
+.blogroll li:last-child,.widget_archive li:last-child,.widget_categories li:last-child,.widget_meta li:last-child,.widget_pages li:last-child,.widget_recent_comments li:last-child,.widget_recent_entries li:last-child{padding:.75rem 0 0}
 .widget_archive select,.widget_categories select{width:100%;font-size:.75rem;border:1px solid #f5f6fa;border-radius:0;height:35px}
 /*--------------------------------------------------------------
   tagcloud style
@@ -573,54 +573,25 @@ bg style
 
 .time{color: #FFFFFF;text-align: center;line-height: 20px;margin-top: 15px;margin-bottom: 15px;margin-left: auto;background-color: #BDBDBD;border-radius: 10px;max-width:130px;font-size: 12px;margin-right: auto;}
 
-.grid_author_avt {
-    position: relative;
-    z-index: 9;
-    display: block;
-    width: 100px;
-    height: 36px;
-    margin-top: -24px;
-    margin-left: -10px;
-    transform: translateZ(0);
-}
-
-.grid_author_bggo {
-    position: absolute;
-    margin: auto;
-    top: 8px;
-    right: 0;
-    left: 24px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    z-index: 9;
-}
-
-.grid_author_avt:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-position: right top;
-    background-repeat: no-repeat;
-    /*background-size: 100px 30px;*/
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAfCAYAAABNjStyAAAABmJLR0QA/wD/AP+gvaeTAAAB1UlEQVRoge2YPWsUURhGz/WjsBIVNRAIrNGIiiCmUCQGRUhjI1j4D1L5P2xEsPMvmEa08aMQJCghopWVoBFCFsUIVoLielJstllQcnfuzJ3gPTBMM/PM+5xhZi4TyIi6EzgPzAHTwBFgbOiwz8BH4A3wFFgKIfxpcs7sqMfUO2rXeNbU2+pk7h61o55UH6i9EUQN01MX1KncvZKj7lHvqr8TiBrml3pL3Z27ZxLsP37vahA1zLI6nrtvJdQZdb0BWQNW1dO5e4+EOqv+aFDWgG/bTpo6rX7PIGtAVz1aR7eQOlA9CzwH9qbOjmQNuBhCWEkZmlSYegJ4ARxMmVuBD8BsCKGbKjCZMLUDLAJt+1K9py/tS4qwHSlC1AngMe2TBTAFPFQPpAirLEy9ALwFjlcfpzbOAa/VyjOOLEwN6jzwBEhy92qmAyyq1xu/snpGfZZlwZCGBUdcdmz5pa/uAq4AN4GrMee2lB5wH7gHvNzqL6N/llbHgEvAZeAacKjajK1lFXgEvAKWgE9/ExjUG8C+zW3/5r4DnAIONzJu+/gJrNAX+RVYH2xBNedk240k67D/iSIskiIskiIskiIskiIskiIskiIskiIskiIskiIskiIskg3BxADmB5cAEQAAAABJRU5ErkJggg==);
-    top: 6px;
-    left: 50%;
-    transform: translate(-50%,0);
-    z-index: -1;
-}
-.display-flex{display:flex;}
-.box-grid {
-    transition: box-shadow .3s cubic-bezier(.215,.61,.355,1),transform .3s cubic-bezier(.215,.61,.355,1),-webkit-box-shadow .3s cubic-bezier(.215,.61,.355,1),-webkit-transform .3s cubic-bezier(.215,.61,.355,1);
-    transform: translate(0,0);
-}
-
-.box-grid:hover {
-    -webkit-box-shadow: 0 34px 20px -24px rgba(136,161,206,0.3);
-    box-shadow: 0 34px 20px -24px rgba(136,161,206,0.3);
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-}
-
+.grid_author_avt{position:relative;z-index:9;display:block;width:100px;height:36px;margin-top:-24px;margin-left:-10px;transform:translateZ(0)}
+.grid_author_bggo{position:absolute;margin:auto;top:8px;right:0;left:24px;width:30px;height:30px;border-radius:50%;z-index:9}
+.grid_author_avt:after{content:'';position:absolute;width:100%;height:100%;background-position:right top;background-repeat:no-repeat;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAfCAYAAABNjStyAAAABmJLR0QA/wD/AP+gvaeTAAAB1UlEQVRoge2YPWsUURhGz/WjsBIVNRAIrNGIiiCmUCQGRUhjI1j4D1L5P2xEsPMvmEa08aMQJCghopWVoBFCFsUIVoLielJstllQcnfuzJ3gPTBMM/PM+5xhZi4TyIi6EzgPzAHTwBFgbOiwz8BH4A3wFFgKIfxpcs7sqMfUO2rXeNbU2+pk7h61o55UH6i9EUQN01MX1KncvZKj7lHvqr8TiBrml3pL3Z27ZxLsP37vahA1zLI6nrtvJdQZdb0BWQNW1dO5e4+EOqv+aFDWgG/bTpo6rX7PIGtAVz1aR7eQOlA9CzwH9qbOjmQNuBhCWEkZmlSYegJ4ARxMmVuBD8BsCKGbKjCZMLUDLAJt+1K9py/tS4qwHSlC1AngMe2TBTAFPFQPpAirLEy9ALwFjlcfpzbOAa/VyjOOLEwN6jzwBEhy92qmAyyq1xu/snpGfZZlwZCGBUdcdmz5pa/uAq4AN4GrMee2lB5wH7gHvNzqL6N/llbHgEvAZeAacKjajK1lFXgEvAKWgE9/ExjUG8C+zW3/5r4DnAIONzJu+/gJrNAX+RVYH2xBNedk240k67D/iSIskiIskiIskiIskiIskiIskiIskiIskiIskiIskiIskg3BxADmB5cAEQAAAABJRU5ErkJggg==);top:6px;left:50%;transform:translate(-50%,0);z-index:-1}
+.display-flex{display:flex}
+.box-grid{transition:box-shadow .3s cubic-bezier(.215,.61,.355,1),transform .3s cubic-bezier(.215,.61,.355,1),-webkit-box-shadow .3s cubic-bezier(.215,.61,.355,1),-webkit-transform .3s cubic-bezier(.215,.61,.355,1);transform:translate(0,0)}
+.box-grid:hover{-webkit-box-shadow:0 34px 20px -24px rgba(136,161,206,0.3);box-shadow:0 34px 20px -24px rgba(136,161,206,0.3);-webkit-transform:translateY(-5px);transform:translateY(-5px);-ms-transform:translateY(-5px)}
+#searchform{padding:5px 30px}
+#searchform input[type="text"]{color:#393e46;border:1px solid #f2f2f5;border-radius:.15rem;padding:.225rem .575rem!important}
+#searchsubmit{color:#fff;background-color:#448ef6;border-color:#448ef6;display:inline-block;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid transparent;font-size:.875rem;line-height:1.5;border-radius:2px;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}
+.widget_calendar h3{display:none}
+#calendar_wrap{padding:20px}
+#wp-calendar{width:100%}
+#wp-calendar #today{background:#F5F9FE;color:#8DDB6B;font-weight:bold}
+#wp-calendar tbody a{font-weight:bold;color:#4680ff}
+#wp-calendar caption{font:14px 'Microsoft Yahei',arial,SimSun,sans-serif;background:#F1F6FC;color:#4680ff;font-weight:bold;letter-spacing:-0.05em;text-align:center;padding:5px 0 5px 0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
+#wp-calendar th,#wp-calendar td{text-align:center}
+#wp-calendar tbody td{border:1px solid #E9F0F4;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px}
+#wp-calendar tbody td.pad{border:0 none}
+#wp-calendar th{background:#4680ff;color:#fff}
+#wp-calendar td#prev{text-align:left;padding-top:5px}
+#wp-calendar td#next{text-align:right;padding-top:5px}
+#recommended_posts .widget_search{margin-bottom: 1rem;}
