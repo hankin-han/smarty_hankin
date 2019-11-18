@@ -37,7 +37,7 @@ function hljsLoad(){
 			    nextSelector:".pagenavi a",
 			    navSelector:".pagenavi",
 			    itemSelector:"#list-home .list-box",
-			    animate: true,
+			    animate: false,
 			    extraScrollPx: 30, //离网页底部多少像素时触发ajax 
 			});
 			$("#list-grid").infinitescroll({
@@ -49,7 +49,7 @@ function hljsLoad(){
 			    nextSelector:".pagenavi a",
 			    navSelector:".pagenavi",
 			    itemSelector:"#list-grid .list-box",
-			    animate: true,
+			    animate: false,
 			    extraScrollPx: 30, //离网页底部多少像素时触发ajax 
 			});
 		});

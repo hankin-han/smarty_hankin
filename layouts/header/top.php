@@ -10,7 +10,7 @@ $i_avatar_logo = cs_get_option('i_avatar_logo'); //自定义友情链接
             <?php if(empty($i_avatar_logo)):?>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo2.png" alt="" class="logo">
             <?php else:?>
-            <img src="<?php echo $i_avatar_logo?>" alt="" class="logo">
+            <img src="<?php echo $i_avatar_logo?>" alt="" class="logo" width="68" height="auto">
             <?php endif;?>
         </a>
         <a href="#!" class="mob-toggler">

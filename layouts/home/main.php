@@ -16,7 +16,6 @@
                 <?php else:?>
                 <?php get_template_part( 'layouts/home/list' );?>
                 <?php get_template_part( 'layouts/home/box_grid' );?>
-                        
                 <?php endif;?>
                 <!-- [ list ] end -->
             </div>

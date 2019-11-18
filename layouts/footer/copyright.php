@@ -1,16 +1,19 @@
+<?php
+$i_avatar_beian = cs_get_option('i_avatar_beian'); //备案号
+$i_avatar_option_footer = cs_get_option('i_avatar_option_footer'); //备案号
+?>
 <footer class="footer card py-3 py-lg-3">
     <div class="container">
-        <div class="d-md-flex flex-md-fill align-items-md-center">
-            <div class="d-md-flex flex-md-column">
-                <div class="footer-copyright text-xs px-3">
-        			Copyright © <?= date("Y") ?> <a href="" title="" rel="home"><?php echo _the_theme_name()?> 主题</a>. Designed by <a href="http://www.hankin.cn" title="hankin" target="_blank">hankin</a>
-        		</div>
-            </div>
-            <div class="flex-md-fill"></div>
-        </div>
+        <div class="footer-copyright text-xs px-3">
+			<div class="float-left">Copyright © <?= date("Y") ?> 
+            网站备案号：<?php if($i_avatar_beian == ''):?> 请去后台填写 <?php else:?><a href="http://www.beian.miit.gov.cn/" target="_blank"><?= $i_avatar_beian ?></a><?php endif;?> 
+            <?= $i_avatar_option_footer?></div>
+            <?php 、/* 请尊重博主的劳动成果 你忍心删除我？ */ ?>
+            <div class="float-right"><a href="" title="" rel="home"><?php echo _the_theme_name()?> 主题</a>. Designed by <a href="http://www.hankin.cn" title="hankin" target="_blank">hankin</a></div>
+		</div>
     </div>
 </footer>
-<div class="mobile-btn clearfix">
+<div class="mobile-btn clearfix" style="display: none">
     <div class="menu">
         <div class="bt-name"><a href="<?= home_url();?>"><i class="feather icon-home"></i>主页</a></div>
     </div>
@@ -88,5 +91,4 @@
             </div>
         </div>
     </div>
-
 </div>

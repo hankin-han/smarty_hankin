@@ -416,7 +416,7 @@ $options[] = [
       ],
     ],
   ];
-
+*/
 
   // ------------------------------
   // 页面元素                         -
@@ -426,137 +426,6 @@ $options[] = [
     'title' => '外观设置',
     'icon' => 'fa fa-globe',
     'fields' => [
-
-      //背景设置
-      [
-        'type' => 'notice',
-        'class' => 'info',
-        'content' => '背景设置',
-      ],
-
-      // 开启背景
-      [
-        'id' => 'i_skin_body_check',
-        'type' => 'radio',
-        'title' => '背景设置',
-        'options' => [
-          'none' => '不开启',
-          'background' => '壁纸背景',
-          'video' => '视频背景',
-          'canvas' => '动态背景',
-        ],
-        'default' => 'none',
-      ],
-
-      // 壁纸背景
-      [
-        'id' => 'i_skin_body',
-        'type' => 'background',
-        'title' => '壁纸背景',
-        'default' => [
-          'image' => "https://www.hankin.cn/wp-content/themes/hankin/images/bg.jpg",
-          'repeat' => 'repeat-x',
-          'position' => 'center center',
-          'attachment' => 'fixed',
-          'color' => '#fff',
-        ],
-        'dependency' => [ 'i_skin_body_check_background', '==', 'true' ]
-      ],
-
-      // 视频背景
-      [
-        'id' => 'i_skin_body_video',
-        'type' => 'upload',
-        'title' => '视频背景',
-        'desc' => '可上传视频或使用视频地址<br>注：视频背景使用后，内存消耗有点大，请选择小于5M的视频文件<br><a href="https://videos.pexels.com/" target="_blank">视频资源下载</a>',
-        'default' => "https://ninghao.net/sites/all/themes/ninghao/images/blue_bokeh.mp4 ",
-        'dependency' => [ 'i_skin_body_check_video', '==', 'true' ]
-      ],
-
-      // 背景暗色效果
-      [
-        'id' => 'i_skin_body_canvas',
-        'type' => 'select',
-        'title' => '动态背景',
-        'options' => [
-          1 => '梦幻背景动画特效',
-          2 => '网状粒子效果',
-          3 => '宇宙星空效果',
-          4 => '宇宙星空效果2',
-          5 => '宇宙星空烟花',
-        ],
-        'default' => '0',
-        'dependency' => [ 'i_skin_body_check_canvas', '==', 'true' ]
-      ],
-
-      // 模式选择
-      [
-        'id' => 'i_skin_body_mode',
-        'type' => 'radio',
-        'title' => '模式选择',
-        'options' => [
-          'none' => '不开启',
-          'transparent' => '透明模式',
-          'black' => '护眼模式-黑暗',
-        ],
-        'default' => 'none'
-      ],
-
-      // 背景暗色效果
-      [
-        'id' => 'i_filter_brightness',
-        'type' => 'select',
-        'title' => '背景暗色效果',
-        'desc' => '注：开启透明模式后觉得背景<font color="green">太亮</font>，可使用暗色效果',
-        'help' => '开启透明模式后，觉得背景太亮 可以使用 背景暗色效果',
-        'options' => [
-          '100' => '100',
-          '95' => '95',
-          '90' => '90',
-          '85' => '85',
-          '80' => '80',
-          '75' => '75',
-          '70' => '70',
-          '65' => '65',
-          '60' => '60',
-          '55' => '55',
-          '50' => '50',
-          '45' => '45',
-          '40' => '40',
-          '35' => '35',
-          '30' => '30',
-          '25' => '25',
-          '20' => '20',
-          '15' => '15',
-          '10' => '10',
-          '5' => '5',
-          '0' => '0',
-        ],
-        'default' => '80',
-        'dependency' => [ 'i_skin_body_mode_transparent', '==', 'true' ]
-      ],
-
-      // 背景高斯模糊效果
-      [
-        'id' => 'i_filter_blur',
-        'type' => 'select',
-        'title' => '背景模糊效果',
-        'desc' => '注：开启透明模式后觉得背景<font color="green">太亮或太花</font>，可使用模糊效果',
-        'help' => '开启透明模式后，觉得背景太亮或太花 可以使用 背景高斯模糊效果',
-        'options' => [
-          '0' => '0',
-          '5' => '5',
-          '10' => '10',
-          '15' => '15',
-          '20' => '20',
-          '25' => '25',
-          '30' => '30',
-          '35' => '35',
-        ],
-        'default' => '0',
-        'dependency' => [ 'i_skin_body_mode_transparent', '==', 'true' ]
-      ],
-
       //基本设置
       [
         'type' => 'notice',
@@ -566,75 +435,16 @@ $options[] = [
 
       // 显示换肤按钮
       [
-        'id' => 'i_me_switch',
+        'id' => 'i_theme_switch',
         'type' => 'switcher',
         'title' => '显示换肤按钮',
-        'label' => '<font color="red">注：如果开启了换肤功能，后端的主题设置则无法正常使用</font>',
-        'help' => '注：如果开启了换肤功能，后端的主题设置则无法正常使用',
-      ],
-
-      // 主题风格
-      [
-        'id' => 'i_theme_color',
-        'type' => 'image_select',
-        'title' => '主题风格',
-        'default' => 7,
-        'options' => [
-          0 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/0.png',
-          1 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/1.png',
-          2 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/2.png',
-          3 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/3.png',
-          4 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/4.png',
-          5 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/5.png',
-          6 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/6.png',
-          7 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/7.png',
-          8 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/8.png',
-          9 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/9.png',
-          10 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/10.png',
-          11 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/11.png',
-          12 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/12.png',
-          13 => 'https://www.hankin.cn/wp-content/themes/hankin/images/theme_color/13.png',
-        ],
-      ],
-
-      // 固定头部
-      [
-        'id' => 'i_header_fixed',
-        'type' => 'switcher',
-        'title' => '固定头部',
-      ],
-
-      // 固定导航
-      [
-        'id' => 'i_aside_fixed',
-        'type' => 'switcher',
-        'title' => '固定导航',
-      ],
-
-      // 折叠导航
-      [
-        'id' => 'i_aside_folded',
-        'type' => 'switcher',
-        'title' => '折叠导航',
-      ],
-
-      // 置顶导航
-      [
-        'id' => 'i_aside_dock',
-        'type' => 'switcher',
-        'title' => '置顶导航',
-      ],
-
-      // 盒子模型
-      [
-        'id' => 'i_layout_boxed',
-        'type' => 'switcher',
-        'title' => '盒子模型',
+        'label' => '',
+        'help' => '',
       ],
 
     ],
   ];
-
+/*
   // ------------------------------
   // 文章设置                       -
   // ------------------------------
@@ -916,22 +726,16 @@ $options[] = [
         'title' => '开启自动播放',
       ],
 
-      // 显示播放列表
-      [
-        'id' => 'i_music_list_show',
-        'type' => 'switcher',
-        'title' => '显示播放列表',
-      ],
 
       // 音乐循环
       [
         'id' => 'i_music_loop',
         'type' => 'select',
         'options' => [
-          'singleloop' => '单曲循环',
-          'listloop' => '列表循环',
+          'false' => '单曲循环',
+          'true' => '列表循环',
         ],
-        'default' => 'listloop',
+        'default' => 'true',
         'title' => '音乐循环',
       ],
 
@@ -939,7 +743,7 @@ $options[] = [
       [
         'type' => 'notice',
         'class' => 'info',
-        'content' => "URL形如<code>http://music.163.com/#/song?id=9474056</code>ID即为<code>id=</code>后面的数字",
+        'content' => "URL形如<code>https://music.163.com/#/my/m/music/playlist?id==9474056</code>ID即为<code>id=</code>后面的数字",
       ],
 
       // 音乐播放列表id

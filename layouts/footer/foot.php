@@ -5,6 +5,11 @@ $i_seo_keywords = cs_get_option('i_seo_keywords'); //关键词
 $i_seo_description = cs_get_option('i_seo_description'); //关键词
 $i_appId = cs_get_option('i_appId'); //appid
 $i_appSecret = cs_get_option('i_appSecret'); //appSecret
+$i_theme_switch = cs_get_option('i_theme_switch'); //i_theme_switch
+$i_music_check = cs_get_option('i_music_check'); //开启播放器
+$i_music_auto_play = cs_get_option('i_music_auto_play'); //开启自动播放
+$i_music_loop = cs_get_option('i_music_loop'); //音乐循环
+$i_music_value = cs_get_option('i_music_value'); //音乐播放列表id
 ?>
 <!--定义全局变量--> 
 <script type="text/javascript">
@@ -34,7 +39,7 @@ wxConfig = {
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.cookie.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/bootstrap.min.js?version=<?= time()?>"></script>
-<?php if(!wp_is_mobile()):?>
+<?php if(!wp_is_mobile() && $i_theme_switch):?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu-setting.min.js?version=<?= time()?>"></script>
 <?php endif;?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/clipboard.min.js?version=<?= time()?>"></script>
@@ -47,7 +52,14 @@ wxConfig = {
 <div id="cz-leftside-share"></div>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.share.min.js?version=<?= time()?>"></script>
 <!-- 分享插件 end-->
-<?php if(!wp_is_mobile()):?>
+<?php if(!wp_is_mobile() && $i_music_check):?>
+<script type="text/javascript">
+	playerConfig = {
+		autoplay : <?= $i_music_auto_play ? 'true' : 'false' ?>,
+		loop : <?= $i_music_loop?>,
+		ids : <?= $i_music_value?>,
+	}
+</script>
 <!-- 音乐播放器 start-->
 <div class="aplayer-footer"><div class="ap-f" id="ap-f"></div></div>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/player/css/play.css">
