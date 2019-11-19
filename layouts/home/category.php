@@ -1,7 +1,7 @@
 <?php if(is_category()):?>
 <div class="list-cover list-rounded mb-3 mb-md-4 animated fadeIn">
     <div class="list-item list-overlay-content overlay-hover bg-dark">
-        <div class="media media-21x9">
+        <div class="media media-5x1">
             <div class="media-content" style="background-image:url('<?= getThumbnail()?>')"><div class="overlay"></div></div>
         </div>
         <div class="list-content p-3 p-md-4">

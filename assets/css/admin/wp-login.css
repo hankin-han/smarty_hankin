@@ -1,0 +1,84 @@
+.login {
+  position: relative;
+  background-image: url("../../images/nav-bg/body-bg-4.png");
+  background-position: center;
+  background-size: cover;
+}
+#login {
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+  padding: 0;
+  top: 50%;
+  margin-top: -300px;
+  background: #fff;
+  width: 400px;
+  border-radius: 4px;
+}
+#login h1 {
+  padding: 30px 0;
+}
+#login h1 a {
+  background-image: url("../../images/user/avatar.png");
+  border-radius: 50px;
+  box-shadow: 0 0 10px 5px #e4eaef;
+  background-size: 100%;
+  background-position: center;
+  margin: 0 auto;
+  width: 80px;
+  outline: none;
+  height: 80px;
+  transition: all 0.2s;
+}
+#login h1 a:hover {
+  box-shadow: 0 0 10px 5px #bfd9ef;
+}
+#login form {
+  box-shadow: none;
+  margin-top: 0;
+  padding: 10px 30px 2px;
+}
+#login form input {
+  padding: 7px 10px;
+  margin-top: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 40px;
+}
+#login form input:focus {
+  border-color: #419df5;
+  box-shadow: 0 0 2px #7bb8f3;
+}
+#login form .forgetmenot {
+  padding-bottom: 20px;
+  padding-top: 7px;
+}
+#login form .forgetmenot input[type=checkbox],
+#login form .forgetmenot input[type=radio] {
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
+}
+#login form .submit {
+  float: none;
+}
+#login form .submit input[type=submit] {
+  width: 100%;
+  background: #419df5;
+  border-color: #419df5;
+  line-height: 40px;
+  padding: 0;
+  text-shadow: none;
+  box-shadow: none;
+}
+#login #nav,
+#login #backtoblog {
+  padding-left: 30px;
+}
+@media screen and (max-width: 767px) {
+  #login {
+    left: 5%;
+    margin-left: 0;
+    width: 90%;
+  }
+}
