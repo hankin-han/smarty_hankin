@@ -1,5 +1,32 @@
 
 function hljsLoad(){
+
+
+$("#author").blur(function(){
+var _this = $(this);
+var url = '/wp-admin/admin-ajax.php?action=get_ajax_qq&qq='+_this.val();
+if(_this.val() !==""){
+	$("#comment-loader").show();
+	$.get(url, function(result){
+		$("#comment-loader").hide();
+	   	var avatar = result.data.avatar;
+	   	var qq = result.data.id;
+	   	var name = result.data.name;
+	   	$("#avatar_img").attr("src",avatar);
+	   	$("#email").val(qq+'@qq.com');
+	   	_this.val(qq);
+	   	$("#clear-qq").find("font").text(name);
+	   	$.cookie('hankin-avatar', avatar, { expires: 7 });
+	   	$.cookie('hankin-qq', qq, { expires: 7 });
+	   	$.cookie('hankin-username', name, { expires: 7 });
+	});
+}
+})
+
+$("#clear-qq").on("click",function(){
+	$("#qqShow").toggle(100);
+});
+
 	hljs.initHighlightingOnLoad();
       $('pre code').each(function(j, block) {
         hljs.highlightBlock(block);
@@ -87,6 +114,9 @@ function hljsLoad(){
  setTimeout(window.autoAnimation, 5000);
 }
 hljsLoad();
+
+
+
 $(".pcoded-navbar .close").on("click", function() {
 	var a = $(this);
 	a.parents(".card").fadeOut("slow").remove()

@@ -294,7 +294,7 @@ post content
 .post-content h2.quote{font-size:1.25rem;color:#2d3757;padding-bottom:1rem;border-bottom:solid 1px #f0f4f7}
 .post-content ul{list-style:disc}
 .post-content ol{list-style:decimal}
-.post-content ol,.post-content ul{margin:0 0 20px 45px;font-size:.875rem}
+.post-content ol,.post-content ul{font-size:.875rem}
 .post-content ol li,.post-content ul li{margin:15px 0}
 /*--------------------------------------------------------------
   post share  style
@@ -562,7 +562,8 @@ bg style
 .new-sub ul li{list-style: none;}
 .user-info{display: block;width: 101vw;left: calc(-67vw);padding: 0;display: none;}
 .clear-lineheight{line-height: 1;}
-@media only screen and (max-width:414px){.bg-relative{display: block;}.mobile-btn{display: block;}#styleSelector{display: none;}}
+.footer-copyright .d-none{display: block!important;}
+@media only screen and (max-width:414px){.bg-relative{display: block;}.mobile-btn{display: block;}#styleSelector{display: none;}.footer-copyright .d-none{display: none!important;}}
 
 #infscr-loading{text-align: center;color: #ccc;}
 

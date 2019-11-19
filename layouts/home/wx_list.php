@@ -3,6 +3,7 @@
     <div class="container" id="list-home">
 <?php if (have_posts()): ?>
     <?php while (have_posts()) : the_post(); ?>
+    <div class="list-box">
     <div class="row list-grouped">
             <div class="col-md-4 col-lg-12">
                 <div class="list-item block">
@@ -26,6 +27,7 @@
                 </div>
             </div>
         </div>
+    </div>  
     <?php endwhile; ?>
 <?php endif;?>
 <div class="pagenavi text-center"><?php next_posts_link('加载更多') ?></div>

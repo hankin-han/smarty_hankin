@@ -296,7 +296,7 @@ class RandLists extends WP_Widget {
             $query_posts = new WP_Query($args);
             $num = 0;
             extract($args);
-            echo $before_widget;
+            
         
             echo '<div id="recommended_posts">';
             echo '    <div id="recommended_posts_1" class="card card-sm widget Recommended_Posts">';
@@ -312,7 +312,7 @@ class RandLists extends WP_Widget {
             echo '                <div class="py-2">';
             echo '                    <div class="list-item list-overlay-content">';
             echo '                        <div class="media media-2x1">';
-            echo '                            <a class="media-content" href="'.the_permalink().'" style="background-image:url('.getThumbnail().')">';
+            echo '                            <a class="media-content" href="'.get_the_permalink().'" style="background-image:url('.getThumbnail().')">';
             echo '                                <span class="overlay"></span>';
             echo '                            </a>';
             echo '                        </div>';
@@ -349,8 +349,6 @@ class RandLists extends WP_Widget {
             echo '        </div>';
             echo '    </div>';
             echo '</div>';
-
-            echo $after_widget;
         }
         function update($new_instance, $old_instance) {
             $instance = $old_instance;

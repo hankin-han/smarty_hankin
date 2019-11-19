@@ -25,45 +25,43 @@ if (post_password_required())
                     <div class="comment-from-author">
                         <div class="comment-avatar-author d-flex flex-fill align-items-center text-sm mb-2">
                             <div class="flex-avatar w-32">
-                                <img src="<?= json_get_avatar_url(get_avatar( get_the_author_meta( 'user_email' ),'80' )) ?>" class="avatar w-32"></div>
+                            <?php if ($_COOKIE['hankin-username']) : ?>
+                                <img src="<?= $_COOKIE['hankin-avatar'] ?>" class="avatar w-32" id="avatar_img">
+                            <?php else:?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/user/default-avatar.png" class="avatar w-32" id="avatar_img">
+                            <?php endif;?>
+                            </div>
                         </div>
                         <div class="comment-form-text">
-                            <?php if ($user_ID) : ?>
-                                <p class="warning-text" style="margin-bottom:10px">以<a
-                                    href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>身份登录
-                            | <a class="link-logout" href="<?php echo wp_logout_url(get_permalink()); ?>">注销 »</a></p>
-                            <div class="comment-textarea mb-3">
-                                <textarea id="comment" name="comment" class="form-control form-control-sm" rows="3"></textarea>
-                            </div>
-                            <?php else : ?>
-                            <div class="comment-textarea mb-3">
-                                <textarea id="comment" name="comment" class="form-control form-control-sm" rows="3"></textarea>
-                            </div>
-                            <div class="comment-form-info row row-sm">
-                                <div class="col">
+                            <?php if ($_COOKIE['hankin-username']) : ?>
+                                <p class="warning-text" style="margin-bottom:10px">欢迎您 <a href="javascript:void(0)" no-pjax id="clear-qq"><font color="#4680ff"><?= $_COOKIE['hankin-username']; ?></font> &nbsp;<i class="feather icon-edit"></i></a></p>
+                            <div class="comment-form-info row row-sm" id="qqShow" style="<?php if($_COOKIE['hankin-username']):?>display:none<?php endif;?>">
+                                <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-author">
-                                        <input class="form-control text-sm" id="author" placeholder="昵称[必填]" name="author" type="text" value="<?php echo $comment_author; ?>" required="required"></div>
+                                    <input class="form-control text-sm" id="author" placeholder="QQ号【可获取头像和昵称】" name="author" type="text" value="<?= $_COOKIE['hankin-qq']; ?>" required="required">
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-email">
-                                        <input id="email" class="form-control text-sm" name="email" placeholder="邮箱[必填]" type="email" value="<?php echo $comment_author_email; ?>" required="required"></div>
+                                        <input id="email" class="form-control text-sm" name="email" placeholder="自动获取" type="email" value="<?= $_COOKIE['hankin-qq'].'@qq.com'; ?>" readonly autocomplete="off"></div>
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-url">
-                                        <input class="form-control text-sm" placeholder="网址(可不填)" id="url" name="url" type="url" value="<?php echo $comment_author_url; ?>"></div>
+                                        <input class="form-control text-sm" placeholder="网址(可不填)" id="url" name="url" type="url" value=""></div>
                                 </div>
                             </div>
                             <?php endif; ?>
+                            <div class="loader-comment" style="display: none;" id="comment-loader">
+                                <div class="loader-track">
+                                    <div class="loader-fill"></div>
+                                </div>
+                            </div>
+                            <div class="comment-textarea mb-3">
+                                <textarea id="comment" name="comment" class="form-control form-control-sm" rows="3"></textarea>
+                            </div>
                             <div class="d-flex flex-fill align-items-center">
-                                <!-- <div class="nice-checkbox text-muted text-xs">
-                                <label for="nice-checkbox-comment">
-                                <input type="checkbox" name="checkbox" id="nice-checkbox-comment" class="d-none">
-                                <span class="nice-checkbox-text"></span>邮件通知我
-                                </label>
-                                </div> --> 
                                 <div class="flex-fill"></div>
                                 <div class="form-submit">
-                                    <a rel="nofollow" id="cancel-comment-reply-link" style="display: none" href="javascript:;" class="btn btn-light mx-2">再想想</a>
                                     <button type="submit" id="submit" class="btn btn-dark">发布评论</button>
                                     <?php comment_id_fields(); ?>
                                 </div>

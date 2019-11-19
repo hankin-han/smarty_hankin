@@ -45,6 +45,27 @@ function custom_adminbar_menu($meta = TRUE)
 }
 add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
 
+/* 
+ * 移除工具条占位空白
+ */  
+function remove_adminbar_margin() {  
+    $remove_adminbar_margin = '<style type="text/css">  
+        html { margin-top: -28px !important; }  
+        * html body { margin-top: -28px !important; }  
+    </style>';  
+    echo $remove_adminbar_margin;  
+}  
+/* 针对后台 */  
+/*if ( is_admin() ) {  
+    remove_action( 'init', '_wp_admin_bar_init' );  
+    add_action( 'admin_head', 'remove_adminbar_margin' );  
+}  */
+/* 针对前台 */  
+/*if ( !is_admin() ) {  
+    remove_action( 'init', '_wp_admin_bar_init' );  
+    add_action( 'wp_head', 'remove_adminbar_margin' );  
+}*/
+
 
 register_nav_menu('warp-nav', 'smarty_hankin-左侧菜单');
 register_nav_menu('top-warp-nav', 'smarty_hankin-顶部菜单');
@@ -459,6 +480,7 @@ function categoryPage($range = 4)
 /* 获取默认封面 */
 function getThumbnail()
 {
+    global $post;
     $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 
     if(!empty($large_image_url[0]))
@@ -501,9 +523,31 @@ function timeGo($ptime)
     return TRUE;
 }
 
+
+function qqMsg($qq)
+{
+    $api = "http://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=";
+
+    $avatarApi = "https://q1.qlogo.cn/g?b=qq&s=5&nk=";
+
+    $contents = file_get_contents($api.$qq);
+    if($contents){
+        $data = iconv("GB2312","UTF-8",$contents);
+        $pattern = '/portraitCallBack\((.*)\)/is';
+        preg_match($pattern,$data,$result);
+        $result = $result[1];
+        $result = json_decode($result, true)[$qq];
+
+        return [
+            'nickname' => $result[6],
+            'avatar' => $avatarApi.$qq,
+        ];
+    }
+}
+
 /**
 * 根据 QQ号获取 昵称和头像
-* http://test.www.hankin.cn/wp-admin/admin-ajax.php?action=get_ajax_qq&qq=315444473
+* http://www.hankin.cn/wp-admin/admin-ajax.php?action=get_ajax_qq&qq=315444473
 */
 function get_ajax_qq() {
   // 输出响应
@@ -702,17 +746,18 @@ function simple_comment($comment, $args, $depth) {
    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-<?php comment_ID(); ?>">
         <article id="div-comment-<?php comment_ID(); ?>" class="comment-body d-flex flex-fill ">
             <div class="comment-avatar-author vcard mr-2 mr-md-3 ">
+                <?php $qqMsg = qqMsg(get_comment_author())?>
                 <div class="flex-avatar w-48">
-                    <?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?>
+                    <img src="<?= $qqMsg['avatar']?>" width="48" height="48">
                 </div>
             </div>
             <div class="comment-text d-flex flex-fill flex-column">
                 <div class="comment-info d-flex align-items-center mb-1">
                     <div class="comment-author text-sm">
                         <?php if(!get_comment_author_url()) : ?>
-                            <?php comment_author(); ?>
+                            <?= $qqMsg['nickname']?>
                             <?php else : ?>
-                            <a href="<?php comment_author_url(); ?>" target="_blank" rel='nofollow'><?php comment_author(); ?></a>
+                            <a href="<?= get_comment_author_url()?>" target="_blank" rel='nofollow'><?= $qqMsg['nickname']?></a>
                         <?php endif; ?>
                         <?php if ($comment->comment_approved == '0') : ?>
                             <em>评论等待审核...</em><br />
