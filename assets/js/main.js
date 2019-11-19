@@ -1,7 +1,5 @@
 
 function hljsLoad(){
-
-
 $("#author").blur(function(){
 var _this = $(this);
 var url = '/wp-admin/admin-ajax.php?action=get_ajax_qq&qq='+_this.val();
@@ -9,6 +7,11 @@ if(_this.val() !==""){
 	$("#comment-loader").show();
 	$.get(url, function(result){
 		$("#comment-loader").hide();
+		if(result.result.code == '1000')
+		{
+			alert(result.result.msg);
+			return false;
+		}
 	   	var avatar = result.data.avatar;
 	   	var qq = result.data.id;
 	   	var name = result.data.name;

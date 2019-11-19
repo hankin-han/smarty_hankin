@@ -38,12 +38,29 @@ if (post_password_required())
                             <div class="comment-form-info row row-sm" id="qqShow" style="<?php if($_COOKIE['hankin-username']):?>display:none<?php endif;?>">
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-author">
-                                    <input class="form-control text-sm" id="author" placeholder="QQ号【可获取头像和昵称】" name="author" type="text" value="<?= $_COOKIE['hankin-qq']; ?>" required="required">
+                                    <input class="form-control text-sm" id="author" placeholder="QQ号【可获取头像和昵称】" name="author" type="number" value="<?= $_COOKIE['hankin-qq']; ?>" required="required">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-email">
                                         <input id="email" class="form-control text-sm" name="email" placeholder="自动获取" type="email" value="<?= $_COOKIE['hankin-qq'].'@qq.com'; ?>" readonly autocomplete="off"></div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group comment-form-url">
+                                        <input class="form-control text-sm" placeholder="网址(可不填)" id="url" name="url" type="url" value=""></div>
+                                </div>
+                            </div>
+                            <?php else:?>
+                                <p class="warning-text" style="margin-bottom:10px">欢迎您 <a href="javascript:void(0)" no-pjax id="clear-qq"><font color="#4680ff">游客</font> &nbsp;<i class="feather icon-edit"></i></a></p>
+                            <div class="comment-form-info row row-sm" id="qqShow">
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group comment-form-author">
+                                    <input class="form-control text-sm" id="author" placeholder="QQ号【可获取头像和昵称】" name="author" type="number" value="" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group comment-form-email">
+                                        <input id="email" class="form-control text-sm" name="email" placeholder="自动获取" type="email" value="" readonly autocomplete="off"></div>
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-url">

@@ -574,7 +574,7 @@ function get_ajax_qq() {
     }
     ajaxResult(200,'',["id"=> intval($qq),"name"=>$nickname,"avatar"=>$avatar]);
   }else{
-    ajaxResult(1000,'',["id"=> "","name"=>"","avatar"=>""]);
+    ajaxResult(1000,'QQ格式不正确',["id"=> "","name"=>"","avatar"=>""]);
   }
 }
 add_action( 'wp_ajax_nopriv_get_ajax_qq', 'get_ajax_qq' );
