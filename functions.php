@@ -29,7 +29,7 @@ function custom_adminbar_menu($meta = TRUE)
 
         $wp_admin_bar->add_menu([
             'id' => 'custom_menu',
-            'title' => __('<i style="position: relative;top:5px;color:#9ea3a8" 
+            'title' => __('<i style="position: relative;top:7px;color:#9ea3a8" 
                 class="wp-menu-image dashicons-before dashicons-admin-settings">
                 </i>&nbsp;&nbsp;smarty_hankin 主题设置'),
             'href' => '/wp-admin/admin.php?page=cs-framework',
@@ -48,12 +48,18 @@ add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
 
 register_nav_menu('warp-nav', 'smarty_hankin-左侧菜单');
 register_nav_menu('top-warp-nav', 'smarty_hankin-顶部菜单');
-//用户自定义头像功能
-/* 设置后台样式*/
-function admin_my_css() {
-    wp_enqueue_style( "admin-my", get_template_directory_uri() . "/assets/css/admin-my.css" );
+
+/* 设置登录样式*/
+function wp_login_style() {
+    wp_enqueue_style( "wp-login", get_template_directory_uri() . "/assets/css/admin/wp-login.css" );
 }
-add_action('admin_head', 'admin_my_css');
+add_action('login_enqueue_scripts', 'wp_login_style');
+/* 设置后台样式*/
+function wp_admin_style() {
+    wp_enqueue_style( "wp-admin", get_template_directory_uri() . "/assets/css/admin/wp-admin.css" );
+}
+add_action('admin_head', 'wp_admin_style');
+
 
 /* 获取主题名称 */
 function _the_theme_name()

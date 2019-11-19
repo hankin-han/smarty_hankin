@@ -370,7 +370,7 @@ post content
 /*--------------------------------------------------------------
   widget_categories style
 --------------------------------------------------------------*/
-
+.widget_categories .screen-reader-text{display: none}
 .blogroll li,.widget_archive li,.widget_categories li,.widget_meta li,.widget_pages li,.widget_recent_comments li,.widget_recent_entries li{position:relative;font-size:.75rem;color:#393e46;padding:.75rem 0;text-transform:uppercase;border-top:1px solid #f5f6fa;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center;text-align:justify;justify-content:space-between}
 .blogroll li{-ms-flex-direction:column;flex-direction:column;justify-content:normal;-ms-flex-align:normal;align-items:normal}
 .blogroll li a,.widget_archive li a,.widget_categories li a,.widget_meta li a,.widget_pages li a,.widget_recent_comments li a,.widget_recent_entries li a{font-size:.875rem}
@@ -378,7 +378,7 @@ post content
 .blogroll li a img{width:26px;height:26px;border-radius:100%;margin-right:10px}
 .blogroll li:first-child,.widget_archive li:first-child,.widget_categories li:first-child,.widget_meta li:first-child,.widget_pages li:first-child,.widget_recent_comments li:first-child,.widget_recent_entries li:first-child{border:none;padding:0 0 .75rem 0}
 .blogroll li:last-child,.widget_archive li:last-child,.widget_categories li:last-child,.widget_meta li:last-child,.widget_pages li:last-child,.widget_recent_comments li:last-child,.widget_recent_entries li:last-child{padding:.75rem 0 0}
-.widget_archive select,.widget_categories select{width:100%;font-size:.75rem;border:1px solid #f5f6fa;border-radius:0;height:35px}
+.widget_archive select,.widget_categories select{width:90%;font-size:.75rem;border:1px solid #f5f6fa;border-radius:0;height:35px;margin: 10px 14px;}
 /*--------------------------------------------------------------
   tagcloud style
 --------------------------------------------------------------*/
