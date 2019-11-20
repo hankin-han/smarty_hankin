@@ -1,6 +1,6 @@
 
 function hljsLoad(){
-$("#author").blur(function(){
+$("#hankin_qq").blur(function(){
 var _this = $(this);
 var url = '/wp-admin/admin-ajax.php?action=get_ajax_qq&qq='+_this.val();
 if(_this.val() !==""){
@@ -17,6 +17,9 @@ if(_this.val() !==""){
 	   	var name = result.data.name;
 	   	$("#avatar_img").attr("src",avatar);
 	   	$("#email").val(qq+'@qq.com');
+	   	$("#hankin_avatar").val(avatar);
+	   	$("#hankin_username").val(name);
+	   	$("#avatar").val(name);
 	   	_this.val(qq);
 	   	$("#clear-qq").find("font").text(name);
 	   	$.cookie('hankin-avatar', avatar, { expires: 7 });

@@ -611,27 +611,7 @@ function wpjam_locale($locale) {
 } 
 
 
-// 数据库插入评论表单的qq字段 
-add_action('wp_insert_comment','inlojv_sql_insert_qq_field',10,2);
-function inlojv_sql_insert_qq_field($comment_ID,$commmentdata) {
-$qq = isset($_POST['new_field_qq']) ? $_POST['new_field_qq'] : false;  
-update_comment_meta($comment_ID,'new_field_qq',$qq); // new_field_qq 是表单name值，也是存储在数据库里的字段名字
-}
-// 后台评论中显示qq字段
-add_filter( 'manage_edit-comments_columns', 'add_comments_columns' );
-add_action( 'manage_comments_custom_column', 'output_comments_qq_columns', 10, 2 );
-function add_comments_columns( $columns ){
-    $columns[ 'new_field_qq' ] = __( 'QQ号' );        // 新增列名称
-    return $columns;
-}
-function output_comments_qq_columns( $column_name, $comment_id ){
-    switch( $column_name ) {
-        case "new_field_qq" :
-        // 这是输出值，可以拿来在前端输出，这里已经在钩子manage_comments_custom_column上输出了
-        echo get_comment_meta( $comment_id, 'new_field_qq', true );
-        break;
-        }
-}
+
 
 
 /* 启用浏览数目 */
@@ -660,6 +640,8 @@ function setPostViews($postID,$count_key='views')
             update_post_meta($postID, $count_key, $count);
         }
 }
+
+
 
 //后台显示浏览数目
 add_filter('manage_posts_columns', 'posts_column_views');
@@ -741,23 +723,69 @@ function isWechat(){
     return false;
 }
 
+
+//评论自定义字段
+function add_comment_meta_values($comment_id){
+//地址
+if(isset($_POST['hankin_avatar'])){
+$hankin_avatar = wp_filter_nohtml_kses($_POST['hankin_avatar']);
+add_comment_meta($comment_id,'hankin_avatar', $hankin_avatar,false);
+}
+// phone
+if(isset($_POST['hankin_qq'])){
+$hankin_qq = wp_filter_nohtml_kses($_POST['hankin_qq']);
+add_comment_meta($comment_id,'hankin_qq', $hankin_qq,false);
+}
+// comolay
+if(isset($_POST['hankin_username'])){
+$hankin_username = wp_filter_nohtml_kses($_POST['hankin_username']);
+add_comment_meta($comment_id,'hankin_username', $hankin_username,false);
+}
+}//end评论自定义字段
+add_action ('comment_post','add_comment_meta_values',1);
+//添加评论自定义字段标题
+function add_comment_meta_title( $columns )
+{
+return array_merge( $columns, array(
+'hankin_avatar'=>'头像',
+'hankin_qq'=>'qq号',
+'hankin_username'=>'昵称',
+));
+}//end添加评论自定义字段标题
+add_filter('manage_edit-comments_columns','add_comment_meta_title');
+//输出自定义字段值
+function echo_comment_column_value( $column_name, $comment_ID )
+{
+    switch( $column_name ) {
+        case "hankin_avatar" :
+            echo '<img width="50" height="50" src='.get_comment_meta( $comment_ID, $column_name ,true).'>';
+            break;
+            default :
+            echo get_comment_meta( $comment_ID, $column_name ,true);
+    }
+
+    
+}
+add_filter('manage_comments_custom_column','echo_comment_column_value',10,2);
+
+
+
 function simple_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-<?php comment_ID(); ?>">
         <article id="div-comment-<?php comment_ID(); ?>" class="comment-body d-flex flex-fill ">
             <div class="comment-avatar-author vcard mr-2 mr-md-3 ">
-                <?php $qqMsg = qqMsg(get_comment_author())?>
                 <div class="flex-avatar w-48">
-                    <img src="<?= $qqMsg['avatar']?>" width="48" height="48">
+                    <img src="<?= empty(get_comment_meta(get_comment_ID(),'hankin_avatar')[0]) ? get_template_directory_uri().'/assets/images/user/default-avatar.png' : get_comment_meta(get_comment_ID(),'hankin_avatar')[0] ?>" width="48" height="48">
                 </div>
             </div>
             <div class="comment-text d-flex flex-fill flex-column">
                 <div class="comment-info d-flex align-items-center mb-1">
                     <div class="comment-author text-sm">
                         <?php if(!get_comment_author_url()) : ?>
-                            <?= $qqMsg['nickname']?>
+                            <?= get_comment_meta(get_comment_ID(),'hankin_username')[0] ?>
                             <?php else : ?>
-                            <a href="<?= get_comment_author_url()?>" target="_blank" rel='nofollow'><?= $qqMsg['nickname']?></a>
+                            <a href="<?= get_comment_author_url()?>" target="_blank" rel='nofollow'><?= get_comment_meta(get_comment_ID(),'hankin_username')[0] ?></a>
                         <?php endif; ?>
                         <?php if ($comment->comment_approved == '0') : ?>
                             <em>评论等待审核...</em><br />

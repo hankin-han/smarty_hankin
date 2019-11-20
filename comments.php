@@ -15,11 +15,6 @@ if (post_password_required())
                     <?php cancel_comment_reply_link(); ?>
                 </small>
             </p>
-            <?php if (get_option('comment_registration') && !$user_ID) : ?>
-                <p>You must be <a
-                            href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged
-                        in</a> to post a comment.</p>
-            <?php else : ?>
             <div id="respond" class="comment-respond mb-4">
                 <form method="post" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php#respond" id="commentform" class="comment-form">
                     <div class="comment-from-author">
@@ -38,7 +33,10 @@ if (post_password_required())
                             <div class="comment-form-info row row-sm" id="qqShow" style="<?php if($_COOKIE['hankin-username']):?>display:none<?php endif;?>">
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-author">
-                                    <input class="form-control text-sm" id="author" placeholder="QQ号【可获取头像和昵称】" name="author" type="number" value="<?= $_COOKIE['hankin-qq']; ?>" required="required">
+                                    <input class="form-control text-sm" id="hankin_qq" placeholder="QQ号可获取头像和昵称" name="hankin_qq" type="number" value="<?= $_COOKIE['hankin-qq']; ?>" required="required">
+                                     <input id="hankin_avatar" name="hankin_avatar" type="hidden" value="<?= $_COOKIE['hankin-avatar']?>">
+                                     <input id="hankin_username" name="hankin_username" type="hidden" value="<?= $_COOKIE['hankin-username']?>">
+                                     <input id="avatar" name="avatar" type="text" value="<?= $_COOKIE['hankin-username']?>" style="display: none">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-4">
@@ -55,7 +53,10 @@ if (post_password_required())
                             <div class="comment-form-info row row-sm" id="qqShow">
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-author">
-                                    <input class="form-control text-sm" id="author" placeholder="QQ号【可获取头像和昵称】" name="author" type="number" value="" required="required">
+                                    <input class="form-control text-sm" id="hankin_qq" placeholder="QQ号可获取头像和昵称" name="hankin_qq" type="number" value="" required="required">
+                                    <input id="hankin_avatar" name="hankin_avatar" type="hidden" value="<?= $_COOKIE['hankin-avatar']?>">
+                                    <input id="hankin_username" name="hankin_username" type="hidden" value="<?= $_COOKIE['hankin-username']?>">
+                                    <input id="avatar" name="avatar" type="text" value="<?= $_COOKIE['hankin-username']?>" style="display: none">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-4">
@@ -64,7 +65,8 @@ if (post_password_required())
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-url">
-                                        <input class="form-control text-sm" placeholder="网址(可不填)" id="url" name="url" type="url" value=""></div>
+                                        <input class="form-control text-sm" placeholder="网址(可不填)" id="url" name="url" type="url" value="">
+                                    </div>
                                 </div>
                             </div>
                             <?php endif; ?>
@@ -87,7 +89,6 @@ if (post_password_required())
                     </div>
                 </form>
             </div>
-            <?php endif; ?>
             <ul class="comment-list">
                 <?php
                 wp_list_comments([
