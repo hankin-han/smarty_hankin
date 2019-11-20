@@ -10,7 +10,7 @@ if (post_password_required())
         <small class="font-theme text-muted">(<?php echo number_format_i18n(get_comments_number()); ?>)</small></div>
 
         <div class="card-body">
-            <p id="reply-title" class="comments-title"><?php comment_form_title('', '回复给 %s'); ?>
+            <p id="reply-title" class="comments-title">回复给 <font color="#4680ff"><?= get_comment_meta($_GET['replytocom'],'hankin_username')[0] ?></font>
                 <small>
                     <?php cancel_comment_reply_link(); ?>
                 </small>
