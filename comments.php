@@ -10,13 +10,13 @@ if (post_password_required())
         <small class="font-theme text-muted">(<?php echo number_format_i18n(get_comments_number()); ?>)</small></div>
 
         <div class="card-body">
-            <p id="reply-title" class="comments-title">回复给 <font color="#4680ff"><?= get_comment_meta($_GET['replytocom'],'hankin_username')[0] ?></font>
+            <p id="reply-title" class="comments-title"><?php if($_GET['replytocom']):?>回复给 <font color="#4680ff"><?= get_comment_meta($_GET['replytocom'],'hankin_username')[0] ?></font><?php endif;?>
                 <small>
                     <?php cancel_comment_reply_link(); ?>
                 </small>
             </p>
             <div id="respond" class="comment-respond mb-4">
-                <form method="post" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php#respond" id="commentform" class="comment-form">
+                <form action="<?php echo home_url( add_query_arg( array() ) );  ?>#respond" id="commentform" class="comment-form" method="post">
                     <div class="comment-from-author">
                         <div class="comment-avatar-author d-flex flex-fill align-items-center text-sm mb-2">
                             <div class="flex-avatar w-32">
@@ -36,7 +36,7 @@ if (post_password_required())
                                     <input class="form-control text-sm" id="hankin_qq" placeholder="QQ号可获取头像和昵称" name="hankin_qq" type="number" value="<?= $_COOKIE['hankin-qq']; ?>" required="required">
                                      <input id="hankin_avatar" name="hankin_avatar" type="hidden" value="<?= $_COOKIE['hankin-avatar']?>">
                                      <input id="hankin_username" name="hankin_username" type="hidden" value="<?= $_COOKIE['hankin-username']?>">
-                                     <input id="avatar" name="avatar" type="text" value="<?= $_COOKIE['hankin-username']?>" style="display: none">
+                                     <input id="avatar" name="avatar" type="hidden" value="<?= $_COOKIE['hankin-username']?>">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-4">

@@ -4,6 +4,7 @@ require_once dirname(__FILE__) . '/includes/wxShare.php';
 require_once dirname(__FILE__) . '/includes/author-avatars.php';
 require_once dirname(__FILE__) . '/includes/wp-editormd/wp-editormd.php';
 require_once dirname(__FILE__) . '/widgets.php';
+require_once dirname(__FILE__) . '/includes/ajax-comment/main.php';
 
 // -(or)-
 define('CS_ACTIVE_FRAMEWORK', TRUE); // default true
@@ -65,6 +66,7 @@ function remove_adminbar_margin() {
     remove_action( 'init', '_wp_admin_bar_init' );  
     add_action( 'wp_head', 'remove_adminbar_margin' );  
 }*/
+
 
 
 register_nav_menu('warp-nav', 'smarty_hankin-左侧菜单');
@@ -758,7 +760,10 @@ function echo_comment_column_value( $column_name, $comment_ID )
 {
     switch( $column_name ) {
         case "hankin_avatar" :
-            echo '<img width="50" height="50" src='.get_comment_meta( $comment_ID, $column_name ,true).'>';
+
+            $qq_url = get_comment_meta( $comment_ID, $column_name ,true);
+            $qq_url = ($qq_url=='') ? get_template_directory_uri().'/assets/images/user/default-avatar.png' : $qq_url;
+            echo '<img width="50" height="50" src='.$qq_url.'>';
             break;
             default :
             echo get_comment_meta( $comment_ID, $column_name ,true);
@@ -769,45 +774,5 @@ function echo_comment_column_value( $column_name, $comment_ID )
 add_filter('manage_comments_custom_column','echo_comment_column_value',10,2);
 
 
-
-function simple_comment($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
-   <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-<?php comment_ID(); ?>">
-        <article id="div-comment-<?php comment_ID(); ?>" class="comment-body d-flex flex-fill ">
-            <div class="comment-avatar-author vcard mr-2 mr-md-3 ">
-                <div class="flex-avatar w-48">
-                    <img src="<?= empty(get_comment_meta(get_comment_ID(),'hankin_avatar')[0]) ? get_template_directory_uri().'/assets/images/user/default-avatar.png' : get_comment_meta(get_comment_ID(),'hankin_avatar')[0] ?>" width="48" height="48">
-                </div>
-            </div>
-            <div class="comment-text d-flex flex-fill flex-column">
-                <div class="comment-info d-flex align-items-center mb-1">
-                    <div class="comment-author text-sm">
-                        <?php if(!get_comment_author_url()) : ?>
-                            <?= get_comment_meta(get_comment_ID(),'hankin_username')[0] ?>
-                            <?php else : ?>
-                            <a href="<?= get_comment_author_url()?>" target="_blank" rel='nofollow'><?= get_comment_meta(get_comment_ID(),'hankin_username')[0] ?></a>
-                        <?php endif; ?>
-                        <?php if ($comment->comment_approved == '0') : ?>
-                            <em>评论等待审核...</em><br />
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="comment-content d-inline-block text-sm">
-                    <?php comment_text(); ?>
-                </div>
-                <!-- .comment-content -->
-                <div class="d-flex flex-fill text-xs text-muted pt-2">
-                    <div>
-                        <time class="comment-date"><?php echo timeGo(get_gmt_from_date(get_comment_time('Y-m-d G:i:s'))); ?></time></div>
-                    <div class="flex-fill"></div>
-                    <?php comment_reply_link(array_merge($args, ['reply_text' => '回复', 'depth' => $depth, 'max_depth' => $args['max_depth']])) ?>
-                </div>
-            </div>
-            
-        </article>
-    </li>
-<?php
-}
-?>
 
 

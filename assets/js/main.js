@@ -9,7 +9,7 @@ if(_this.val() !==""){
 		$("#comment-loader").hide();
 		if(result.result.code == '1000')
 		{
-			alert(result.result.msg);
+			faAjax.createButterbar(result.result.msg);
 			return false;
 		}
 	   	var avatar = result.data.avatar;
