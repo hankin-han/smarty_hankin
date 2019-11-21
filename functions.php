@@ -775,7 +775,7 @@ add_filter('manage_comments_custom_column','echo_comment_column_value',10,2);
 
 
 
-
+/* 文章点赞功能 */
 function hankin_like(){
     global $wpdb,$post;
     $id = $_POST["um_id"];
@@ -798,6 +798,11 @@ function hankin_like(){
     die;
 }
 
-
 add_action('wp_ajax_nopriv_hankin_like', 'hankin_like');
 add_action('wp_ajax_hankin_like', 'hankin_like');
+
+
+
+// 禁用Gutenberg（古腾堡） 编辑器
+add_filter('use_block_editor_for_post', '__return_false'); // 禁止加载Gutenberg（古腾堡） 编辑器
+remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' ); // 禁止前端加载样式文件
