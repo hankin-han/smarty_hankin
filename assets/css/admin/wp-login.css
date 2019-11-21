@@ -37,6 +37,7 @@
   box-shadow: none;
   margin-top: 0;
   padding: 10px 30px 2px;
+  border:0;
 }
 #login form input {
   padding: 7px 10px;
@@ -82,3 +83,5 @@
     width: 90%;
   }
 }
+.login #login_error{width: 76%;margin: 0 auto;}
+.login .button.wp-hide-pw .dashicons{top: .8rem;}

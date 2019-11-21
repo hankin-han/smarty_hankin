@@ -776,3 +776,28 @@ add_filter('manage_comments_custom_column','echo_comment_column_value',10,2);
 
 
 
+function hankin_like(){
+    global $wpdb,$post;
+    $id = $_POST["um_id"];
+    $action = $_POST["um_action"];
+    if ( $action == 'like'){
+    $bigfa_raters = get_post_meta($id,'hankin_like',true);
+    $expire = time() + 99999999;
+    $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false; // make cookies work with localhost
+    setcookie('hankin_like_'.$id,$id,$expire,'/',$domain,false);
+    if (!$bigfa_raters || !is_numeric($bigfa_raters)) {
+        update_post_meta($id, 'hankin_like', 1);
+    } 
+    else {
+            update_post_meta($id, 'hankin_like', ($bigfa_raters + 1));
+        }
+
+    echo get_post_meta($id,'hankin_like',true);
+
+    } 
+    die;
+}
+
+
+add_action('wp_ajax_nopriv_hankin_like', 'hankin_like');
+add_action('wp_ajax_hankin_like', 'hankin_like');

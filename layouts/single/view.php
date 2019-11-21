@@ -19,9 +19,15 @@
                     <a class="mx-1" href="#comments">
                         <i class="text-md iconfont icon-chat--line mx-1"></i>
                         <small><?= getCommentsNumber($post->ID); ?></small></a>
-                    <a class="btn-like btn-link-like  mx-1" href="javascript:;" data-action="like" data-id="4621">
+                    <a class="btn-like btn-link-like<?php if(isset($_COOKIE['hankin_like_'.$post->ID])) echo ' current';?>" href="javascript:;" data-action="like" data-id="<?php the_ID(); ?>">
                         <i class="text-md iconfont icon-thumb-up-line mx-1"></i>
-                        <small class="like-count">19</small></a>
+                        <small class="like-count">
+                            <?php if( get_post_meta($post->ID,'hankin_like',true) ){            
+                                echo get_post_meta($post->ID,'hankin_like',true);
+                             } else {
+                                echo '0';
+                             }?>
+                        </small></a>
                 </div>
             </div>
             <div class="border-theme bg-primary"></div>

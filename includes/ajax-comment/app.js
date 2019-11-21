@@ -68,3 +68,32 @@ $(document).ready(function() {
 		}
 	};
 });
+
+$(document).ready(function() { 
+	$.fn.postLike = function() {
+	 if ($(this).hasClass('current')) {
+	 	faAjax.createButterbar("已经点过赞了");
+	 	return false;
+	 } else {
+		 $(this).addClass('current');
+		 var id = $(this).data("id"),
+		 action = $(this).data('action'),
+		 rateHolder = $(this).children('.like-count');
+		 var ajax_data = {
+			 action: "hankin_like",
+			 um_id: id,
+			 um_action: action
+	 	};
+	 $.post("/wp-admin/admin-ajax.php", ajax_data,
+	 function(data) {
+	 	faAjax.createButterbar("谢谢点赞");
+	 	$(rateHolder).html(data);
+	 });
+	 	return false;
+	 }
+	};
+	$(document).on("click", ".btn-link-like",function() {
+	 	$(this).postLike();
+	});
+});
+

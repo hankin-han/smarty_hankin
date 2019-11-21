@@ -1,4 +1,4 @@
-var options = {
+/*var options = {
   dir: "auto", // 文字方向
   body: "通知：OBKoro1评论了你的朋友圈", // 通知主体
   requireInteraction: true, // 不自动关闭通知
@@ -32,4 +32,4 @@ function notifyMe(title, options) {
       console.log('用户曾经拒绝显示通知');
     }
   }
-}
+}*/
