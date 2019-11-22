@@ -38,7 +38,7 @@ wxConfig = {
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/wxShare.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.cookie.js?version=<?= time()?>"></script>
-<script type="text/javascript" src="https://unpkg.com/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/popper.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/bootstrap.min.js?version=<?= time()?>"></script>
 <?php if(!wp_is_mobile() && $i_theme_switch):?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu-setting.min.js?version=<?= time()?>"></script>

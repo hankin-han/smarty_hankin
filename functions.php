@@ -1,12 +1,12 @@
 <?php
-error_reporting( E_ALL&~E_NOTICE );
+//error_reporting( E_ALL&~E_NOTICE );
 require_once dirname(__FILE__) . '/framework/cs-framework.php';
 require_once dirname(__FILE__) . '/includes/wxShare.php';
 require_once dirname(__FILE__) . '/includes/author-avatars.php';
 // 禁用Gutenberg（古腾堡） 编辑器
-//add_filter('use_block_editor_for_post', '__return_false'); // 禁止加载Gutenberg（古腾堡） 编辑器
-//remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' ); // 禁止前端加载样式文件
-//require_once dirname(__FILE__) . '/includes/wp-editormd/wp-editormd.php';
+add_filter('use_block_editor_for_post', '__return_false'); // 禁止加载Gutenberg（古腾堡） 编辑器
+remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' ); // 禁止前端加载样式文件
+require_once dirname(__FILE__) . '/includes/wp-editormd/wp-editormd.php';
 
 require_once dirname(__FILE__) . '/widgets.php';
 require_once dirname(__FILE__) . '/includes/ajax-comment/main.php';

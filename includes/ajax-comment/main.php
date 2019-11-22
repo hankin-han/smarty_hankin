@@ -129,7 +129,7 @@ function simple_comment($comment, $args, $depth) {
                 <div class="comment-info d-flex align-items-center mb-1">
                     <div class="comment-author text-sm">
                         <?php if(!get_comment_author_url()) : ?>
-                            <?= get_comment_meta(get_comment_ID(),'hankin_username')['0'] ?>
+                            <?= !empty(get_comment_meta(get_comment_ID(),'hankin_username')['0']) ? get_comment_meta(get_comment_ID(),'hankin_username')['0'] : '' ?>
                             <?php else : ?>
                             <a href="<?= get_comment_author_url()?>" target="_blank" rel='nofollow'><?= get_comment_meta(get_comment_ID(),'hankin_username')['0'] ?></a>
                         <?php endif; ?>
