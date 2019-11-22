@@ -1,4 +1,4 @@
-
+$('a[data-toggle="tooltip"]').tooltip();
 function hljsLoad(){
 $("#hankin_qq").blur(function(){
 var _this = $(this);

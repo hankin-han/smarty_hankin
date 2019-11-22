@@ -399,7 +399,6 @@ widget author meta style
 /*--------------------------------------------------------------
 Avatar
 --------------------------------------------------------------*/
-.flex-avatar{position:relative;line-height:1;border-radius:500px;white-space:nowrap;font-weight:700;border-radius:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-negative:0;flex-shrink:0;border-radius:500px}
 .flex-avatar img{border-radius:inherit;width:100%}
 .flex-avatar.w-32 .avatar-title{margin:0}
 .flex-avatar.w-40 .avatar-title{margin:1px}
@@ -422,7 +421,6 @@ Avatar
 .avatar-title.v2{background-color:#5bc146}
 .avatar-title.v3{background-color:#ffd14d}
 .avatar-title.v4{background-color:#fe4d62}
-.flex-avatar{position:relative;line-height:1;border-radius:500px;white-space:nowrap;font-weight:700;border-radius:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-negative:0;flex-shrink:0;border-radius:500px}
 .flex-avatar img{border-radius:inherit;width:100%}
 .flex-avatar.w-32 .avatar-title{margin:0}
 .flex-avatar.w-40 .avatar-title{margin:1px}

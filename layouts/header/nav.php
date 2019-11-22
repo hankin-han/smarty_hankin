@@ -2,7 +2,7 @@
 $i_links = cs_get_option('i_links'); //自定义友情链接
 ?>
 <!-- [ navigation menu ] start -->
-<nav class="pcoded-navbar <?= ($_COOKIE['menu'] == '') ? 'menu-light' : $_COOKIE['menu']?> <?= isset($_COOKIE['menupos']) ? $_COOKIE['menupos'] : ''?>">
+<nav class="pcoded-navbar <?= isset($_COOKIE['menu']) ? $_COOKIE['menu'] : 'menu-light'?> <?= isset($_COOKIE['menupos']) ? $_COOKIE['menupos'] : ''?>">
     <div class="navbar-wrapper  ">
         <div class="navbar-content scroll-div ">
 

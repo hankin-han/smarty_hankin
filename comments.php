@@ -10,7 +10,17 @@ if (post_password_required())
         <small class="font-theme text-muted">(<?php echo number_format_i18n(get_comments_number()); ?>)</small></div>
 
         <div class="card-body">
-            <p id="reply-title" class="comments-title"><?php if($_GET['replytocom']):?>回复给 <font color="#4680ff"><?= get_comment_meta($_GET['replytocom'],'hankin_username')[0] ?></font><?php endif;?>
+            <p class="text-center">
+            <?php if(getuserList(get_the_ID())):?>
+                <?php foreach(getuserList(get_the_ID()) as $value):?>
+                     <a href="javascript:void(0)" data-toggle="tooltip" 
+                     data-original-title="<?= get_comment_meta($value['comment_ID'],'hankin_username')['0'] ?>">
+                        <img src="<?= empty(get_comment_meta($value['comment_ID'],'hankin_avatar')[0]) ? get_template_directory_uri().'/assets/images/user/default-avatar.png' : get_comment_meta($value['comment_ID'],'hankin_avatar')[0] ?>" class="avatar w-32" style="border-radius: 5px;">
+                    </a>
+                <?php endforeach;?>
+            <?php endif;?>
+            </p>
+            <p id="reply-title" class="comments-title"><?php if(isset($_GET['replytocom'])):?>回复给 <font color="#4680ff"><?= get_comment_meta($_GET['replytocom'],'hankin_username')[0] ?></font><?php endif;?>
                 <small>
                     <?php cancel_comment_reply_link(); ?>
                 </small>
@@ -19,16 +29,16 @@ if (post_password_required())
                 <form action="<?php echo home_url( add_query_arg( array() ) );  ?>#respond" id="commentform" class="comment-form" method="post">
                     <div class="comment-from-author">
                         <div class="comment-avatar-author d-flex flex-fill align-items-center text-sm mb-2">
-                            <div class="flex-avatar w-32">
-                            <?php if ($_COOKIE['hankin-username']) : ?>
-                                <img src="<?= $_COOKIE['hankin-avatar'] ?>" class="avatar w-32" id="avatar_img">
+                            <div class="avatar w-32">
+                            <?php if(isset($_COOKIE['hankin-username'])) : ?>
+                                <img src="<?= $_COOKIE['hankin-avatar'] ?>" class="avatar w-32" id="avatar_img" style="border-radius: 5px;">
                             <?php else:?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/user/default-avatar.png" class="avatar w-32" id="avatar_img">
                             <?php endif;?>
                             </div>
                         </div>
                         <div class="comment-form-text">
-                            <?php if ($_COOKIE['hankin-username']) : ?>
+                            <?php if(isset($_COOKIE['hankin-username'])): ?>
                                 <p class="warning-text" style="margin-bottom:10px">欢迎您 <a href="javascript:void(0)" no-pjax id="clear-qq"><font color="#4680ff"><?= $_COOKIE['hankin-username']; ?></font> &nbsp;<i class="feather icon-edit"></i></a></p>
                             <div class="comment-form-info row row-sm" id="qqShow" style="<?php if($_COOKIE['hankin-username']):?>display:none<?php endif;?>">
                                 <div class="col-12 col-md-4">
@@ -54,9 +64,9 @@ if (post_password_required())
                                 <div class="col-12 col-md-4">
                                     <div class="form-group comment-form-author">
                                     <input class="form-control text-sm" id="hankin_qq" placeholder="QQ号可获取头像和昵称" name="hankin_qq" type="number" value="" required="required">
-                                    <input id="hankin_avatar" name="hankin_avatar" type="hidden" value="<?= $_COOKIE['hankin-avatar']?>">
-                                    <input id="hankin_username" name="hankin_username" type="hidden" value="<?= $_COOKIE['hankin-username']?>">
-                                    <input id="avatar" name="avatar" type="text" value="<?= $_COOKIE['hankin-username']?>" style="display: none">
+                                    <input id="hankin_avatar" name="hankin_avatar" type="hidden" value="<?= isset($_COOKIE['hankin-avatar']) ? $_COOKIE['hankin-avatar'] : '' ?>">
+                                    <input id="hankin_username" name="hankin_username" type="hidden" value="<?= isset($_COOKIE['hankin-username']) ? $_COOKIE['hankin-username'] : ''?>">
+                                    <input id="avatar" name="avatar" type="text" value="<?= isset($_COOKIE['hankin-username']) ? $_COOKIE['hankin-username'] : '' ?>" style="display: none">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-4">

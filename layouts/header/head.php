@@ -32,10 +32,10 @@ Blog：https://www.hankin.cn -->
 <?php if( ! empty( $i_css ) ){ echo '<style>'.$i_css.'</style>';}else{ echo' ';} ?>
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
 <link rel="icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" class="layout-css" id="layout-css" href="<?= $_COOKIE['layout-css']?>">
+<link rel="stylesheet" class="layout-css" id="layout-css" href="<?= isset($_COOKIE['layout-css']) ? $_COOKIE['layout-css'] : ''?>">
 <link rel="stylesheet" class="rtl-css" id="rtl-css" href="">
 </head>
-<body class="<?= ($_COOKIE['box-layout'] == '') ? 'container box-layout' :  $_COOKIE['box-layout'] ?> <?= ($_COOKIE['background'] == '') ? 'background-blue' : $_COOKIE['background']?>">
+<body class="<?= isset($_COOKIE['box-layout']) ? $_COOKIE['box-layout'] : 'container box-layout' ?> <?= isset($_COOKIE['background']) ? $_COOKIE['background'] : 'background-blue'?>">
 <!-- [ Pre-loader ] start -->
 <div class="loader-bg" style="display: none">
     <div class="loader-track">

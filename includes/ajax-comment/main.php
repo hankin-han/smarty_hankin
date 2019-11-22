@@ -94,27 +94,44 @@ $wpdb->update('wp_options',[
 ],[
     'option_name' => 'require_name_email'
 ]); 
+$wpdb->update('wp_options',[
+    'option_value' => 0
+],[
+    'option_name' => 'page_comments'
+]);
+
+function getuserList($postId){
+
+    global $wpdb;
+    $user_sql = "SELECT * FROM `wp_comments`
+    WHERE `comment_post_ID` = '".$postId."' 
+    GROUP BY `comment_author_email`";
+    $user_list = $wpdb->get_results($user_sql,ARRAY_A);
+
+    return $user_list ? $user_list : [];
+}
 
 add_action( 'wp_enqueue_scripts', 'fa_ajax_comment_scripts' );
 add_action('wp_ajax_nopriv_ajax_comment', 'fa_ajax_comment_callback');
 add_action('wp_ajax_ajax_comment', 'fa_ajax_comment_callback');
+
 
 function simple_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-<?php comment_ID(); ?>">
         <article id="div-comment-<?php comment_ID(); ?>" class="comment-body d-flex flex-fill ">
             <div class="comment-avatar-author vcard mr-2 mr-md-3 ">
-                <div class="flex-avatar w-48">
-                    <img src="<?= empty(get_comment_meta(get_comment_ID(),'hankin_avatar')[0]) ? get_template_directory_uri().'/assets/images/user/default-avatar.png' : get_comment_meta(get_comment_ID(),'hankin_avatar')[0] ?>" width="48" height="48">
+                <div class="w-48">
+                    <img src="<?= empty(get_comment_meta(get_comment_ID(),'hankin_avatar')[0]) ? get_template_directory_uri().'/assets/images/user/default-avatar.png' : get_comment_meta(get_comment_ID(),'hankin_avatar')[0] ?>" style="border-radius: 5px;">
                 </div>
             </div>
             <div class="comment-text d-flex flex-fill flex-column">
                 <div class="comment-info d-flex align-items-center mb-1">
                     <div class="comment-author text-sm">
                         <?php if(!get_comment_author_url()) : ?>
-                            <?= get_comment_meta(get_comment_ID(),'hankin_username')[0] ?>
+                            <?= get_comment_meta(get_comment_ID(),'hankin_username')['0'] ?>
                             <?php else : ?>
-                            <a href="<?= get_comment_author_url()?>" target="_blank" rel='nofollow'><?= get_comment_meta(get_comment_ID(),'hankin_username')[0] ?></a>
+                            <a href="<?= get_comment_author_url()?>" target="_blank" rel='nofollow'><?= get_comment_meta(get_comment_ID(),'hankin_username')['0'] ?></a>
                         <?php endif; ?>
                         <?php if ($comment->comment_approved == '0') : ?>
                             <em>评论等待审核...</em><br />
