@@ -10,12 +10,12 @@ if (post_password_required())
         <small class="font-theme text-muted">(<?php echo number_format_i18n(get_comments_number()); ?>)</small></div>
 
         <div class="card-body">
-            <p class="text-center">
+            <p class="text-left">
             <?php if(getuserList(get_the_ID())):?>
                 <?php foreach(getuserList(get_the_ID()) as $value):?>
                      <a href="javascript:void(0)" data-toggle="tooltip" 
                      data-original-title="<?= !empty(get_comment_meta($value['comment_ID'],'hankin_username')[0]) ? get_comment_meta($value['comment_ID'],'hankin_username')[0] :'' ?>">
-                        <img src="<?= empty(get_comment_meta($value['comment_ID'],'hankin_avatar')[0]) ? get_template_directory_uri().'/assets/images/user/default-avatar.png' : get_comment_meta($value['comment_ID'],'hankin_avatar')[0] ?>" class="avatar w-32"  style="border-radius: 5px;">
+                        <img src="<?= empty(get_comment_meta($value['comment_ID'],'hankin_avatar')[0]) ? get_template_directory_uri().'/assets/images/user/default-avatar.png' : get_comment_meta($value['comment_ID'],'hankin_avatar')[0] ?>" class="avatar w-32 mb-2"  style="border-radius: 5px;">
                     </a>
                 <?php endforeach;?>
             <?php endif;?>
@@ -86,7 +86,7 @@ if (post_password_required())
                                 </div>
                             </div>
                             <div class="comment-textarea mb-3">
-                                <textarea id="comment" name="comment" class="form-control form-control-sm" rows="3"></textarea>
+                                <textarea id="comment" name="comment" class="form-control form-control-sm" rows="1"></textarea>
                             </div>
                             <div class="d-flex flex-fill align-items-center">
                                 <div class="flex-fill"></div>
