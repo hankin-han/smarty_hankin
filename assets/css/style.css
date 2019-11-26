@@ -26,9 +26,13 @@ html::-webkit-scrollbar-thumb:hover{background-color:#bbb}
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */:root{--blue:#4680ff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#ff5252;--orange:#fd7e14;--yellow:#ffba57;--green:#9ccc65;--teal:#20c997;--cyan:#00acc1;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#4680ff;--secondary:#6c757d;--success:#9ccc65;--info:#00acc1;--warning:#ffba57;--danger:#ff5252;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:"Open Sans",sans-serif;--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
 *,::after,::before{box-sizing:border-box}
-html{font-family:rst,'Uu';line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+html{line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
-body{margin:0;font-family:rst,'Uu';font-size:1rem;font-weight:400;line-height:1.5;color:#373a3c;text-align:left;background-color:#ecf0f5}
+
+body{margin:0;font-family:rst,'Uu';font-size:1rem;font-weight:400;line-height:1.5;}
+body{font-size:14px;color:#373a3c;text-align:left;position:relative}
+.box-layout{width: 1380px;margin:0 auto;}
+
 [tabindex="-1"]:focus{outline:0!important}
 hr{box-sizing:content-box;height:0;overflow:visible}
 h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}
@@ -4413,7 +4417,7 @@ a.badge-light-danger.active,a.badge-light-danger:active,a.badge-light-danger:foc
 a.badge-light-light.active,a.badge-light-light:active,a.badge-light-light:focus,a.badge-light-light:hover{background:#f8f9fa;border-color:#f8f9fa;color:#fefefe}
 .badge-light-dark{background:rgba(52,58,64,.2);border-color:#c6c8ca;color:#343a40}
 a.badge-light-dark.active,a.badge-light-dark:active,a.badge-light-dark:focus,a.badge-light-dark:hover{background:#343a40;border-color:#343a40;color:#d6d8d9}
-body{font-size:14px;color:#373a3c;font-weight:400;background:#4680ff;position:relative}
+
 :focus{outline:0}
 a:hover{outline:0;text-decoration:none}
 h1,h2,h3,h4,h5,h6{color:#37474f;font-weight:600}

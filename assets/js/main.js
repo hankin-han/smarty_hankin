@@ -205,7 +205,7 @@ $(window).scroll(function() {
 			$(".pcoded-navbar.menupos-fixed").css("margin-top", "60px")
 		}
 	}
-	if ($("body").hasClass("box-layout")) {
+	if ($("#body").hasClass("box-layout")) {
 		if ($(this).scrollTop() > 60) {
 			$(".pcoded-navbar").css("position", "fixed");
 			$(".pcoded-navbar").css("transition", "none");

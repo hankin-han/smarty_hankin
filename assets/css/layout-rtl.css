@@ -27,7 +27,7 @@
 /**  =====================
       RTL css start
 ==========================  **/
-body {
+#body {
     direction: rtl;
     text-align: right;
 }

@@ -1,12 +1,15 @@
 <?php
+
 //error_reporting( E_ALL&~E_NOTICE );
 require_once dirname(__FILE__) . '/framework/cs-framework.php';
 require_once dirname(__FILE__) . '/includes/wxShare.php';
 require_once dirname(__FILE__) . '/includes/author-avatars.php';
-// 禁用Gutenberg（古腾堡） 编辑器
+$i_markdown_option = cs_get_option('i_markdown_option'); //markdown编辑器
+if($i_markdown_option):
 add_filter('use_block_editor_for_post', '__return_false'); // 禁止加载Gutenberg（古腾堡） 编辑器
 remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' ); // 禁止前端加载样式文件
 require_once dirname(__FILE__) . '/includes/wp-editormd/wp-editormd.php';
+endif;
 
 require_once dirname(__FILE__) . '/widgets.php';
 require_once dirname(__FILE__) . '/includes/ajax-comment/main.php';
@@ -25,7 +28,7 @@ define('CS_ACTIVE_CUSTOMIZE', FALSE); // default true
 function custom_adminbar_menu($meta = TRUE)
 {
     global $wp_admin_bar;
-
+    $i_markdown_option = cs_get_option('i_markdown_option'); //markdown编辑器
     if (!is_user_logged_in()) {return;}
     if (!is_super_admin() || !is_admin_bar_showing()) {return;}
     echo '<style>
@@ -41,13 +44,14 @@ function custom_adminbar_menu($meta = TRUE)
             'href' => '/wp-admin/admin.php?page=cs-framework',
             //'meta'  => array( 'target' => '_blank' )
         ]);
-
+if($i_markdown_option):
         $wp_admin_bar->add_menu([
                 'id' => 'markdown_edit',
                 'title' => __('<i style="position: relative;top:5px;color:#9ea3a8" class="wp-menu-image dashicons-before dashicons-admin-generic"></i>&nbsp;&nbsp;Markdown 编辑器设置'),
                 'href' => '/wp-admin/plugins.php?page=wp-editormd-settings',
                 //    'meta'  => array( target => '_blank' )
             ]);
+endif;
 }
 add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
 

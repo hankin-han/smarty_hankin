@@ -78,5 +78,6 @@ wxConfig = {
 <!--网站统计代码 start-->
 <?php if( ! empty( $i_js_tongji ) ){ echo '<script type="text/javascript">'.$i_js_tongji.'</script>';}else{ echo'';} ?>
 <!--网站统计代码 end-->
+</div>
 </body>
 </html>

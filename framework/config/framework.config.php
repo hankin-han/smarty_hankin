@@ -244,14 +244,14 @@ $options[] = [
   // ------------------------------
   // 高级设置                      -
   // ------------------------------
-/*
+
   $options[] = [
     'name' => 'rule',
     'title' => '高级设置',
     'icon' => 'fa fa-send',
     'fields' => [
 
-      // 开启付款二维码
+/*      // 开启付款二维码
       [
         'id' => 'i_aside_pay',
         'type' => 'switcher',
@@ -279,38 +279,18 @@ $options[] = [
         'type' => 'upload',
         'title' => '网站后台登录背景设置',
         'default' => "https://www.hankin.cn/wp-content/themes/hankin/images/login_bg.jpg",
-      ],
+      ],*/
 
       // 使用markdown编辑器
       [
         'id' => 'i_markdown_option',
         'type' => 'switcher',
         'title' => '使用markdown编辑器',
+        'help' => '注意：开启 保存后 请刷新页面',
+        'label' => '<font color="red">注意：开启 保存后 请刷新页面</font>',
       ],
-
-      // 前端登录
-      [
-        'id' => 'i_login',
-        'type' => 'switcher',
-        'title' => '前端登录',
-      ],
-
-      // 前端源码Gzip压缩
-      [
-        'id' => 'i_home_html_zip',
-        'type' => 'switcher',
-        'title' => '前端源码Gzip压缩',
-      ],
-
-      // 开启全站无刷新Pjax
-      [
-        'id' => 'i_pjax',
-        'type' => 'switcher',
-        'title' => '全站无刷新Pjax',
-      ],
-
     ],
-  ];*/
+  ];
 
   // ------------------------------
   // 页面元素                         -

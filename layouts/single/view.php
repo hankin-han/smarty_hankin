@@ -1,3 +1,5 @@
+<style type="text/css" src="http://ygt.linyakq.com/public/library/fancybox/jquery.fancybox.min.css"></style>
+<script type="text/javascript" src="http://ygt.linyakq.com/public/library/fancybox/jquery.fancybox.min.js"></script>
 <?php $category = get_the_category()[0] ?>
 <?php if ( have_posts() ): ?>
 <?php while ( have_posts() ) : the_post(); ?>
