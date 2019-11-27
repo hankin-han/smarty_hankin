@@ -36,7 +36,7 @@ Blog：https://www.hankin.cn -->
 <link rel="stylesheet" class="rtl-css" id="rtl-css" href="">
 </head>
 <body class="<?= isset($_COOKIE['background']) ? $_COOKIE['background'] : 'background-blue'?>">
-<div class="<?= isset($_COOKIE['box-layout']) ? $_COOKIE['box-layout'] : 'box-layout' ?>" id="body">
+<div class="<?= isset($_COOKIE['box-layout']) ? $_COOKIE['box-layout'] : 'container box-layout' ?>" id="body">
 <!-- [ Pre-loader ] start -->
 <div class="loader-bg" style="display: none">
     <div class="loader-track">

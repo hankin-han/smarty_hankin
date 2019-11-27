@@ -210,6 +210,7 @@ $(window).scroll(function() {
 			$(".pcoded-navbar").css("position", "fixed");
 			$(".pcoded-navbar").css("transition", "none");
 			$(".pcoded-navbar").css("margin-top", "0px");
+			$(".pcoded-navbar").css("height", "100vh");
 			$(".pcoded-navbar").css("border-radius", "0px")
 		} else {
 			$(".pcoded-navbar").removeAttr("style");
