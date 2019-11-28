@@ -33,6 +33,7 @@ Blog：https://www.hankin.cn -->
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
 <link rel="icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" class="layout-css" id="layout-css" href="<?= isset($_COOKIE['layout-css']) ? $_COOKIE['layout-css'] : ''?>">
+<link rel="stylesheet" class="layout-blur-css" id="layout-blur-css" href="<?= isset($_COOKIE['layout-blur-css']) ? $_COOKIE['layout-blur-css'] : ''?>">
 <link rel="stylesheet" class="rtl-css" id="rtl-css" href="">
 </head>
 <body class="<?= isset($_COOKIE['background']) ? $_COOKIE['background'] : 'background-blue'?>">

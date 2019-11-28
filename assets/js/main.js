@@ -1,5 +1,7 @@
+
 $('a[data-toggle="tooltip"]').tooltip();
 function hljsLoad(){
+$('#view-content').viewer();
 $("#hankin_qq").blur(function(){
 var _this = $(this);
 var url = '/wp-admin/admin-ajax.php?action=get_ajax_qq&qq='+_this.val();

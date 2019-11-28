@@ -43,11 +43,14 @@ wxConfig = {
 <?php if(!wp_is_mobile() && $i_theme_switch):?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu-setting.min.js?version=<?= time()?>"></script>
 <?php endif;?>
-
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/clipboard.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/highlight.min.js?version=<?= time()?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/pjax.js?version=<?= time()?>"></script>
+<!-- 图片放大 start-->
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/viewer/viewer.min.css">
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/viewer/viewer.min.js"></script>
+<!-- 图片放大 start-->
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/message.js?version=<?= time()?>"></script>
 <?php if( ! empty( $i_js ) ){ echo '<script type="text/javascript">'.$i_js.'</script>';}else{ echo'';} ?>
 <!-- 分享插件 start-->
@@ -78,6 +81,6 @@ wxConfig = {
 <!--网站统计代码 start-->
 <?php if( ! empty( $i_js_tongji ) ){ echo '<script type="text/javascript">'.$i_js_tongji.'</script>';}else{ echo'';} ?>
 <!--网站统计代码 end-->
-</div>
+
 </body>
 </html>
