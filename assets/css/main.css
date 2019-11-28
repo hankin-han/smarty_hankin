@@ -397,6 +397,17 @@ widget author meta style
 .widget-author-cover .widget-author-avatar {top: auto;bottom: 0;-webkit-transform: translate(-50%, 50%);-ms-transform: translate(-50%, 50%);transform: translate(-50%, 50%);}
 
 /*--------------------------------------------------------------
+widget gallery meta style
+--------------------------------------------------------------*/
+.gallery{margin:-1%!important;padding:1.375rem 1.5rem 1.5rem}
+.gallery .gallery-item{padding:1%;margin:0 !important;overflow:hidden;position:relative}
+.gallery-columns-3 .gallery-item{width:33.3333333%!important}
+.gallery .gallery-item dt:before{content:"";display:block;padding-top:100%}
+.gallery .gallery-item dt{position:relative;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;background:#eee;cursor:pointer;overflow:hidden}
+.gallery .gallery-item img{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;border:0!important}
+
+
+/*--------------------------------------------------------------
 Avatar
 --------------------------------------------------------------*/
 .flex-avatar img{border-radius:inherit;width:100%}
