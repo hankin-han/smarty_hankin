@@ -46,10 +46,10 @@ wxConfig = {
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/clipboard.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/highlight.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/pjax.js?version=<?= time()?>"></script>
-<!-- 图片放大 start-->
+<!-- viewer start-->
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/viewer/viewer.min.css">
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/viewer/viewer.min.js"></script>
-<!-- 图片放大 start-->
+<!-- viewer start-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/message.js?version=<?= time()?>"></script>
 <?php if( ! empty( $i_js ) ){ echo '<script type="text/javascript">'.$i_js.'</script>';}else{ echo'';} ?>
@@ -73,10 +73,12 @@ wxConfig = {
 <?php endif;?>
 <?php wp_footer(); ?>
 <script type="text/javascript">
-    let style = 'color:#4680ff;font-size:14px; padding:2px;';
-    console.log('version：'+'%c %s', style, '<?php echo _the_theme_name().'_v'._the_theme_version();?>');
-    console.log('SQL 请求数：'+'%c %s', style, '<?php echo get_num_queries();?>');
-    console.log('页面生成耗时： '+'%c %s', style, '<?php echo timer_stop(0,10);?>');
+    let key_style = 'color: #fff; background: #5c5c5c; font-size: 12px;border-radius:2px 0 0 2px;padding:3px 6px;';
+    let value_style = 'border-radius:0 2px 2px 0;padding:3px 6px;color:#fff;background:#1b81c2';
+    console.log("%csmarty_hankin%c<?php echo 'v'._the_theme_version();?>", key_style, value_style);
+    console.log("%c页面生成耗时%c<?php echo timer_stop(0,10);?>", key_style, value_style);
+    console.log("%cSQL 请求数%c<?php echo get_num_queries();?>", key_style, value_style);
+    console.log("%c作者博客%chttps://www.hankin.cn", key_style, value_style);
 </script>
 <!--网站统计代码 start-->
 <?php if( ! empty( $i_js_tongji ) ){ echo '<script type="text/javascript">'.$i_js_tongji.'</script>';}else{ echo'';} ?>

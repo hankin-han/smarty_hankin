@@ -403,7 +403,7 @@ widget gallery meta style
 .gallery .gallery-item{padding:1%;margin:0 !important;overflow:hidden;position:relative}
 .gallery-columns-3 .gallery-item{width:33.3333333%!important}
 .gallery .gallery-item dt:before{content:"";display:block;padding-top:100%}
-.gallery .gallery-item dt{position:relative;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;background:#eee;cursor:pointer;overflow:hidden}
+.gallery .gallery-item dt{position:relative;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;background:#eee;cursor:pointer;overflow:hidden;border-radius: 5px;box-shadow: 0 0 3px #7b7b7b;}
 .gallery .gallery-item img{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;border:0!important}
 
 

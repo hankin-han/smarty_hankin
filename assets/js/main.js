@@ -177,7 +177,9 @@ $("#mobile-collapse").on("click", function() {
 });
 $("#mobile-collapse,#mobile-collapse1").click(function(b) {
 	var a = $(window)[0].innerWidth;
+	console.log(a);
 	if (a < 992) {
+		$(".pcoded-navbar").removeClass("navbar-collapsed");
 		$(".pcoded-navbar").toggleClass("mob-open");
 		b.stopPropagation()
 	}

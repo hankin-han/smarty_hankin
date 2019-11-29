@@ -132,24 +132,6 @@ function coolwp_remove_open_sans_from_wp_core()
 add_action('init', 'coolwp_remove_open_sans_from_wp_core');
 
 
-// 禁用谷歌字体
-class Disable_Google_Fonts
-{
-    public function __construct()
-    {
-        add_filter('gettext_with_context', [$this, 'disable_open_sans'], 888, 4);
-    }
-
-    public function disable_open_sans($translations, $text, $context, $domain)
-    {
-        if ('Open Sans font: on or off' == $context && 'on' == $text)
-        {
-            $translations = 'off';
-        }
-
-        return $translations;
-    }
-}
 /* 清除wp_head无用内容 */
 function disable_emojis() {
     remove_action( 'wp_head', 'wp_generator' ); //移除WordPress版本
@@ -172,7 +154,6 @@ function remove_dns_prefetch( $hints, $relation_type ) {
     }
     return $hints;
 }
-
 
 /* 开启文章形式 */
 //文章形式
