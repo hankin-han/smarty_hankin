@@ -103,9 +103,12 @@ $wpdb->update('wp_options',[
 function getuserList($postId){
 
     global $wpdb;
-    $user_sql = "SELECT * FROM `wp_comments`
-    WHERE `comment_post_ID` = '".$postId."' 
-    GROUP BY `comment_author_email`";
+$user_sql = "SELECT
+    * 
+FROM
+    ( SELECT * FROM wp_comments WHERE `comment_post_ID` = '".$postId."' ORDER BY comment_ID DESC ) a 
+GROUP BY
+    a.comment_author_email";
     $user_list = $wpdb->get_results($user_sql,ARRAY_A);
 
     return $user_list ? $user_list : [];
