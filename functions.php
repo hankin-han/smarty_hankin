@@ -550,7 +550,7 @@ function get_ajax_qq() {
 
   $avatarApi = "https://q1.qlogo.cn/g?b=qq&s=5&nk=";
 
-  $qq = isset($_GET['qq']) ? addslashes(trim($_GET['qq'])) : '';
+  $qq = isset($_GET['qq']) ? trim($_GET['qq']) : '';
 
   if(!empty($qq) && is_numeric($qq) && strlen($qq) > 4 && strlen($qq) < 13)
   {
@@ -565,7 +565,7 @@ function get_ajax_qq() {
         //$avatar = $result[0]; //被禁了
         $avatar = $avatarApi.$qq;
     }
-    ajaxResult(200,'',["id"=> intval($qq),"name"=>$nickname,"avatar"=>$avatar]);
+    ajaxResult(200,'',["id"=> $qq,"name"=>$nickname,"avatar"=>$avatar]);
   }else{
     ajaxResult(1000,'QQ格式不正确',["id"=> "","name"=>"","avatar"=>""]);
   }
