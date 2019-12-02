@@ -518,13 +518,14 @@ function timeGo($ptime)
 
 function qqMsg($qq)
 {
-    $api = "http://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=";
+    //$api = "https://r.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=";
+    $api = "https://r.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=";
 
     $avatarApi = "https://q1.qlogo.cn/g?b=qq&s=5&nk=";
 
     $contents = file_get_contents($api.$qq);
     if($contents){
-        $data = iconv("GB2312","UTF-8",$contents);
+        $data = iconv("GBK","UTF-8",$contents);
         $pattern = '/portraitCallBack\((.*)\)/is';
         preg_match($pattern,$data,$result);
         $result = $result[1];
@@ -545,7 +546,7 @@ function get_ajax_qq() {
   // 输出响应
   header( "Content-Type: application/json" );
 
-  $api = "http://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=";
+  $api = "https://r.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=";
 
   $avatarApi = "https://q1.qlogo.cn/g?b=qq&s=5&nk=";
 
@@ -555,7 +556,7 @@ function get_ajax_qq() {
   {
     $contents = file_get_contents($api.$qq);
     if($contents){
-        $data = iconv("GB2312","UTF-8",$contents);
+        $data = iconv("GBK","UTF-8",$contents);
         $pattern = '/portraitCallBack\((.*)\)/is';
         preg_match($pattern,$data,$result);
         $result = $result[1];
