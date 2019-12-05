@@ -27,11 +27,6 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                     <label>导航</label>
                 </li>
             </ul>
-            <ul class="nav pcoded-inner-navbar">
-                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1411">
-                    <a href="http://test.www.hankin.cn" aria-current="page"><span class="pcoded-micon"><i class="feather icon-home"></i></span>首页</a>
-                </li>
-            </ul>
             <?php
             if ( function_exists( 'wp_nav_menu' ) && has_nav_menu('warp-nav') ) {
                 wp_nav_menu(
