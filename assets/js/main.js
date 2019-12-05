@@ -66,7 +66,7 @@ $("#clear-qq").on("click",function(){
 		$(document).ready(function(){          
 			$("#list-home").infinitescroll({
 			    loading: {
-			        img: THEME_URL+'/assets/images/loading.gif',
+			        img: THEME_URL+'/assets/images/loading.svg',
 			        msgText: "加载中...",
 			        finishedMsg: "—— 我是有底线的 ——"
 			    },
@@ -78,7 +78,7 @@ $("#clear-qq").on("click",function(){
 			});
 			$("#list-grid").infinitescroll({
 			    loading: {
-			        img: THEME_URL+'/assets/images/loading.gif',
+			        img: THEME_URL+'/assets/images/loading.svg',
 			        msgText: "加载中...",
 			        finishedMsg: "—— 我是有底线的 ——"
 			    },

@@ -27,6 +27,11 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                     <label>导航</label>
                 </li>
             </ul>
+            <ul class="nav pcoded-inner-navbar">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1411">
+                    <a href="http://test.www.hankin.cn" aria-current="page"><span class="pcoded-micon"><i class="feather icon-home"></i></span>首页</a>
+                </li>
+            </ul>
             <?php
             if ( function_exists( 'wp_nav_menu' ) && has_nav_menu('warp-nav') ) {
                 wp_nav_menu(
@@ -39,7 +44,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                         'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     ]);
             } else {
-                echo '<li><a href="/wp-admin/nav-menus.php" target="_blank">请到[后台->外观->菜单]中设置菜单。</a></li>';
+                echo '<a href="/wp-admin/nav-menus.php" target="_blank">请到[后台->外观->菜单]中设置菜单。</a>';
             }
             ?>
             <ul class="nav pcoded-inner-navbar ">
@@ -59,12 +64,16 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                                 );
                                 $categories=get_categories($args);
                                 ?>
-                                <?php foreach($categories as $category):?>
-                                    <li><a href="<?= get_category_link( $category->term_id )?>" title="<?= $category->name ?>">
-                                            <span><?= $category->name ?></span>
-                                        </a>
-                                    </li>
-                                <?php endforeach;?>
+                                <?php if($categories):?>
+                                    <?php foreach($categories as $category):?>
+                                        <li><a href="<?= get_category_link( $category->term_id )?>" title="<?= $category->name ?>">
+                                                <span><?= $category->name ?></span>
+                                            </a>
+                                        </li>
+                                    <?php endforeach;?>
+                                <?php else:?>
+                                <a href="/wp-admin/edit-tags.php?taxonomy=category" target="_blank">请到[后台->文章->分类]中设置。</a>
+                                <?php endif;?>
                         </ul>
                     </li>
             </ul>
@@ -102,7 +111,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                                 </li>
                             <?php endforeach;?>
                             <?php else: ?>
-                            <?php echo '<li><a href="/wp-admin/admin.php?page=cs-framework" target="_blank">请到[后台->主题设置->友情链接]中设置。</a></li>';?>
+                            <?php echo '<a href="/wp-admin/admin.php?page=cs-framework" target="_blank">请到[后台->主题设置->友情链接]中设置。</a>';?>
                             <?php endif;?>
                         </ul>
                     </li>

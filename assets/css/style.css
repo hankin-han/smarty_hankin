@@ -1027,7 +1027,7 @@ to{background-position:0 0}
 .list-group-item-action{width:100%;color:#495057;text-align:inherit}
 .list-group-item-action:focus,.list-group-item-action:hover{z-index:1;color:#495057;text-decoration:none;background-color:#f8f9fa}
 .list-group-item-action:active{color:#373a3c;background-color:#e9ecef}
-.list-group-item{position:relative;display:block;padding:.75rem 1.25rem;margin-bottom:-1px;background-color:#fff;border:1px solid rgba(0,0,0,.125)}
+.list-group-item{position:relative;display:block;padding:.75rem 1.25rem;margin-bottom:-1px;border:1px solid rgba(0,0,0,.125)}
 .list-group-item:first-child{border-top-left-radius:.25rem;border-top-right-radius:.25rem}
 .list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}
 .list-group-item.disabled,.list-group-item:disabled{color:#6c757d;pointer-events:none;background-color:#fff}
@@ -4955,7 +4955,7 @@ pre[class*=language-]:after,pre[class*=language-]:before{display:none}
 .mob-toggler:hover span:after,.mob-toggler:hover span:before,.mobile-menu:hover span:after,.mobile-menu:hover span:before{background-color:#101b33;width:100%}
 .mob-toggler{right:5px;display:none}
 .pcoded-header:before,.pcoded-main-container:before{content:"";transition:all .3s ease-in-out}
-.pcoded-navbar{display:block;z-index:1028;position:absolute;box-shadow:0 2px 10px -1px rgba(69,90,100,.3);transition:all .3s ease-in-out;width:230px;height:calc(100% - 50px);margin-top:50px;border-radius:0 6px 0 0;top:0;background:#101b33;color:#97a7c1}
+.pcoded-navbar{display:block;z-index:1028;position:absolute;box-shadow:0 2px 10px -1px rgba(69,90,100,.3);transition:all .3s ease-in-out;width:230px;height:calc(100% - 50px);margin-top:50px;border-radius:6px 6px 0 0;top:0;background:#101b33;color:#97a7c1}
 .pcoded-navbar ul{padding-left:0;list-style:none;margin-bottom:0}
 .pcoded-navbar .scroll-div.navbar-content{height:100%}
 .pcoded-navbar .header-logo{position:relative;align-items:center;display:inline-flex;float:left;background:#101b33;height:50px;text-align:center;width:230px;margin-right:0;padding:10px 25px;transition:all .3s ease-in-out}
