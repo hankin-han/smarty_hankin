@@ -83,6 +83,8 @@ wxConfig = {
 <!--网站统计代码 start-->
 <?php if( ! empty( $i_js_tongji ) ){ echo '<script type="text/javascript">'.$i_js_tongji.'</script>';}else{ echo'';} ?>
 <!--网站统计代码 end-->
-
+<!-- [ modal ] start -->
+ <?php get_template_part( 'layouts/footer/modal' );?>
+<!-- [ modal ] end -->
 </body>
 </html>

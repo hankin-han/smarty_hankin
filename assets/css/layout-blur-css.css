@@ -16,15 +16,7 @@ h1, h2, h3, h4, h5, h6,a{color:var(--white)!important}
 .form-control:disabled, .form-control[readonly]{background-color:rgba(0,0,0,.15)!important;}
 .comment .comment-text{border-bottom:1px solid rgba(151,167,193,.5)!important;}
 .menu-styler h5,.menu-styler h6{color:#37474f!important}
-.theme-box-list a{
-	color:#37474f!important
-}
-.mb-2{
-	color:#37474f!important
-}
-.grid_author_avt:after{
-	background-image:none;
-}
-.list-body a{
-	color:var(--white)!important
-}
+.theme-box-list a{color:#37474f!important}
+.mb-2{color:#37474f!important}
+.grid_author_avt:after{background-image:none;}
+.list-body a{color:var(--white)!important}

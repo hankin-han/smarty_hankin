@@ -424,7 +424,7 @@ $options[] = [
 
     ],
   ];
-/*
+
   // ------------------------------
   // 文章设置                       -
   // ------------------------------
@@ -435,7 +435,7 @@ $options[] = [
     'icon' => 'fa fa-list-alt',
     'fields' => [
 
-      // 文章设置
+      /*// 文章设置
       [
         'id' => 'i_article',
         'type' => 'radio',
@@ -467,7 +467,7 @@ $options[] = [
         'id' => 'i_article_bing_thumbnail',
         'type' => 'switcher',
         'title' => '文章默认封面使用微软Bing封面',
-      ],
+      ],*/
 
       // 开启文章页打赏按钮
       [
@@ -480,21 +480,21 @@ $options[] = [
       [
         'id' => 'i_dashang_weixin',
         'type' => 'upload',
-        'title' => '文章页打赏作者（微信）',
-        'default' => "https://www.hankin.cn/wp-content/themes/hankin/images/dashang_weixin.png",
+        'title' => '文章页打赏作者（微信）140*140 正方形',
+        'default' => "",
       ],
 
       // 文章页打赏作者（支付宝）
       [
         'id' => 'i_dashang_zhifubao',
         'type' => 'upload',
-        'title' => '文章页打赏作者（支付宝）',
-        'default' => "https://www.hankin.cn/wp-content/themes/hankin/images/dashang_zhifubao.jpg",
+        'title' => '文章页打赏作者（支付宝）140*140 正方形',
+        'default' => "",
       ],
 
     ],
   ];
-
+/*
   // ------------------------------
   // 评论设置                       -
   // ------------------------------

@@ -15,10 +15,10 @@
 }
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){.ps{overflow:auto!important}
 }
-html::-webkit-scrollbar-track-piece{background:#EDEDED}
-html::-webkit-scrollbar{width:5px;height:6px}
-html::-webkit-scrollbar-thumb{border-radius:4px;background-color:#9a9fbf}
-html::-webkit-scrollbar-thumb:hover{background-color:#bbb}
+body::-webkit-scrollbar-track-piece{background:#EDEDED}
+body::-webkit-scrollbar{width:5px;height:6px}
+body::-webkit-scrollbar-thumb{border-radius:4px;background-color:#9a9fbf}
+body::-webkit-scrollbar-thumb:hover{background-color:#bbb}
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -1114,14 +1114,14 @@ a.close.disabled{pointer-events:none}
 .modal-dialog-centered.modal-dialog-scrollable .modal-content{max-height:none}
 .modal-dialog-centered.modal-dialog-scrollable::before{content:none}
 .modal-content{position:relative;display:flex;flex-direction:column;width:100%;pointer-events:auto;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.2);border-radius:.25rem;outline:0}
-.modal-backdrop{position:fixed;top:0;left:0;z-index:1040;width:100vw;height:100vh;background-color:#000}
+.modal-backdrop{position:fixed;top:0;left:0;z-index:1040;width:100vw;height:100vh;background-color:#000;}
 .modal-backdrop.fade{opacity:0}
 .modal-backdrop.show{opacity:.5}
 .modal-header{display:flex;align-items:flex-start;justify-content:space-between;padding:20px 20px;border-bottom:1px solid #e3eaef;border-top-left-radius:.25rem;border-top-right-radius:.25rem}
 .modal-header .close{padding:20px 20px;margin:-20px -20px -20px auto}
 .modal-title{margin-bottom:0;line-height:1.5}
 .modal-body{position:relative;flex:1 1 auto;padding:20px 20px}
-.modal-footer{display:flex;align-items:center;justify-content:flex-end;padding:20px 20px;border-top:1px solid #e3eaef;border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}
+.modal-footer{padding:20px 20px;border-top:1px solid #e3eaef;border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}
 .modal-footer>:not(:first-child){margin-left:.25rem}
 .modal-footer>:not(:last-child){margin-right:.25rem}
 .modal-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}
@@ -4478,6 +4478,7 @@ b,strong{font-weight:600}
 .bd-example-modal{background-color:#fafafa}
 .bd-example-modal .modal{position:relative;top:auto;right:auto;bottom:auto;left:auto;z-index:1;display:block}
 .bd-example-modal .modal-dialog{left:auto;margin-right:auto;margin-left:auto}
+.modal-header {background-color: #f3f3f3;overflow: hidden;border-top-left-radius: 3px;border-top-right-radius: 3px;padding: 15px;border-bottom: 1px solid #e5e5e5;min-height: 16.5px;}
 .bd-example-tabs .nav-tabs{margin-bottom:1rem}
 .highlight{padding:1rem;margin-top:1rem;margin-bottom:1rem;background-color:#f3f2fb;-ms-overflow-style:-ms-autohiding-scrollbar}
 @media only screen and (max-height:575px){.highlight{padding:1.5rem}

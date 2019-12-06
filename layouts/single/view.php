@@ -38,6 +38,9 @@
             </div>
         </div>
     </div>
+    <!-- [ like ] start -->
+        <?php get_template_part( 'layouts/single/like' );?>
+    <!-- [ like ] end -->
 </div>
 <?php endwhile; ?>
 <?php endif; ?>

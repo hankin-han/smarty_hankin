@@ -727,3 +727,7 @@ Buttons
 .btn-ins:hover{background-color:#ed4956;border-color:#ed4956;color:#fff}
 .btn-tumblr:hover{background-color:#36465d;border-color:#36465d;color:#fff}
 .btn-plus-nice{}
+
+.qr_pay{background: url(../images/qr_pay.png) no-repeat;height:580px;}
+.qr_pay .qr_pay_wechatpay{width: 140px;height:140px;position: relative;top: 250px;left: 140px;}
+.qr_pay .qr_pay_alipay{width: 140px;height:140px;position: relative;top: 250px;left: 377px;}
