@@ -25,7 +25,7 @@ $i_dashang_zhifubao = cs_get_option('i_dashang_zhifubao');//打赏支付宝
         </div>
       </div>
       <div class="modal-footer">
-        <p class="text-center text-muted">请通过微信、支付宝、QQ APP 扫一扫 </p>
+        <p class="text-center text-muted">请通过微信、支付宝 APP 扫一扫 </p>
         <p class="text-center text-muted">感谢您对作者的支持！</p>
       </div>
     </div>
