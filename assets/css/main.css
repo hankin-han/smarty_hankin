@@ -729,5 +729,5 @@ Buttons
 .btn-plus-nice{}
 
 .qr_pay{background: url(../images/qr_pay.png?v=1) no-repeat;height:580px;}
-.qr_pay .qr_pay_wechatpay{width: 140px;height:140px;position: relative;top: 250px;left: 140px;}
-.qr_pay .qr_pay_alipay{width: 140px;height:140px;position: relative;top: 250px;left: 377px;}
+.qr_pay .qr_pay_wechatpay{width: 140px;height:140px;position: relative;top: 253px;left: 138px;}
+.qr_pay .qr_pay_alipay{width: 140px;height:140px;position: relative;top: 253px;left: 375px;}
