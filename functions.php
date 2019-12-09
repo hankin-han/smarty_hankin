@@ -792,5 +792,17 @@ function hankin_like(){
 add_action('wp_ajax_nopriv_hankin_like', 'hankin_like');
 add_action('wp_ajax_hankin_like', 'hankin_like');
 
-
+// 获取点赞总数量
+function count_post_meta($key){
+    global $wpdb;
+    $sql = "SELECT
+    count(*) as total,
+    SUM(meta_value) as count
+FROM
+    wp_postmeta 
+WHERE
+    `meta_key` = '".$key."'";
+    $res = $wpdb->get_row($sql,ARRAY_A);
+    return $res ? $res['count'] : 0;
+}
 

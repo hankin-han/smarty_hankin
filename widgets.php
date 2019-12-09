@@ -238,6 +238,9 @@ class AuthorCard extends WP_Widget {
         echo '                <span class="font-theme font-weight-bold text-md">'.get_comments('count=true&comment_status=approved').'</span><small class="d-block text-xs text-muted">评论</small>';
         echo '            </a>';
         echo '            <a href="" class="col">';
+        echo '                <span class="font-theme font-weight-bold text-md">'.count_post_meta('hankin_like').'</span><small class="d-block text-xs text-muted">点赞</small>';
+        echo '            </a>';
+        echo '            <a href="" class="col">';
         echo '                <span class="font-theme font-weight-bold text-md">'.lo_all_view().'</span><small class="d-block text-xs text-muted">浏览</small>';
         echo '            </a>';
         echo '        </div>';
