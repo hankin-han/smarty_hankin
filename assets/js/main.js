@@ -244,3 +244,6 @@ $(".pcoded-submenu-click").on("click",function(){
 		$(this).parent().removeClass("pcoded-trigger");
 	}
 });
+$(".menu-item-object-custom a , .pcoded-submenu a").on("click",function(){
+	$(".pcoded-navbar").removeClass("mob-open");
+})
