@@ -8,7 +8,9 @@
             <div class="col-md-4 col-lg-12">
                 <div class="list-item block">
                     <div class="media media-21x9">
-                        <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url(<?= getThumbnail()?>)"></a>
+                        <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url(<?= getThumbnail()?>)">
+                            <span class="overlay"></span>
+                        </a>
                     </div>
                     <div class="list-content">
                         <div class="list-body ">

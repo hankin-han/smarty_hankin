@@ -5,7 +5,9 @@
     <div class="list-box">
     <div class="card list-item block card-plain">
         <div class="media media-3x2 col-4 col-md-4">
-            <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url('<?= getThumbnail()?>')"></a>
+            <a class="media-content" href="<?php the_permalink() ?>" style="background-image:url('<?= getThumbnail()?>')">
+                <span class="overlay"></span>
+            </a>
         </div>
         <div class="list-content">
             <div class="list-body">

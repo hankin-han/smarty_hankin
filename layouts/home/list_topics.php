@@ -9,7 +9,9 @@
             <div class="col-md-4">
                 <div class="list-item block">
                     <div class="media media-21x9">
-                        <a class="media-content" href="<?= get_category_link( $category->term_id )?>" style="background-image:url(<?= getThumbnail()?>)"></a>
+                        <a class="media-content" href="<?= get_category_link( $category->term_id )?>" style="background-image:url(<?= getThumbnail()?>)">
+                            <span class="overlay"></span>
+                        </a>
                         <div class="media-overlay overlay-top p-3">
                             <small>
                                 <i class="text-xl iconfont icon-file-text-line"></i>
