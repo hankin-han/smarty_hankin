@@ -9,7 +9,12 @@ $i_avatar_option_footer = cs_get_option('i_avatar_option_footer'); //备案号
             <?php if($i_avatar_beian):?> 网站备案号： <a href="http://www.beian.miit.gov.cn/" target="_blank"><?= $i_avatar_beian ?></a><?php endif;?> 
             <?= $i_avatar_option_footer?></div>
             <?php /* 请尊重博主的劳动成果 你忍心删除我？ */ ?>
-            <div class="float-right d-none"><a href="" title="" rel="home"><?php echo _the_theme_name()?> 主题</a>. Designed by <a href="http://www.hankin.cn" title="hankin" target="_blank">hankin</a></div>
+            <?php if(!wp_is_mobile()):?>
+                <div class="float-right d-none">
+                    <a href="" title="" rel="home"><?php echo _the_theme_name()?> 主题</a>. Designed by 
+                    <a href="http://www.hankin.cn" title="hankin" target="_blank">hankin</a>
+                </div>
+            <?php endif;?>
 		</div>
     </div>
 </footer>
