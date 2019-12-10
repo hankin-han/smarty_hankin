@@ -5780,7 +5780,7 @@ body.background-img-12 .pcoded-navbar.theme-horizontal~.pcoded-header[class*=hea
 .pcoded-header.brand-default .header-logo,.pcoded-header[class*=header-].brand-default .header-logo{background:#101b33}
 .pcoded-navbar.menupos-fixed{position:fixed;height:100vh;min-height:100vh;border-radius:0}
 .pcoded-navbar.menupos-fixed .scroll-div.navbar-content{height:calc(100% - 50px);min-height:calc(100% - 50px)}
-.pcoded-header.headerpos-fixed{position:fixed!important;top:0}
+.pcoded-header.headerpos-fixed{position:fixed!important;top:0;background:var(--blue);}
 .pcoded-header.headerpos-fixed~.pcoded-main-container{padding-top:50px}
 .pcoded-header.headerpos-fixed~.pcoded-main-container .page-header h5{color:#37474f}
 .pcoded-header.headerpos-fixed~.pcoded-main-container .page-header .page-header-title+.breadcrumb>.breadcrumb-item:before{color:rgba(55,71,79,.8)}
