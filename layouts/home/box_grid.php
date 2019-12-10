@@ -6,7 +6,9 @@
             <div class="list-item-column card card-featured p-0 box-grid">
                 <div class="list-content p-0">
                     <div class="media media-16x9">
-                        <a class="media-content" title="<?php echo get_the_title()?>" href="<?php the_permalink() ?>" style="background-image:url('<?= getThumbnail()?>');border-radius: 4px 4px 0 0;"></a>
+                        <a class="media-content" title="<?php echo get_the_title()?>" href="<?php the_permalink() ?>" style="background-image:url('<?= getThumbnail()?>');border-radius: 4px 4px 0 0;">
+                            <span class="overlay"></span>
+                        </a>
                     </div>
                     <a href="<?php the_permalink() ?>" class="grid_author_avt">
                             <div class="grid_author_bggo avatar bg-cover" style="background-image: url(<?php echo json_get_avatar_url(get_avatar( get_the_author_meta( 'user_email' ),'30' )); ?>);"></div>
