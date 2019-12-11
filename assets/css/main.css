@@ -708,12 +708,21 @@ Buttons
 .btn-icon.btn-lg{width:3.375rem;height:3.375rem}
 .btn-rounded{border-radius:4rem;padding-left:1rem;padding-right:1rem}
 .btn-rounded.btn-xs{padding-left:0.8rem;padding-right:0.8rem}
-
+/*--------------------------------------------------------------
+ table social style
+--------------------------------------------------------------*/
+table{width:100%;max-width:65em;border:1px solid #dedede;margin:15px auto;border-collapse:collapse;empty-cells:show}
+table th,table td{height:35px;border:1px solid #dedede;padding:0 10px}
+table th{font-weight:bold;background:#f8f8f8}
+table tbody tr:nth-child(2n){background:#f8f8f8}
+table tr:hover{background:#efefef}
+table th{white-space:nowrap}
+table td:nth-child(1){white-space:nowrap}
+.table-area{overflow:auto}
 
 /*--------------------------------------------------------------
  btn social style
 --------------------------------------------------------------*/
-
 .qq{color:#3d93e0}
 .weibo{color:#e24040}
 .weixin{color:#20b767}
