@@ -1,4 +1,3 @@
-<?php get_template_part( 'layouts/home/category' );?>
 <main class="h-v-75">
     <div class="container" id="list-home">
 <?php if (have_posts()): ?>
