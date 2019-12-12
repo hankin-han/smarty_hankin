@@ -10,6 +10,7 @@ $i_music_check = cs_get_option('i_music_check'); //开启播放器
 $i_music_auto_play = cs_get_option('i_music_auto_play'); //开启自动播放
 $i_music_loop = cs_get_option('i_music_loop'); //音乐循环
 $i_music_value = cs_get_option('i_music_value'); //音乐播放列表id
+$i_slider = cs_get_option('i_slider'); //自定义幻灯片
 ?>
 <!--定义全局变量--> 
 <script type="text/javascript">
@@ -25,6 +26,7 @@ window.TIMESTAMP = '<?= $wxJsData['timestamp']?>';
 window.NONCESTR = '<?= $wxJsData['nonceStr']?>';
 window.SIGNATURE = '<?= $wxJsData['signature']?>';
 window.IS_PAGE_SINGLE = <?= (is_single() || is_page()) ? '1' : '0' ?>;
+window.IS_SLIDER = <?= ($i_slider) ? '1' : '0' ?>;
 </script>
 <script type="text/javascript" src="//res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script type="text/javascript">

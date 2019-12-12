@@ -1,6 +1,28 @@
 
 $('a[data-toggle="tooltip"]').tooltip();
 function hljsLoad(){
+//幻灯片	
+if(IS_SLIDER == '1'){
+	var newSlideSize = function slideSize(){
+    var w = Math.ceil($(".swiper-container").width()/2);
+    $(".swiper-container,.swiper-wrapper,.swiper-slide").height(w);
+    };
+    	newSlideSize();
+    $(window).resize(function(){
+    	newSlideSize();
+    });
+	var swiper = new Swiper('.swiper-container', {
+	    pagination: '.swiper-pagination',
+	    nextButton: '.swiper-button-next',
+	    prevButton: '.swiper-button-prev',
+	    paginationClickable: true,
+	    loop : true,
+	    autoplay : 5000,
+	    lazyLoading: true,
+	    zoom: true,
+	    effect: 'slide'
+    });
+}
 $('#view-content').viewer();
 $('.gallery').viewer();
 $("#hankin_qq").blur(function(){

@@ -101,7 +101,7 @@ $options[] = [
         'help' => '',
         'fields' => [
 
-          // 自定义社交链接--标题
+          // 公告栏--标题
           [
             'id' => 'i_notice_title',
             'type' => 'text',
@@ -111,7 +111,7 @@ $options[] = [
             ],
           ],
 
-          // 自定义社交链接--链接
+          // 公告栏--链接
           [
             'id' => 'i_notice_link',
             'type' => 'text',
@@ -121,12 +121,12 @@ $options[] = [
             ],
           ],
 
-          // 自定义社交链接--新标签
+          // 公告栏--新标签
           [
             'id' => 'i_notice_newtab',
             'type' => 'switcher',
             'title' => '新标签打开',
-            'dependency' => ['i_notice_link', '!=', ''],
+
           ],
 
         ],
@@ -740,7 +740,7 @@ $options[] = [
   // ------------------------------
   // 幻灯片                      -
   // ------------------------------
-/*
+
   $options[] = [
     'name' => 'slider',
     'title' => '幻灯片',
@@ -755,7 +755,7 @@ $options[] = [
         'help' => '注意：幻灯片只显示在主页，图片尺寸1600*500！请慎重选择图片',
       ],
 
-      // 幻灯片切换效果
+      /*// 幻灯片切换效果
       [
         'id' => 'i_slider_effect',
         'type' => 'select',
@@ -768,7 +768,7 @@ $options[] = [
           'flip' => 'flip-3d翻转',
         ],
         'default' => 'slide',
-      ],
+      ],*/
 
       // 自定义幻灯片
       [
@@ -781,14 +781,14 @@ $options[] = [
         'fields' => [
 
           // 自定义幻灯片--标题
-          [
+          /*[
             'id' => 'i_slider_title',
             'type' => 'text',
             'title' => '标题',
             'attributes' => [
               'placeholder' => '例如：滑块01',
             ],
-          ],
+          ],*/
 
           // 自定义幻灯片--图片
           [
@@ -798,14 +798,14 @@ $options[] = [
           ],
 
           // 自定义幻灯片--描述
-          [
+          /*[
             'id' => 'i_slider_text',
             'type' => 'text',
             'title' => '描述',
             'attributes' => [
               'placeholder' => '输入描述',
             ],
-          ],
+          ],*/
 
           // 自定义幻灯片--链接
           [
@@ -822,7 +822,6 @@ $options[] = [
             'id' => 'i_slider_newtab',
             'type' => 'switcher',
             'title' => '新标签打开',
-            'dependency' => ['i_slider_newtab', '!=', ''],
           ],
 
         ],
@@ -830,7 +829,7 @@ $options[] = [
 
     ],
   ];
-*/
+
   // ----------------------------------------
   // 友情链接
   // ----------------------------------------

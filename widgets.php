@@ -213,23 +213,49 @@ class AuthorCard extends WP_Widget {
             parent::__construct('cs_widget_author', 'smarty_hankin主题作者主页', $widget_ops);
         }
         function widget($args, $instance) {
+            $i_social = cs_get_option('i_social'); //自定义社交链接
+            $i_slider = cs_get_option('i_slider'); //自定义幻灯片
+            $i_slider_custom = cs_get_option('i_slider_custom'); //自定义幻灯片
             extract($args);
             echo $before_widget;
         echo '<div id="author_card-5" class="card-sm widget Author_Card">';
         echo '    <div class="widget-author-cover">';
-        echo '        <div class="media media-2x1">';
-        echo '            <div class="media-content" style="background-image:url('.get_template_directory_uri().'/assets/images/default-cover.jpg)"></div>';
-        echo '        </div>';
-        echo '        <div class="widget-author-avatar">';
+
+###################################   
+        if($i_slider):
+            echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>';
+            echo '<style> .swiper-pagination-bullet{width: 5px;height: 5px;display: inline-block;background: #060606;opacity: .6;border-radius:10px;transition: all .2s ease-in-out;} .swiper-pagination-bullet-active{opacity: 1;background: #fff;width:25px} .swiper-button-prev{transition: all .2s ease-in-out;} .swiper-button-next{transition: all .2s ease-in-out;} .swiper-container:hover .swiper-button-prev{left:0;opacity:1} .swiper-container:hover .swiper-button-next{right:0;opacity:1} .swiper-container{overflow: hidden;box-shadow: 0 0 5px #7b7b7b;border-radius:5px 5px 0px 0px;} .swiper-content{border:0;margin-bottom: 0;background:rgba(255,255,255,.15);padding-bottom: 0;border-radius: 0}.swiper-pagination{text-align:right!important;}.swiper-container-horizontal>.swiper-pagination-bullets{bottom:0!important}.swiper-button-next, .swiper-button-prev{height:20px!important;margin-top:0px!important}.swiper-button-next{right:-15px;}.swiper-button-prev{left:-15px;}</style>';
+            echo '<div class="panel wrapper-md swiper-content">';
+            echo '    <div class="swiper-container border-radius">';
+            echo '        <div class="swiper-wrapper">';
+            foreach($i_slider_custom as $item):
+            echo '            <div class="swiper-slide">';
+            echo '                    <img class="img-responsive center-block img-full" src="'.$item['i_slider_image'].'"></a>';
+            echo '            </div>';
+            endforeach;
+            echo '        </div>';
+            echo '        <div class="swiper-pagination"></div>';
+            echo '        <div class="swiper-button-next swiper-button-white"></div>';
+            echo '        <div class="swiper-button-prev swiper-button-white"></div>';
+            echo '    </div>';
+            echo '</div>';    
+        else:
+            echo '        <div class="media media-2x1">';
+            echo '            <div class="media-content" style="background-image:url('.get_template_directory_uri().'/assets/images/default-cover.jpg)"></div>';
+            echo '        </div>';
+        endif;
+###################################       
+
+        echo '        <div class="widget-author-avatar" style="z-index:1;">';
         echo '            <div class="flex-avatar mx-2 w-80 border border-white border-2">';
         echo '                <img src="' . $instance['advertising'] . '" style="width:80px;height:80px;" /></div>';
         echo '        </div>';
         echo '    </div>';
-        echo '    <div class="widget-author-meta text-center p-4">';
+        echo '    <div class="widget-author-meta text-center pt-4 pl-4 pr-4">';
         echo '        <div class="h6 mb-3 text-lg text-c-blue">'.the_author_meta('display_name',1).'</div>';
         echo '        <div class="desc text-xs mb-3 h-2x ">';
         echo            $instance['title'];
-        echo '        </div>';
+        echo '        </div>';    
         echo '        <div class="row no-gutters text-center">';
         echo '            <a href="" class="col">';
         echo '                <span class="font-theme font-weight-bold text-md">'.get_the_author_posts().'</span><small class="d-block text-xs text-muted">文章</small>';
@@ -245,8 +271,23 @@ class AuthorCard extends WP_Widget {
         echo '            </a>';
         echo '        </div>';
         echo '    </div>';
+###################################        
+        if($i_social):
+            echo '<hr class="b-wid-1 my-1">';
+            echo '<div class="row no-gutters text-center pt-2 pb-2">';
+                foreach($i_social as $v):
+            echo '<a class="col" href="'. $v['i_social_link'].'"';
+                if($v['i_social_newtab']):
+                    echo 'target="_blank"';
+                endif;
+            echo 'data-toggle="tooltip" data-placement="bottom" title="'.$v['i_social_title'].'">';
+            echo '<i class="'.$v['i_social_icon'].'"></i>';
+            echo '</a>';
+                endforeach;
+            echo '</div>';
+        endif;
+##################################
         echo '</div>';
-
             echo $after_widget;
         }
         function update($new_instance, $old_instance) {
