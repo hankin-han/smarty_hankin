@@ -1,7 +1,7 @@
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container" id="content">
 <?php if(is_home() && wp_is_mobile()): ?>
-<style type="text/css">.swiper-container{border-radius: 0!important}#i_social,#i_social_hr{display: none;}.Author_Card{background:#fff;}</style>
+<style type="text/css">.swiper-container{border-radius: 0!important}#i_social,#i_social_hr{display: none;}.Author_Card{background:#fff;}.widget-author-cover .widget-author-avatar{top:-60!important;}</style>
     <div class="AuthorCardMobile">
     <?php 
         $authorCard = new AuthorCard();
