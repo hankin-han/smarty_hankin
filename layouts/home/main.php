@@ -5,7 +5,7 @@
     <div class="AuthorCardMobile">
     <?php 
         $authorCard = new AuthorCard();
-        $widget_cs_widget_author = get_option('widget_cs_widget_author')[2];
+        $widget_cs_widget_author = reset(get_option('widget_cs_widget_author'));
         $instance['title'] = $widget_cs_widget_author['title'];
         $instance['advertising'] = $widget_cs_widget_author['advertising'];
         $authorCard->widget([],$instance);
