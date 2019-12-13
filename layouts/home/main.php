@@ -1,5 +1,17 @@
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container" id="content">
+<?php if(is_home() && wp_is_mobile()): ?>
+<style type="text/css">.swiper-container{border-radius: 0!important}</style>
+    <div class="AuthorCardMobile">
+    <?php 
+        $authorCard = new AuthorCard();
+        $widget_cs_widget_author = get_option('widget_cs_widget_author')[3];
+        $instance['title'] = $widget_cs_widget_author['title'];
+        $instance['advertising'] = $widget_cs_widget_author['advertising'];
+        $authorCard->widget([],$instance);
+    ?>
+    </div>
+<?php endif;?>
     <div class="pcoded-content">
         <div class="row">
             <div class="col-md-8">
