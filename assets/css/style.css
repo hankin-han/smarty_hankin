@@ -3730,7 +3730,7 @@ pre[class*=language-]:after,pre[class*=language-]:before{display:none}
 	.pcoded-content{top: 10px;}
 }
 @media only screen and (max-width:768px){
-.pcoded-content{padding:25px 15px;top:0;}
+.pcoded-content{padding:15px 15px;top:0;}
 }
 @media only screen and (max-width:1200px) and (min-width:768px){.pcoded-navbar .header-logo{transition:none}
 .pcoded-navbar.navbar-collapsed{transition:none}

@@ -1,12 +1,12 @@
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container" id="content">
 <?php if(is_home() && wp_is_mobile()): ?>
-<style type="text/css">.swiper-container{border-radius: 0!important}#i_social{display: none;}</style>
+<style type="text/css">.swiper-container{border-radius: 0!important}#i_social,#i_social_hr{display: none;}.Author_Card{background:#fff;}</style>
     <div class="AuthorCardMobile">
     <?php 
         $authorCard = new AuthorCard();
         $widget_cs_widget_author = get_option('widget_cs_widget_author')[3];
-        $instance['title'] = $widget_cs_widget_author['title'];
+        $instance['title'] = '';
         $instance['advertising'] = $widget_cs_widget_author['advertising'];
         $authorCard->widget([],$instance);
     ?>
