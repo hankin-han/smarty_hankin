@@ -269,8 +269,8 @@ class AuthorCard extends WP_Widget {
         echo '    </div>';
 ###################################        
         if($i_social):
-            echo '<hr class="b-wid-1 my-1">';
-            echo '<div class="row no-gutters text-center pt-2 pb-2">';
+            echo '<hr class="b-wid-1 my-1" id="">';
+            echo '<div class="row no-gutters text-center pt-2 pb-2" id="i_social">';
                 foreach($i_social as $v):
             echo '<a class="col" href="'. $v['i_social_link'].'"';
                 if($v['i_social_newtab']):

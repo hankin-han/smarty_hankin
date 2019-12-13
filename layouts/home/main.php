@@ -1,7 +1,7 @@
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container" id="content">
 <?php if(is_home() && wp_is_mobile()): ?>
-<style type="text/css">.swiper-container{border-radius: 0!important}</style>
+<style type="text/css">.swiper-container{border-radius: 0!important}#i_social{display: none;}</style>
     <div class="AuthorCardMobile">
     <?php 
         $authorCard = new AuthorCard();
