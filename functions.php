@@ -83,7 +83,18 @@ register_nav_menu('top-warp-nav', 'smarty_hankin-顶部菜单');
 
 /* 设置登录样式*/
 function wp_login_style() {
-    wp_enqueue_style( "wp-login", get_template_directory_uri() . "/assets/css/admin/wp-login.css" );
+    $authorCard = new AuthorCard();
+        $widget_cs_widget_author = reset(get_option('widget_cs_widget_author'));
+        $advertising = $widget_cs_widget_author['advertising'];
+    wp_enqueue_style( "wp-login", get_template_directory_uri() . "/assets/css/admin/wp-login.css?v=".time() );
+    echo '<style>
+        .login {
+            background-image: url("'.get_template_directory_uri().'/assets/images/nav-bg/body-bg-'.rand(1,12).'.png");
+        }
+        #login h1 a {
+            background: #ccc url("'.$advertising.'");
+        }
+    </style>';
 }
 add_action('login_enqueue_scripts', 'wp_login_style');
 /* 设置后台样式*/
