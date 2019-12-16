@@ -1,8 +1,8 @@
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container" id="content">
 <?php if(is_home() && wp_is_mobile()): ?>
-<style type="text/css">.swiper-container{border-radius: 0!important}#i_social,#i_social_hr{display: none;}.Author_Card{background:#fff;}.widget-author-avatar{top:-60px!important;}</style>
-    <div class="AuthorCardMobile">
+<style type="text/css">.swiper-container{border-radius: 0!important}#i_social,#i_social_hr{display: none;}.Author_Card{background:#fff;}.widget-author-avatar{top:-60px!important;}.swiper-container{height: 15rem!important}</style>
+<div class="AuthorCardMobile">
     <?php 
         $authorCard = new AuthorCard();
         $widget_cs_widget_author = reset(get_option('widget_cs_widget_author'));
@@ -10,7 +10,7 @@
         $instance['advertising'] = $widget_cs_widget_author['advertising'];
         $authorCard->widget([],$instance);
     ?>
-    </div>
+</div>
 <?php endif;?>
     <div class="pcoded-content">
         <div class="row">

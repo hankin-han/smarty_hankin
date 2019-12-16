@@ -221,13 +221,15 @@ class AuthorCard extends WP_Widget {
 ###################################   
         if($i_slider):
             echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>';
-            echo '<style> .swiper-pagination-bullet{width: 5px;height: 5px;display: inline-block;background: #060606;opacity: .6;border-radius:10px;transition: all .2s ease-in-out;} .swiper-pagination-bullet-active{opacity: 1;background: #fff;width:25px} .swiper-button-prev{transition: all .2s ease-in-out;} .swiper-button-next{transition: all .2s ease-in-out;} .swiper-container:hover .swiper-button-prev{left:0;opacity:1} .swiper-container:hover .swiper-button-next{right:0;opacity:1} .swiper-container{width: 100%!important;height: 11rem;overflow: hidden;border-radius:3px 3px 0px 0px;} .swiper-content{border:0;margin-bottom: 0;background:rgba(255,255,255,.15);padding-bottom: 0;border-radius: 0}.swiper-pagination{text-align:right!important;}.swiper-container-horizontal>.swiper-pagination-bullets{bottom:0!important}.swiper-button-next, .swiper-button-prev{height:20px!important;margin-top:0px!important}.swiper-button-next{right:-15px;}.swiper-button-prev{left:-15px;}.swiper-slide{width:100%;height:100%;}</style>';
+            echo '<style> .swiper-pagination-bullet{width: 5px;height: 5px;display: inline-block;background: #fdfdfd;opacity: .6;border-radius:10px;transition: all .2s ease-in-out;} .swiper-pagination-bullet-active{opacity: 1;background: #fff;width:25px} .swiper-button-prev{transition: all .2s ease-in-out;} .swiper-button-next{transition: all .2s ease-in-out;} .swiper-container:hover .swiper-button-prev{left:0;opacity:1} .swiper-container:hover .swiper-button-next{right:0;opacity:1} .swiper-container{width: 100%!important;height: 11rem;overflow: hidden;border-radius:3px 3px 0px 0px;} .swiper-content{border:0;margin-bottom: 0;background:rgba(255,255,255,.15);padding-bottom: 0;border-radius: 0}.swiper-pagination{text-align:right!important;}.swiper-container-horizontal>.swiper-pagination-bullets{bottom:0!important}.swiper-button-next, .swiper-button-prev{height:20px!important;margin-top:0px!important}.swiper-button-next{right:-15px;}.swiper-button-prev{left:-15px;}.swiper-slide{width:100%;height:100%;}</style>';
             echo '<div class="panel wrapper-md swiper-content">';
             echo '    <div class="swiper-container border-radius">';
             echo '        <div class="swiper-wrapper">';
-            foreach($i_slider_custom as $item):
-            echo '            <div class="swiper-slide media-content" style="background:url('.$item['i_slider_image'].');background-size: cover;"></div>';
-            endforeach;
+            if(!empty($i_slider_custom)):
+                foreach($i_slider_custom as $item):
+                echo '            <div class="swiper-slide media-content" style="background:url('.$item['i_slider_image'].');background-size: cover;"></div>';
+                endforeach;
+            endif;
             echo '        </div>';
             echo '        <div class="swiper-pagination"></div>';
             echo '        <div class="swiper-button-next swiper-button-white"></div>';
@@ -247,29 +249,29 @@ class AuthorCard extends WP_Widget {
         echo '                <img src="' . $instance['advertising'] . '" style="width:80px;height:80px;" /></div>';
         echo '        </div>';
         echo '    </div>';
-        echo '    <div class="widget-author-meta text-center pt-4 pl-4 pr-4">';
+        echo '    <div class="widget-author-meta text-center pt-4 pl-4 pr-4 pb-2">';
         echo '        <div class="h6 mb-3 text-lg text-c-blue">'.the_author_meta('display_name',1).'</div>';
         echo '        <div class="desc text-xs mb-3 h-2x ">';
         echo            $instance['title'];
         echo '        </div>';    
         echo '        <div class="row no-gutters text-center">';
-        echo '            <a href="" class="col">';
+        echo '            <a href="javascript:void(0);" class="col">';
         echo '                <span class="font-theme font-weight-bold text-md">'.get_the_author_posts().'</span><small class="d-block text-xs text-muted">文章</small>';
         echo '            </a>';
-        echo '            <a href="" class="col">';
+        echo '            <a href="javascript:void(0);" class="col">';
         echo '                <span class="font-theme font-weight-bold text-md">'.get_comments('count=true&comment_status=approved').'</span><small class="d-block text-xs text-muted">评论</small>';
         echo '            </a>';
-        echo '            <a href="" class="col">';
+        echo '            <a href="javascript:void(0);" class="col">';
         echo '                <span class="font-theme font-weight-bold text-md">'.count_post_meta('hankin_like').'</span><small class="d-block text-xs text-muted">点赞</small>';
         echo '            </a>';
-        echo '            <a href="" class="col">';
+        echo '            <a href="javascript:void(0);" class="col">';
         echo '                <span class="font-theme font-weight-bold text-md">'.lo_all_view().'</span><small class="d-block text-xs text-muted">浏览</small>';
         echo '            </a>';
         echo '        </div>';
         echo '    </div>';
 ###################################        
-        if($i_social):
-            echo '<hr class="b-wid-1 my-1" id="">';
+        if($i_social && !empty($i_social)):
+            echo '<hr class="b-wid-1 my-1" id="i_social_hr">';
             echo '<div class="row no-gutters text-center pt-2 pb-2" id="i_social">';
                 foreach($i_social as $v):
             echo '<a class="col" href="'. $v['i_social_link'].'"';

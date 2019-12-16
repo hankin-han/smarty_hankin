@@ -195,6 +195,7 @@ $("#mobile-collapse,#mobile-collapse1").click(function(b) {
 	if (a < 992) {
 		$(".pcoded-navbar").removeClass("navbar-collapsed");
 		$(".pcoded-navbar").toggleClass("mob-open");
+		$("#content").addClass("mobile-overlay");
 		b.stopPropagation()
 	}
 });
@@ -207,6 +208,7 @@ $(window).ready(function() {
 		if (a < 992) {
 			if ($(".pcoded-navbar").hasClass("mob-open") == true) {
 				$(".pcoded-navbar").removeClass("mob-open");
+				$("#content:before").removeClass("mobile-overlay");
 				$("#mobile-collapse,#mobile-collapse1").removeClass("on")
 			}
 		}

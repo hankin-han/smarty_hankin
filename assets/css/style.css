@@ -3527,6 +3527,7 @@ pre[class*=language-]:after,pre[class*=language-]:before{display:none}
 .mob-toggler:hover span:after,.mob-toggler:hover span:before,.mobile-menu:hover span:after,.mobile-menu:hover span:before{background-color:#101b33;width:100%}
 .mob-toggler{right:5px;display:none}
 .pcoded-header:before,.pcoded-main-container:before{content:"";transition:all .3s ease-in-out}
+.mobile-overlay:before{z-index:2!important;backdrop-filter: blur(5px);}
 .pcoded-navbar{display:block;z-index:1028;position:absolute;box-shadow:0 2px 10px -1px rgba(69,90,100,.3);transition:all .3s ease-in-out;width:230px;height:calc(100% - 50px);margin-top:50px;border-radius:6px 6px 0 0;top:0;background:#101b33;color:#97a7c1}
 .pcoded-navbar ul{padding-left:0;list-style:none;margin-bottom:0}
 .pcoded-navbar .scroll-div.navbar-content{height:100%}
@@ -4351,12 +4352,12 @@ body.background-img-12 .pcoded-navbar.theme-horizontal~.pcoded-header[class*=hea
 .pcoded-header.brand-default .header-logo,.pcoded-header[class*=header-].brand-default .header-logo{background:#101b33}
 .pcoded-navbar.menupos-fixed{position:fixed;height:100vh;min-height:100vh;border-radius:0}
 .pcoded-navbar.menupos-fixed .scroll-div.navbar-content{height:calc(100% - 50px);min-height:calc(100% - 50px)}
-.pcoded-header.headerpos-fixed{position:fixed!important;top:0;background:var(--blue);}
+.pcoded-header.headerpos-fixed{position:fixed!important;top:0;background:hsla(0, 0%, 0%, 0.4);backdrop-filter: blur(5px);}
 .pcoded-header.headerpos-fixed~.pcoded-main-container{padding-top:50px}
 .pcoded-header.headerpos-fixed~.pcoded-main-container .page-header h5{color:#37474f}
 .pcoded-header.headerpos-fixed~.pcoded-main-container .page-header .page-header-title+.breadcrumb>.breadcrumb-item:before{color:rgba(55,71,79,.8)}
 .pcoded-header.headerpos-fixed~.pcoded-main-container .page-header .page-header-title+.breadcrumb>.breadcrumb-item a{color:#37474f}
-@media only screen and (max-width:991px){.pcoded-header.headerpos-fixed~.pcoded-main-container{padding-top:50px}
+@media only screen and (max-width:991px){.pcoded-header.headerpos-fixed~.pcoded-main-container{padding-top:0px}
 }
 #body .box-layout{position:static;background-size:cover;max-width:1380px;}
 #body .box-layout .pcoded-header{position:relative}
