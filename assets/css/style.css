@@ -4357,7 +4357,7 @@ body.background-img-12 .pcoded-navbar.theme-horizontal~.pcoded-header[class*=hea
 .pcoded-header.headerpos-fixed~.pcoded-main-container .page-header h5{color:#37474f}
 .pcoded-header.headerpos-fixed~.pcoded-main-container .page-header .page-header-title+.breadcrumb>.breadcrumb-item:before{color:rgba(55,71,79,.8)}
 .pcoded-header.headerpos-fixed~.pcoded-main-container .page-header .page-header-title+.breadcrumb>.breadcrumb-item a{color:#37474f}
-@media only screen and (max-width:991px){.pcoded-header.headerpos-fixed~.pcoded-main-container{padding-top:0px}
+@media only screen and (max-width:991px){.pcoded-header.headerpos-fixed~.pcoded-main-container{padding-top:50px}
 }
 #body .box-layout{position:static;background-size:cover;max-width:1380px;}
 #body .box-layout .pcoded-header{position:relative}
