@@ -11,6 +11,13 @@
         $authorCard->widget([],$instance);
     ?>
 </div>
+<!-- <div class="category">
+    <div class="list-ajax-nav author-list-ajax-nav list-ajax-index card mb-0 mt-2">
+        <ul class="p-0 mt-0 mb-0">
+            <li><a class="btn btn-sm" href="">推荐</a></li>
+        </ul>
+    </div>
+</div>  --> 
 <?php endif;?>
     <div class="pcoded-content">
         <div class="row">

@@ -1,7 +1,7 @@
 <?php
 $i_notice = cs_get_option('i_notice'); //自定义友情链接
 ?>
-<?php if(is_home() && isset($i_notice)):?>
+<?php if(is_home() && isset($i_notice) && !wp_is_mobile()):?>
 <div class="notice breadcrumb" id="notice">
     <ul class="notice-list" style="margin-top: 0px;">
             <?php foreach($i_notice as $notice):?>

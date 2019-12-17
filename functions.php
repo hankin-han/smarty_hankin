@@ -40,7 +40,7 @@ function custom_adminbar_menu($meta = TRUE)
             'id' => 'custom_menu',
             'title' => __('<i style="position: relative;top:7px;color:#9ea3a8" 
                 class="wp-menu-image dashicons-before dashicons-admin-settings">
-                </i>&nbsp;&nbsp;smarty_hankin 主题设置'),
+                </i>&nbsp;&nbsp;smarty_hankin 主题设置 <span style="border-radius:10px;padding:3px 6px;color:#fff;background:#1b81c2">v'._the_theme_version().'</span>'),
             'href' => '/wp-admin/admin.php?page=cs-framework',
             //'meta'  => array( 'target' => '_blank' )
         ]);
