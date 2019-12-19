@@ -27,7 +27,8 @@
                              } else {
                                 echo '0';
                              }?>
-                        </small></a>
+                        </small>
+                    </a>
                 </div>
             </div>
             <div class="border-theme bg-primary"></div>

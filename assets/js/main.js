@@ -1,5 +1,5 @@
 
-$('a[data-toggle="tooltip"]').tooltip();
+$('a[data-toggle="tooltip"],div[data-toggle="tooltip"]').tooltip();
 function hljsLoad(){
 //幻灯片	
 if(IS_SLIDER == '1'){

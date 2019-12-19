@@ -123,6 +123,50 @@ class EfanBlogStat extends WP_Widget
         echo $output;
     }
 }
+class CommentsList extends WP_Widget {
+    function __construct() {
+            $widget_ops = array(
+                'classname' => 'comments_list',
+                'description' => '最新评论小工具'
+            );
+            parent::__construct('comments_list', 'smarty_hankin主题最新评论', $widget_ops);
+    }
+    function widget($args, $instance) {
+                global $wpdb;
+                $user_sql = "SELECT
+                    * 
+                FROM
+                    wp_commentmeta 
+                WHERE
+                    `meta_key` = 'hankin_avatar' 
+                    OR
+                    `meta_key` = 'hankin_username'
+                    OR
+                    `meta_key` = 'hankin_qq'
+                ORDER BY
+                    comment_ID DESC";
+                
+                $user_list = $wpdb->get_results($user_sql,ARRAY_A);
+            if($user_list):
+                $user_list = dataGroup($user_list,'comment_id');
+            echo '<div id="recommended_posts"><div class="card card-sm widget Recommended_Posts widget_comments_list"><div class="card-header widget-header">最新评论<i class="bg-primary"></i></div>';
+            echo    '<div id="" class="pt-4">';
+                $num = 1;
+                foreach($user_list as $key => $user):
+                    if($num <= 10):
+                        echo  '<a href="'.get_the_permalink(getPostIdByCommentId($key)).'#respond" style="float:left;" data-toggle="tooltip" data-placement="bottom" title="" data-html="true" data-original-title="昵称：'.$user[2]['meta_value'].'<br>QQ号：'.$user[1]['meta_value'].'">';
+                        echo    '<img class="avatar w-32 mb-3 ml-2 mr-0" style="border-radius: 5px;" src="'.$user[0]['meta_value'].'"></a>';
+                    endif;
+                    $num ++;
+                endforeach;
+                 echo  '<a href="javascript:void(0)" style="float: left;">';
+                        echo    '<span class="avatar form-text w-32 mb-3 ml-2 mr-0" style="margin: 0 0 8px 8px;line-height: 32px;color: #fff;background-color: var(--primary);font-size: 10px;width: 32px;height: 32px;border-radius: 5px;overflow: hidden;text-align: center;">+'.count($user_list).'</span></a>';
+            echo    '</div>';
+            echo    '</div>';
+            echo '</div>';
+            endif;      
+        }
+}
 
 //图像链接
 class CS_Widget_Link extends WP_Widget {
@@ -220,7 +264,7 @@ class AuthorCard extends WP_Widget {
             echo $before_widget;
 ###################################   
         if($i_slider):
-            echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>';
+            echo '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>';
             echo '<style> .swiper-pagination-bullet{width: 5px;height: 5px;display: inline-block;background: #fdfdfd;opacity: .6;border-radius:10px;transition: all .2s ease-in-out;} .swiper-pagination-bullet-active{opacity: 1;background: #fff;width:25px} .swiper-button-prev{transition: all .2s ease-in-out;} .swiper-button-next{transition: all .2s ease-in-out;} .swiper-container:hover .swiper-button-prev{left:0;opacity:1} .swiper-container:hover .swiper-button-next{right:0;opacity:1} .swiper-container{width: 100%!important;height: 11rem;overflow: hidden;border-radius:3px 3px 0px 0px;} .swiper-content{border:0;margin-bottom: 0;background:rgba(255,255,255,.15);padding-bottom: 0;border-radius: 0}.swiper-pagination{text-align:right!important;}.swiper-container-horizontal>.swiper-pagination-bullets{bottom:0!important}.swiper-button-next, .swiper-button-prev{height:20px!important;margin-top:0px!important}.swiper-button-next{right:-15px;}.swiper-button-prev{left:-15px;}.swiper-slide{width:100%;height:100%;}</style>';
             echo '<div class="panel wrapper-md swiper-content">';
             echo '    <div class="swiper-container border-radius">';
@@ -275,7 +319,7 @@ class AuthorCard extends WP_Widget {
             echo '<div class="row no-gutters text-center pt-2 pb-2" id="i_social">';
                 foreach($i_social as $v):
             echo '<a class="col" href="'. $v['i_social_link'].'"';
-                if($v['i_social_newtab']):
+                if(isset($v['i_social_newtab'])):
                     echo 'target="_blank"';
                 endif;
             echo 'data-toggle="tooltip" data-placement="bottom" title="'.$v['i_social_title'].'">';
@@ -422,6 +466,7 @@ function EfanBlogStat()
     register_widget('CS_Widget_Link');
     register_widget('AuthorCard');
     register_widget('RandLists');
+    register_widget('CommentsList');
 }
 
 add_action('widgets_init', 'EfanBlogStat');

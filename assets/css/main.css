@@ -66,7 +66,8 @@ Card
 .card-footer,.card-header{background-color:transparent;border-color:rgba(135,150,165,.1);background-clip:padding-box;line-height:1}
 .card-header{padding:1.375rem 1.25rem 0;border:0}
 .card-sm .card-header{padding:1.5rem 1.5rem 0}
-.card-header i{display:inline-block;content:'';height:1px;width:28px;vertical-align:middle;margin-left:16px;top:0;-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);transform:translate(0,-50%)}
+/*.card-header i{display:inline-block;content:'';height:1px;width:28px;vertical-align:middle;margin-left:16px;top:0;-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);transform:translate(0,-50%)}
+*/
 .card-footer{padding:1.25rem 1.25rem 1rem}
 .card-body{padding:1.25rem}
 .card-sm .card-body{padding:1.375rem}
@@ -340,7 +341,18 @@ post content
  widget
 --------------------------------------------------------------*/
 .widget-header{padding:1.25rem 1rem 0;border:0!important}
-.widget-header i{display:inline-block;content:'';height:1px;width:28px;vertical-align:middle;margin-left:16px;top:0;-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);transform:translate(0,-50%)}
+.widget-header i{content: " ";
+    position: absolute;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #fc625d!important;
+    width: 12px;
+    height: 12px;
+    -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    float: right;
+    right: 65px;
+}
 .widget>ul{padding:1.375rem 1.5rem 1.5rem}
 
 /*--------------------------------------------------------------
@@ -676,6 +688,7 @@ Buttons
 .btn-nostyle:focus,.btn-nostyle:active{box-shadow:none;border-color:transparent;background-color:transparent}
 .btn-nostyle.disabled,.btn-nostyle:disabled{opacity:1;color:#9ca0ad;background-color:transparent;border-color:transparent}
 .btn-link-like.current{color:#ff2e63}
+.btn-link-like2.current{color:#fff;font-weight: bold;}
 .btn-outline-like.current{background-color:#ff2e63;border-color:#ff2e63;color:#fff}
 
 

@@ -3043,9 +3043,9 @@ b,strong{font-weight:600}
 .bd-example{position:relative;padding:1rem;margin:1rem;border:solid #ddd;border-width:.2rem 0 0}
 @media only screen and (max-height:575px){.bd-example{padding:1.5rem;margin-right:0;margin-left:0;border-width:.2rem}
 }
-.modal{z-index:1072}
+.modal{z-index:10000}
 .modal .popover,.modal .tooltip{z-index:1073}
-.modal-backdrop{z-index:1071}
+.modal-backdrop{z-index:9999}
 .bd-example-modal{background-color:#fafafa}
 .bd-example-modal .modal{position:relative;top:auto;right:auto;bottom:auto;left:auto;z-index:1;display:block}
 .bd-example-modal .modal-dialog{left:auto;margin-right:auto;margin-left:auto}

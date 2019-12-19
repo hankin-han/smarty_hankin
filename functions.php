@@ -817,3 +817,28 @@ WHERE
     return $res ? $res['count'] : 0;
 }
 
+// 数组分组
+function dataGroup($dataArr,$keyStr)
+{
+    $newArr=[];
+    foreach($dataArr as $k=>$v){
+        $newArr[$v[$keyStr]][] = $v;  //根据initial 进行数组重新赋值
+    }
+
+    return $newArr;
+}
+
+// 根据评论id 获取文章id
+function getPostIdByCommentId($commentId)
+{
+    global $wpdb;
+    $sql = "SELECT
+    *
+FROM
+    wp_comments 
+WHERE
+    `comment_ID` = '".$commentId."'";
+    $res = $wpdb->get_row($sql,ARRAY_A);
+
+    return $res ? $res['comment_post_ID'] : 0;
+}
