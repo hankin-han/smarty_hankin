@@ -20,7 +20,7 @@
 
 ```
 
-- 第一步：请各位正版用户添加QQ群：```21310971```，主题下载 [https://gitee.com/theme-smarty/smarty_hankin/tags](https://gitee.com/theme-smarty/smarty_hankin/tags)！
+- 第一步：请各位正版用户添加QQ群：```1018841266```，主题下载 [https://gitee.com/theme-smarty/smarty_hankin/tags](https://gitee.com/theme-smarty/smarty_hankin/tags)！
 
 ![Demo](https://www.hankin.cn/wp-content/uploads/2019/11/QQ图片20191125090718.png)
 

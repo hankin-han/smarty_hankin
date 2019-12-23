@@ -343,7 +343,7 @@ function getSystemInfo()
     $table = "<table class='wp-list-table widefat fixed striped'>";
     $table .= "<tbody>";
     $table .= "<tr><td>主题开发</td><td><b>唤醒-hankin<b></td></tr>";
-    $table .= "<tr><td>QQ群</td><td><b>21310971<b></td></tr>";
+    $table .= "<tr><td>QQ群</td><td><b>1018841266<b></td></tr>";
     $table .= "<tr><td>服务器系统</td><td>" . php_uname('s') . "</td></tr>";
     $table .= "<tr><td>服务器软件</td><td>" . $_SERVER ['SERVER_SOFTWARE'] . "</td></tr>";
     $table .= "<tr><td>服务器 IP</td><td>" . $_SERVER ['SERVER_ADDR'] . "</td></tr>";
