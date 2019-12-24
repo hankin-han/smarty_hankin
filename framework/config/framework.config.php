@@ -59,7 +59,7 @@ $options[] = [
         'id' => 'i_avatar_logo',
         'type' => 'upload',
         'title' => 'logo设置',
-        'default' => "https://www.hankin.cn/wp-content/uploads/2018/05/bitbug_favicon.ico",
+        'default' => get_template_directory_uri() ."/assets/images/logo2.png",
       ],
 
       // icon
@@ -67,7 +67,7 @@ $options[] = [
         'id' => 'i_avatar_icon',
         'type' => 'upload',
         'title' => 'icon设置',
-        'default' => "https://www.hankin.cn/wp-content/uploads/2018/05/bitbug_favicon.ico",
+        'default' => get_template_directory_uri() ."/assets/images/logo2.png",
       ],
 
       // 网站备案号

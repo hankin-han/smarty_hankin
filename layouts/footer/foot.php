@@ -28,16 +28,7 @@ window.SIGNATURE = '<?= $wxJsData['signature']?>';
 window.IS_PAGE_SINGLE = <?= (is_single() || is_page()) ? '1' : '0' ?>;
 window.IS_SLIDER = <?= ($i_slider) ? '1' : '0' ?>;
 </script>
-<script type="text/javascript" src="//res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-<script type="text/javascript">
-wxConfig = {
-	title : document.title,
-	desc : window.ENCODE_URI_COMPONENT_DESC,
-	link : window.ENCODE_URI_COMPONENT_LINK,
-	imgUrl : window.ENCODE_URI_COMPONENT_IMAGE,
-};
-</script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/wxShare.js?version=<?= time()?>"></script>
+
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/jquery.cookie.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/popper.min.js?version=<?= time()?>"></script>
@@ -48,6 +39,16 @@ wxConfig = {
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/clipboard.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/highlight/highlight.min.js?version=<?= time()?>"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins/pjax.js?version=<?= time()?>"></script>
+<script type="text/javascript" src="//res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script type="text/javascript">
+wxConfig = {
+	title : document.title,
+	desc : window.ENCODE_URI_COMPONENT_DESC,
+	link : window.ENCODE_URI_COMPONENT_LINK,
+	imgUrl : window.ENCODE_URI_COMPONENT_IMAGE,
+};
+</script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/wxShare.js?version=<?= time()?>"></script>
 <!-- viewer start-->
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/viewer/viewer.min.css">
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/viewer/viewer.min.js"></script>

@@ -17,5 +17,7 @@ $(function() {
     $(document).on('pjax:complete', function() {
       $(".loader-bg").hide();
       hljsLoad();
+      window.ENCODE_URI_COMPONENT_TITLE = document.title; 
+      window.ENCODE_URI_COMPONENT_LINK = this.location.href;
     });
 });
