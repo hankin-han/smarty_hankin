@@ -480,7 +480,7 @@ $options[] = [
       [
         'id' => 'i_dashang_weixin',
         'type' => 'upload',
-        'title' => '文章页打赏作者（微信）140*140 正方形',
+        'title' => '文章页打赏作者（微信',
         'default' => "",
       ],
 
@@ -488,7 +488,7 @@ $options[] = [
       [
         'id' => 'i_dashang_zhifubao',
         'type' => 'upload',
-        'title' => '文章页打赏作者（支付宝）140*140 正方形',
+        'title' => '文章页打赏作者（支付宝',
         'default' => "",
       ],
 

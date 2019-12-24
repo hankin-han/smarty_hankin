@@ -1,7 +1,7 @@
 <?php
 $i_dashang_check = cs_get_option('i_dashang_check');
 ?>
-<?php if(!wp_is_mobile() && $i_dashang_check):?>
+<?php if($i_dashang_check):?>
 <div class="donate text-center">
     <p class="text-muted mt-3">如本文“对您有用”，欢迎随意打赏作者，让我们坚持创作！</p>
     <a class="btn btn-primary btn-like btn-link-like2<?php if(isset($_COOKIE['hankin_like_'.$post->ID])) echo ' current';?>" href="javascript:;" data-action="like" data-id="<?php the_ID(); ?>">

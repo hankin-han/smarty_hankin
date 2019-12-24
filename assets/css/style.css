@@ -1,6 +1,6 @@
 @import url(plugins/animate.min.css);
 @import url(../fonts/iconfont.css);
-@font-face{font-family:rst;src:url(//www.cattu.cn/usuuu.ttf)}
+@font-face{font:'Microsoft Yahei','Helvetica Neue', Arial, sans-serif;}
 .ps{overflow:hidden!important;overflow-anchor:none;-ms-overflow-style:none;touch-action:auto;-ms-touch-action:auto}
 .ps__rail-x{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;height:15px;bottom:0;position:absolute}
 .ps__rail-y{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;width:15px;right:0;position:absolute}
@@ -19,6 +19,7 @@ body::-webkit-scrollbar-track-piece{background:#EDEDED}
 body::-webkit-scrollbar{width:5px;height:6px}
 body::-webkit-scrollbar-thumb{border-radius:4px;background-color:#9a9fbf}
 body::-webkit-scrollbar-thumb:hover{background-color:#bbb}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

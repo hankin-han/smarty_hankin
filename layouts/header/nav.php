@@ -111,7 +111,6 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                         </ul>
                     </li>
             </ul>
-
             <div class="card text-center" style="display: none;">
                 <div class="card-block">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

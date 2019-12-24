@@ -1,5 +1,4 @@
 @import url(//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css);
-
 /**
  * Owl Carousel v2.3.4
  * Copyright 2013-2018 David Deutsch
@@ -749,6 +748,6 @@ table td:nth-child(1){white-space:nowrap}
 .btn-tumblr:hover{background-color:#36465d;border-color:#36465d;color:#fff}
 .btn-plus-nice{}
 
-.qr_pay{background: url(../images/qr_pay.png?v=1) no-repeat;height:580px;}
-.qr_pay .qr_pay_wechatpay{width: 140px;height:140px;position: relative;top: 253px;left: 138px;}
-.qr_pay .qr_pay_alipay{width: 140px;height:140px;position: relative;top: 253px;left: 375px;}
+.qr_pay{height:60vh;padding:20px 0;}
+.qr_pay .qr_pay_wechatpay{width: 70%;height:auto;margin:0 auto!important;}
+.qr_pay .qr_pay_alipay{width: 70%;height:auto;margin:0 auto!important;}
