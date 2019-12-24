@@ -92,7 +92,7 @@ $(document).ready(function() {
 	 	return false;
 	 }
 	};
-	$(document).on("click", ".btn-link-like",function() {
+	$(document).on("click", ".btn-link-like,.btn-link-like2",function() {
 	 	$(this).postLike();
 	});
 });

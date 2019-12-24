@@ -687,7 +687,7 @@ Buttons
 .btn-nostyle:focus,.btn-nostyle:active{box-shadow:none;border-color:transparent;background-color:transparent}
 .btn-nostyle.disabled,.btn-nostyle:disabled{opacity:1;color:#9ca0ad;background-color:transparent;border-color:transparent}
 .btn-link-like.current{color:#ff2e63}
-.btn-link-like2.current{color:#fff;font-weight: bold;}
+.btn-link-like2.current{color:var(--green);font-weight: bold;}
 .btn-outline-like.current{background-color:#ff2e63;border-color:#ff2e63;color:#fff}
 
 
