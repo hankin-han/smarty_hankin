@@ -271,7 +271,7 @@ class AuthorCard extends WP_Widget {
             echo '        <div class="swiper-wrapper">';
             if(!empty($i_slider_custom)):
                 foreach($i_slider_custom as $item):
-                echo '            <div class="swiper-slide media-content" style="#ccc background:url('.$item['i_slider_image'].');background-size: cover;"></div>';
+                echo '            <div class="swiper-slide media-content" style="background:url('.$item['i_slider_image'].');background-size: cover;"></div>';
                 endforeach;
             endif;
             echo '        </div>';
@@ -290,7 +290,11 @@ class AuthorCard extends WP_Widget {
         echo '    <div class="widget-author-cover">';
         echo '        <div class="widget-author-avatar" style="z-index:1;">';
         echo '            <div class="flex-avatar mx-2 w-80 border border-white border-2">';
-        echo '                <img src="' . $instance['advertising'] . '" style="width:80px;height:80px;" /></div>';
+        if(!empty($instance['advertising'])):
+            echo '                <img src="' . $instance['advertising'] . '" /></div>';
+        else:
+            echo '                <img src="'.get_template_directory_uri().'/assets/images/default.jpg"/></div>';
+        endif;
         echo '        </div>';
         echo '    </div>';
         echo '    <div class="widget-author-meta text-center pt-4 pl-4 pr-4 pb-2">';

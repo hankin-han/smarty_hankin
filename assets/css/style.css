@@ -1,6 +1,6 @@
 @import url(plugins/animate.min.css);
 @import url(../fonts/iconfont.css);
-@font-face{font:'Microsoft Yahei','Helvetica Neue', Arial, sans-serif;}
+@font-face{font:Helvetica,Arial,PingFangSC-Regular,Microsoft Yahei,sans-serif;}
 .ps{overflow:hidden!important;overflow-anchor:none;-ms-overflow-style:none;touch-action:auto;-ms-touch-action:auto}
 .ps__rail-x{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;height:15px;bottom:0;position:absolute}
 .ps__rail-y{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;width:15px;right:0;position:absolute}
