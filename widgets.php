@@ -271,7 +271,7 @@ class AuthorCard extends WP_Widget {
             echo '        <div class="swiper-wrapper">';
             if(!empty($i_slider_custom)):
                 foreach($i_slider_custom as $item):
-                echo '            <div class="swiper-slide media-content" style="background:url('.$item['i_slider_image'].');background-size: cover;"></div>';
+                echo '            <div class="swiper-slide media-content" style="#ccc background:url('.$item['i_slider_image'].');background-size: cover;"></div>';
                 endforeach;
             endif;
             echo '        </div>';

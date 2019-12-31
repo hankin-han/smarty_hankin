@@ -1,6 +1,5 @@
-
-$('a[data-toggle="tooltip"],div[data-toggle="tooltip"]').tooltip();
 function hljsLoad(){
+$('a[data-toggle="tooltip"],div[data-toggle="tooltip"]').tooltip();
 //幻灯片	
 if(IS_SLIDER == '1'){
 	var swiper = new Swiper('.swiper-container', {
