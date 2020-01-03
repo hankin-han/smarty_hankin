@@ -638,7 +638,7 @@ Buttons
 .btn-light.disabled,.btn-light:disabled{color:#393E46;background-color:#f2f2f5;border-color:#f2f2f5}
 .btn-light:not(:disabled):not(.disabled):active,.btn-light:not(:disabled):not(.disabled).active,.show>.btn-light.dropdown-toggle{color:#393E46;background-color:#f2f2f5;border-color:#f2f2f5}
 .btn-light:not(:disabled):not(.disabled):active:focus,.btn-light:not(:disabled):not(.disabled).active:focus,.show>.btn-light.dropdown-toggle:focus{box-shadow:none}
-.btn-dark{color:#fff;background-color:#222831;border-color:#222831}
+.btn-dark{color:#fff;background-color:#616161;border-color:#222831}
 .btn-dark:hover{color:#fff;background-color:#000;border-color:#000}
 .btn-dark:focus,.btn-dark.focus{color:#fff;background-color:#000;border-color:#000;box-shadow:none}
 .btn-dark.disabled,.btn-dark:disabled{color:#fff;background-color:#222831;border-color:#222831}
