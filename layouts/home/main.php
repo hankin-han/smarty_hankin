@@ -1,3 +1,7 @@
+<?php
+    $i_article = cs_get_option('i_article'); //文章列表
+    $i_article = $i_article ? $i_article : 'list-left'; //文章列表
+?>
 <!-- [ Main Content ] start -->
 <section class="pcoded-main-container" id="content">
 <?php if(is_home() && wp_is_mobile()): ?>
@@ -30,11 +34,14 @@
                 <!-- [ breadcrumb ] end -->
                 <!-- [ list ] start -->
                 <?php get_template_part( 'layouts/home/category' );?>
-                <?php if(isWechat()):?>
+                <?php if($i_article == "list-top"):?>
                     <?php get_template_part( 'layouts/home/wx_list' );?>
-                <?php else:?>
-                <?php get_template_part( 'layouts/home/list' );?>
-                <?php get_template_part( 'layouts/home/box_grid' );?>
+                <?php endif;?>
+                <?php if($i_article == "list-left"):?>
+                    <?php get_template_part( 'layouts/home/list' );?>
+                <?php endif;?>
+                <?php if($i_article == "card-top"):?>
+                    <?php get_template_part( 'layouts/home/box_grid' );?>
                 <?php endif;?>
                 <!-- [ list ] end -->
             </div>

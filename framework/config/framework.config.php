@@ -221,7 +221,12 @@ $options[] = [
       'title' => '微信公众号设置',
       'icon' => 'fa fa-bug',
       'fields' => [
-
+        //设置说明
+        [
+          'type' => 'notice',
+          'class' => 'info',
+          'content' => '可实现 分享到QQ 微信 好友 朋友圈 带有标题、描述、文章封面',
+        ],
         // 关键词
         [
           'id' => 'i_appId',
@@ -435,19 +440,19 @@ $options[] = [
     'icon' => 'fa fa-list-alt',
     'fields' => [
 
-      /*// 文章设置
+      // 文章设置
       [
         'id' => 'i_article',
         'type' => 'radio',
         'title' => '列表形式',
         'options' => [
-          'list-top' => '列表式（上图）',
           'list-left' => '列表式（左图）',
+          'list-top' => '列表式（上图）',
           'card-top' => '卡片式',
         ],
-        'default' => 'list-top',
+        'default' => 'list-left',
       ],
-
+/*
       // 无限加载文章
       [
         'id' => 'i_article_page_load',
