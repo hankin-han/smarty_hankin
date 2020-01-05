@@ -427,6 +427,29 @@ $options[] = [
         'help' => '',
       ],
 
+      // 设置背景
+      [
+        'id' => 'i_theme_background',
+        'type' => 'upload',
+        'title' => '背景设置',
+        'dependency' => ['i_theme_switch', '==', 'false' ],
+      ],
+      [
+        'id' => 'i_theme_box_center',
+        'type' => 'switcher',
+        'title' => '居中模式',
+        'dependency' => ['i_theme_switch', '==', 'false' ],
+        'default' => TRUE,
+      ],
+      [
+        'id' => 'i_theme_blur_layouts',
+        'type' => 'switcher',
+        'title' => '毛玻璃效果',
+        'dependency' => ['i_theme_switch', '==', 'false' ],
+        'default' => FALSE,
+        'label' => '<font color="red">注：开启后会增加浏览器内存消耗</font>',
+      ],
+
     ],
   ];
 
