@@ -34,8 +34,11 @@ $i_avatar_logo = cs_get_option('i_avatar_logo'); //自定义友情链接
             }
             ?>
         <ul class="navbar-nav ml-auto">
+            <li class="nav-item m-r-10"><a href="javascript:void(0)" class="nav-switch-dark-mode text-lg" title="<?= (!empty($_COOKIE['layout-css'])) ? '白天模式' : '夜晚模式' ?>">
+                <i class="feather <?= (!empty($_COOKIE['layout-css'])) ? 'icon-sun text-danger' : 'icon-moon' ?>"></i></a>
+            </li>
             <li class="nav-item">
-                <a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
+                <a href="#!" class="pop-search text-lg"><i class="feather icon-search"></i></a>
                 <form class="search-bar" id="searchform" method="get" role="search" action="<?= home_url()?>">
                     <input type="text" name="s" class="form-control border-0 shadow-none" placeholder="请输入关键词搜索" />
                     <button type="button" class="close" aria-label="Close">

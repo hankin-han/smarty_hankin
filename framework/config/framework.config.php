@@ -449,7 +449,6 @@ $options[] = [
         'default' => FALSE,
         'label' => '<font color="red">注：开启后会增加浏览器内存消耗</font>',
       ],
-
     ],
   ];
 

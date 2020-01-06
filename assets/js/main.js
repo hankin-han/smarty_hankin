@@ -1,3 +1,18 @@
+//切换 白天 夜晚模式
+$(".nav-switch-dark-mode").click(function(){
+	if($(this).find("i").hasClass("icon-moon")){
+		$(this).attr("title","白天模式");
+		$('.nav-switch-dark-mode i').removeClass("icon-moon").addClass("icon-sun text-danger");
+	    $("#layout-css").attr("href",THEME_URL+"/assets/css/layout-dark.css");
+	    $.cookie('layout-css', THEME_URL+"/assets/css/layout-dark.css", { expires: 7 });
+	}else{
+		$(this).attr("title","夜晚模式");
+		$('.nav-switch-dark-mode i').removeClass("icon-sun text-danger").addClass("icon-moon");
+		$("#layout-css").attr("href","");
+	    $.cookie('layout-css', "", { expires: 7 });
+	}
+
+});
 function hljsLoad(){
 $('a[data-toggle="tooltip"],div[data-toggle="tooltip"]').tooltip();
 //幻灯片	
