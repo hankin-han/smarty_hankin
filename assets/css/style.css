@@ -4073,7 +4073,7 @@ pre[class*=language-]:after,pre[class*=language-]:before{display:none}
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.active>a:before,.pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.pcoded-trigger>a:before,.pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li:hover>a:before{color:#4680ff}
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li+li>a{border-top-color:#ededed}
 .pcoded-navbar.menu-light .pcoded-submenu{background:#fff}
-.pcoded-navbar.menu-light a{color:#535763}
+.pcoded-navbar.menu-light a{color:#a2a2a2}
 .pcoded-navbar.menu-light.navbar-collapsed .pcoded-menu-caption:after{background:rgba(0,0,0,.1)}
 .pcoded-navbar.menu-light.navbar-collapsed:hover .pcoded-menu-caption:after{background:0 0}
 .pcoded-navbar.menu-light .pcoded-menu-caption{color:#535763}
@@ -5673,5 +5673,13 @@ new-task label input[type=checkbox]{display:none}
 .w-100-xs{width:100%!important}
 }
 
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
 #list-grid .list-box:nth-child(odd) .col-md-6{float:left;padding-left:0;}
 #list-grid .list-box:nth-child(even) .col-md-6{float:right;padding-right:0;}
+}
+
+@media (min-width: 1200px) { 
+#list-grid .list-box:nth-child(odd) .col-md-6{float:left;padding-left:0;}
+#list-grid .list-box:nth-child(even) .col-md-6{float:right;padding-right:0;}
+}
