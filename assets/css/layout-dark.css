@@ -305,3 +305,5 @@ div.DTS div.dataTables_scrollBody table{background-color:#060b14}
 .pcoded-navbar .pcoded-submenu{background:#292929!important;}
 .pcoded-navbar.menu-light{background-color: #292929;color:#fff;}
 .Author_Card{background:#ffffff0d!important;}
+.pcoded-navbar.menu-light a{color:#fff}
+.pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li+li>a{border:0!important}
