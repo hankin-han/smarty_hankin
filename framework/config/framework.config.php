@@ -276,15 +276,16 @@ $options[] = [
         'id' => 'i_web_weihu',
         'type' => 'switcher',
         'title' => '网站维护设置',
-      ],
-
-      // 网站后台登录背景设置
-      [
-        'id' => 'i_admin_login_bg',
-        'type' => 'upload',
-        'title' => '网站后台登录背景设置',
-        'default' => "https://www.hankin.cn/wp-content/themes/hankin/images/login_bg.jpg",
       ],*/
+
+      // 网站后台暗黑模式
+      [
+        'id' => 'i_admin_dark_mode',
+        'type' => 'switcher',
+        'title' => '网站后台暗黑模式设置',
+        'default' => FALSE,
+        'label' => '<font color="red">注意：开启 保存后 请刷新页面</font>',
+      ],
 
       // 使用markdown编辑器
       [

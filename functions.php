@@ -5,6 +5,7 @@ require_once dirname(__FILE__) . '/framework/cs-framework.php';
 require_once dirname(__FILE__) . '/includes/wxShare.php';
 require_once dirname(__FILE__) . '/includes/author-avatars.php';
 $i_markdown_option = cs_get_option('i_markdown_option'); //markdown编辑器
+$i_admin_dark_mode = cs_get_option('i_admin_dark_mode'); //网站后台暗黑模式设置
 if($i_markdown_option):
 add_filter('use_block_editor_for_post', '__return_false'); // 禁止加载Gutenberg（古腾堡） 编辑器
 remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' ); // 禁止前端加载样式文件
@@ -38,7 +39,7 @@ function custom_adminbar_menu($meta = TRUE)
 
         $wp_admin_bar->add_menu([
             'id' => 'custom_menu',
-            'title' => __('<i style="position: relative;top:7px;color:#9ea3a8" 
+            'title' => __('<i style="position: relative;top:7px;color:#fff" 
                 class="wp-menu-image dashicons-before dashicons-admin-settings">
                 </i>&nbsp;&nbsp;smarty_hankin 主题设置 <span style="border-radius:10px;padding:3px 6px;color:#fff;background:#1b81c2">v'._the_theme_version().'</span>'),
             'href' => '/wp-admin/admin.php?page=cs-framework',
@@ -47,36 +48,13 @@ function custom_adminbar_menu($meta = TRUE)
 if($i_markdown_option):
         $wp_admin_bar->add_menu([
                 'id' => 'markdown_edit',
-                'title' => __('<i style="position: relative;top:5px;color:#9ea3a8" class="wp-menu-image dashicons-before dashicons-admin-generic"></i>&nbsp;&nbsp;Markdown 编辑器设置'),
+                'title' => __('<i style="position: relative;top:5px;color:#fff" class="wp-menu-image dashicons-before dashicons-admin-generic"></i>&nbsp;&nbsp;Markdown 编辑器设置'),
                 'href' => '/wp-admin/plugins.php?page=wp-editormd-settings',
                 //    'meta'  => array( target => '_blank' )
             ]);
 endif;
 }
 add_action('admin_bar_menu', 'custom_adminbar_menu', 71);
-
-/* 
- * 移除工具条占位空白
- */  
-function remove_adminbar_margin() {  
-    $remove_adminbar_margin = '<style type="text/css">  
-        html { margin-top: -28px !important; }  
-        * html body { margin-top: -28px !important; }  
-    </style>';  
-    echo $remove_adminbar_margin;  
-}  
-/* 针对后台 */  
-/*if ( is_admin() ) {  
-    remove_action( 'init', '_wp_admin_bar_init' );  
-    add_action( 'admin_head', 'remove_adminbar_margin' );  
-}  */
-/* 针对前台 */  
-/*if ( !is_admin() ) {  
-    remove_action( 'init', '_wp_admin_bar_init' );  
-    add_action( 'wp_head', 'remove_adminbar_margin' );  
-}*/
-
-
 
 register_nav_menu('warp-nav', 'smarty_hankin-左侧菜单');
 register_nav_menu('top-warp-nav', 'smarty_hankin-顶部菜单');
@@ -97,13 +75,13 @@ function wp_login_style() {
     </style>';
 }
 add_action('login_enqueue_scripts', 'wp_login_style');
+if($i_admin_dark_mode):
 /* 设置后台样式*/
-function wp_admin_style() {
-    wp_enqueue_style( "wp-admin", get_template_directory_uri() . "/assets/css/admin/wp-admin.css" );
+function admin_mycss() {    
+    wp_enqueue_style( "admin-my", get_template_directory_uri() . "/assets/css/admin/wp-admin.css");
 }
-add_action('admin_head', 'wp_admin_style');
-
-
+add_action('admin_head', 'admin_mycss');
+endif;
 /* 获取主题名称 */
 function _the_theme_name()
 {
@@ -491,9 +469,27 @@ function getThumbnail()
         return $large_image_url[0]."?version=".time();
     }
 
-    return "//qiniu.hankin.cn/img".rand(0, 48).".png?version=".time();
+    return "//qiniu.hankin.cn/img".implode(unique_rand(0, 48, 1), ",").".png?version=".time();
 }
-
+/*
+* array unique_rand( int $min, int $max, int $num )
+* 生成一定数量的不重复随机数，指定的范围内整数的数量必须
+* 比要生成的随机数数量大
+* $min 和 $max: 指定随机数的范围
+* $num: 指定生成数量
+*/
+function unique_rand($min, $max, $num) {
+  $count = 0;
+  $return = array();
+  while ($count < $num) {
+    $return[] = mt_rand($min, $max);
+    $return = array_flip(array_flip($return));
+    $count = count($return);
+  }
+  //打乱数组，重新赋予数组新的下标
+  shuffle($return);
+  return $return;
+}
 /* 修改时间格式 */
 function timeGo($ptime)
 {
