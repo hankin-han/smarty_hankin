@@ -3552,9 +3552,9 @@ pre[class*=language-]:after,pre[class*=language-]:before{display:none}
 .pcoded-navbar .pcoded-inner-navbar li>a .pcoded-mtext{position:relative}
 .pcoded-navbar .pcoded-inner-navbar li>a>.pcoded-micon{font-size:16px;padding:0;margin-right:5px;border-radius:4px;width:30px;display:inline-flex;align-items:center;height:30px;text-align:center;justify-content:center}
 .pcoded-navbar .pcoded-inner-navbar li>a>.pcoded-micon+.pcoded-mtext{position:relative;top:0}
-.pcoded-navbar .pcoded-inner-navbar li.pcoded-hasmenu>a:after{content:"\e844";font-family:feather;font-size:13px;border:none;position:absolute;top:13px;right:20px;transition:.3s ease-in-out}
+.pcoded-navbar .pcoded-inner-navbar li.pcoded-hasmenu>a:after{content:"";font-family:feather;font-size:13px;border:none;position:absolute;top:13px;right:20px;transition:.3s ease-in-out}
 .pcoded-navbar .pcoded-inner-navbar li.pcoded-hasmenu.pcoded-trigger>a:after{transform:rotate(90deg)}
-.pcoded-navbar .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu{display:none}
+.pcoded-navbar .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu{display:black}
 .pcoded-navbar .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li+li a{border-top:1px solid rgba(151,167,193,.2)}
 .pcoded-navbar .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu a:after{top:7px}
 .pcoded-navbar .pcoded-inner-navbar li.pcoded-hasmenu.pcoded-trigger.active>.pcoded-submenu{display:block}
@@ -4069,7 +4069,7 @@ pre[class*=language-]:after,pre[class*=language-]:before{display:none}
 .pcoded-navbar.menu-light .mobile-menu span{background-color:rgba(255,255,255,.8)}
 .pcoded-navbar.menu-light .mobile-menu span:after,.pcoded-navbar.menu-light .mobile-menu span:before{background-color:rgba(255,255,255,.8)}
 .pcoded-navbar.menu-light .mobile-menu.on span{background-color:transparent}
-.pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li+li a{border-top:1px solid rgba(151,167,193,.5)}
+.pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li+li a{/*border-top:1px solid rgba(151,167,193,.5)*/}
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.active>a:before,.pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.pcoded-trigger>a:before,.pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li:hover>a:before{color:#4680ff}
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li+li>a{border-top-color:#ededed}
 .pcoded-navbar.menu-light .pcoded-submenu{background:#fff}

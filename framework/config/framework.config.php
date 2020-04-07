@@ -450,6 +450,14 @@ $options[] = [
         'default' => FALSE,
         'label' => '<font color="red">注：开启后会增加浏览器内存消耗</font>',
       ],
+      [
+        'id' => 'i_theme_dark_layouts',
+        'type' => 'switcher',
+        'title' => '夜间暗黑效果',
+        'dependency' => ['i_theme_switch', '==', 'false' ],
+        'default' => FALSE,
+        'label' => '',
+      ],
     ],
   ];
 

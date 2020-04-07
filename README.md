@@ -37,6 +37,7 @@
 - 第七步：第一次使用主题后，浏览网页，请一定要清空浏览器的缓存或者按快捷键ctrl+F5强制刷新几次~
 
 ![Demo](./screenshot.jpg)
+![Demo](https://www.hankin.cn/wp-content/uploads/2020/03/b97a23cde544d3e.gif)
 
 |  微信打赏   | 支付宝打赏  |
 |  ----  | ----  |

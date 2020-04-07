@@ -6,6 +6,7 @@ $i_theme_switch = cs_get_option('i_theme_switch');
 $i_theme_background = cs_get_option('i_theme_background');
 $i_theme_box_center = cs_get_option('i_theme_box_center');
 $i_theme_blur_layouts = cs_get_option('i_theme_blur_layouts');
+$i_theme_dark_layouts = cs_get_option('i_theme_dark_layouts');
 ?>
 <!--
 .----------------.  .----------------.  .-----------------. .----------------.  .----------------.  .-----------------.
@@ -36,7 +37,11 @@ Blog：https://www.hankin.cn -->
 <?php if( ! empty( $i_css ) ){ echo '<style>'.$i_css.'</style>';}else{ echo' ';} ?>
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
 <link rel="icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon">
+<?php if($i_theme_dark_layouts):?>
+<link rel="stylesheet" class="layout-css" id="layout-css" href="<?= get_template_directory_uri().'/assets/css/layout-dark.css'?>">
+<?php else:?>
 <link rel="stylesheet" class="layout-css" id="layout-css" href="<?= isset($_COOKIE['layout-css']) ? $_COOKIE['layout-css'] : ''?>">
+<?php endif;?>
 <?php if($i_theme_switch):?>
 <link rel="stylesheet" class="layout-blur-css" id="layout-blur-css" href="<?= isset($_COOKIE['layout-blur-css']) ? $_COOKIE['layout-blur-css'] : ''?>">
 <?php else:?>

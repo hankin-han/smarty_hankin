@@ -55,15 +55,20 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                             <?php
                                 $args=array(
                                     'orderby' => 'name',
-                                    'order' => 'ESC'
+                                    'order' => 'ESC',
+                                    //'parent' => '0'
                                 );
                                 $categories=get_categories($args);
                                 ?>
                                 <?php if($categories):?>
-                                    <?php foreach($categories as $category):?>
-                                        <li><a href="<?= get_category_link( $category->term_id )?>" title="<?= $category->name ?>">
-                                                <span><?= $category->name ?></span>
-                                            </a>
+                                    <?php 
+                                    foreach($categories as $category):?>
+                                        <li class="<?php if(get_category_children($category->term_id)!=""):?> pcoded-hasmenu<?php endif;?>">
+                                            <?php if(get_category_children($category->term_id)!=""):?>
+                                                <a href="javascript:void(0)" title="<?= $category->name ?>"><span><?= $category->name ?></span></a>
+                                            <?php else:?>
+                                            <a href="<?= get_category_link( $category->term_id )?>" title="<?= $category->name ?>"><span><?= $category->name ?></span></a>
+                                            <?php endif;?>
                                         </li>
                                     <?php endforeach;?>
                                 <?php else:?>
@@ -111,7 +116,7 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                         </ul>
                     </li>
             </ul>
-            <div class="card text-center" style="display: none;">
+            <div class="card text-center" style="display: none">
                 <div class="card-block">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <i class="feather icon-sunset f-40"></i>
@@ -120,7 +125,6 @@ $i_links = cs_get_option('i_links'); //自定义友情链接
                     <a href="#!" target="_blank" class="btn btn-primary btn-sm text-white m-0">Support</a>
                 </div>
             </div>
-
         </div>
     </div>
 </nav>
